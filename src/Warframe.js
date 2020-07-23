@@ -13,7 +13,7 @@ class Warframe {
       delete this.warframe.skipBuildTimePrice;
       delete this.warframe.buildQuantity;
       delete this.warframe.consumeOnBuild;
-      delete this.warframe.tradeable;
+      delete this.warframe.tradable;
       delete this.warframe.conclave;
       delete this.warframe.introduced;
     }

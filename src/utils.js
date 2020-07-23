@@ -51,7 +51,7 @@ function loadMods(upgrades) {
     delete upgradeData.patchlogs;
 
     if (upgradeData.category === 'Arcanes') {
-      delete upgradeData.tradeable;
+      delete upgradeData.tradable;
       arcanes.push(upgradeData);
     } else if (upgradeData.category === 'Mods') {
       if (upgradeData.name.includes('Riven Mod')) {
@@ -63,7 +63,7 @@ function loadMods(upgrades) {
           fusionLimit: upgradeData.fusionLimit,
           imageName: upgradeData.imageName,
           category: upgradeData.category,
-          tradeable: upgradeData.tradeable,
+          tradable: upgradeData.tradable,
           wikiaThumbnail: upgradeData.wikiaThumbnail,
           wikiaUrl: upgradeData.wikiaUrl,
           buffs: upgrade.buffs,

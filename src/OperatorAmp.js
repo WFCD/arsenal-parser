@@ -16,13 +16,14 @@ class OperatorAmp {
             || { uniqueName: amp.modularParts.LWPT_AMP_BRACE },
     };
 
-    delete this.parts.prism.components;
-    delete this.parts.scaffold.components;
-    delete this.parts.brace.components;
-
-    delete this.parts.prism.patchlogs;
-    delete this.parts.scaffold.patchlogs;
-    delete this.parts.brace.patchlogs;
+    Object.keys(this.parts).forEach((partKey) => {
+      delete this.parts[partKey].components;
+      delete this.parts[partKey].patchlogs;
+      delete this.parts[partKey].buildPrice;
+      delete this.parts[partKey].skipBuildTimePrice;
+      delete this.parts[partKey].buildQuantity;
+      delete this.parts[partKey].consumeOnBuild;
+    });
   }
 }
 
