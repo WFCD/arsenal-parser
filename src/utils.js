@@ -42,6 +42,12 @@ function loadMods(upgrades) {
     if (!items) return;
     let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName));
     upgradeData.rank = upgrade.rank;
+    if (upgradeData.levelStats) {
+      if (upgradeData.levelStats[upgrade.rank]) {
+        upgradeData.effects = upgradeData.levelStats[upgrade.rank].stats;
+      }
+      delete upgradeData.levelStats;
+    }
     delete upgradeData.drops;
     delete upgradeData.patchlogs;
     if (upgradeData.category === 'Arcanes') {
