@@ -1,0 +1,40 @@
+{
+  "name": "arsenal-parser",
+  "version": "0.0.1",
+  "description": "Parser for Digital Extreme's Twitch Arsenal Extension data",
+  "main": "src/ArsenalParser.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "warframe-items": "^1.1016.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "mocha": "^8.0.1",
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.1.0"
+  },
+  "scripts": {
+    "test": "npx nyc --reporter=text mocha --exit",
+    "coverage": "npm test && npx nyc report --reporter=text-lcov | npx coveralls",
+    "lint": "npx eslint main.js lib/ test/",
+    "lint:fix": "npx eslint main.js lib/ test/ --fix",
+    "prepublishOnly": "npm run build:types",
+    "build:types": "npx -p typescript tsc -p tsconfig.declaration.json"
+  },
+  "keywords": [
+    "warframe",
+    "parser",
+    "twitch",
+    "arsenal"
+  ],
+  "author": "NicksWorld",
+  "license": "MIT",
+  "release": {
+    "branch": "master"
+  }
+}
