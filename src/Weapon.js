@@ -8,6 +8,8 @@ class WarframeWeapon {
     this.polarized = weapon.polarized;
     this.upgrades = loadMods(weapon.upgrades);
     if (weapon.itemName) this.itemName = weapon.itemName;
+    this.cosmetics = (weapon.skins || [])
+      .map((skin) => (items.find((item) => item.uniqueName === skin.uniqueName)) || skin);
 
     if (weapon.modularParts) {
       const parts = {};

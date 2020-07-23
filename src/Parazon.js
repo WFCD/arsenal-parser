@@ -9,7 +9,7 @@ class WarframeParazon {
     this.polarized = parazon.polarized;
     this.upgrades = loadMods(parazon.upgrades);
     if (parazon.cosmetics) {
-      this.cosmetics = parazon.skins
+      this.cosmetics = (parazon.skins || [])
         .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName))
                  || cosmetic);
 

@@ -6,7 +6,8 @@ class OperatorAmp {
   constructor(amp) {
     this.xp = amp.xp;
     this.polarized = amp.polarized;
-    this.amp = (items.find((item) => item.uniqueName === amp.uniqueName));
+    this.amp = (items.find((item) => item.uniqueName === amp.uniqueName)) || amp;
+    if (!amp.modularParts) return;
     this.parts = {
       prism: (items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_OCULUS))
             || { uniqueName: amp.modularParts.LWPT_AMP_OCULUS },
@@ -23,6 +24,8 @@ class OperatorAmp {
       delete this.parts[partKey].skipBuildTimePrice;
       delete this.parts[partKey].buildQuantity;
       delete this.parts[partKey].consumeOnBuild;
+      delete this.parts[partKey].buildTime;
+      delete this.parts[partKey].tradable;
     });
   }
 }

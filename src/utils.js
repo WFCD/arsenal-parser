@@ -34,19 +34,19 @@ function translatePolarity(pol) {
   return 'None';
 }
 
-function loadMods(upgrades) {
+function loadMods(upgrades = []) {
   const arcanes = [];
   const mods = [];
   upgrades.forEach((upgrade) => {
-    if (upgrade.uniqueName === '') return;
     if (!items) return;
-    let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName))
-          || upgrade;
+    let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName)) || upgrade;
+    if (!upgradeData) return;
 
     upgradeData.rank = upgrade.rank;
+    upgradeData.uniqueName = upgrade.uniqueName;
     if (upgradeData.levelStats) {
       upgradeData.levelStats = upgradeData.levelStats[upgrade.rank]
-          || upgradeData.levelStats;
+            || upgradeData.levelStats;
     }
     delete upgradeData.drops;
     delete upgradeData.patchlogs;

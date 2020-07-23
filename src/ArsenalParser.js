@@ -30,13 +30,13 @@ class ArsenalData {
     const { archwing, primary: archPrimary, melee: archMelee } = ARCHWING;
     const { parazon } = DATAKNIFE;
     const { amp } = OPERATOR;
-    const { companion } = SENTINEL;
+    const { companion, roboticweapon } = SENTINEL;
 
-    if (!warframe.hide) this.loadout.warframe = new Warframe(warframe);
-    if (!primary.hide) this.loadout.primary = new Weapon(primary);
-    if (!secondary.hide) this.loadout.secondary = new Weapon(secondary);
-    if (!melee.hide) this.loadout.melee = new Weapon(melee);
-    if (!heavy.hide) this.loadout.heavy = new Weapon(heavy);
+    if (warframe && !warframe.hide) this.loadout.warframe = new Warframe(warframe);
+    if (primary && !primary.hide) this.loadout.primary = new Weapon(primary);
+    if (secondary && !secondary.hide) this.loadout.secondary = new Weapon(secondary);
+    if (melee && !melee.hide) this.loadout.melee = new Weapon(melee);
+    if (heavy && !heavy.hide) this.loadout.heavy = new Weapon(heavy);
     if (exalted) {
       if (typeof exalted.skins !== 'undefined') {
         this.exalted = new Companion(exalted);
@@ -46,15 +46,16 @@ class ArsenalData {
     }
 
     this.loadout.archwing = {};
-    if (!archwing.hide) this.loadout.archwing.archwing = new Archwing(archwing);
-    if (!archPrimary.hide) this.loadout.archwing.primary = new Weapon(primary);
-    if (!archMelee.hide) this.loadout.archwing.melee = new Weapon(melee);
+    if (archwing && !archwing.hide) this.loadout.archwing.archwing = new Archwing(archwing);
+    if (archPrimary && !archPrimary.hide) this.loadout.archwing.primary = new Weapon(primary);
+    if (archMelee && !archMelee.hide) this.loadout.archwing.melee = new Weapon(melee);
 
-    if (!parazon.hide) this.loadout.parazon = new Parazon(parazon);
+    if (parazon && !parazon.hide) this.loadout.parazon = new Parazon(parazon);
 
-    if (!amp.hide) this.loadout.amp = new Amp(amp);
+    if (amp) this.loadout.amp = new Amp(amp);
 
-    if (!companion.hide) this.loadout.companion = new Companion(companion);
+    if (companion) this.loadout.companion = new Companion(companion);
+    if (roboticweapon) this.loadout.roboticweapon = new Weapon(roboticweapon);
   }
 }
 

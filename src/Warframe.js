@@ -21,7 +21,7 @@ class Warframe {
     this.polarized = frame.polarized;
     this.features = frame.polarized;
     if (items) {
-      this.cosmetics = frame.skins
+      this.cosmetics = (frame.skins || [])
         .map((skin) => (items.find((item) => item.uniqueName === skin.uniqueName)) || skin);
 
       this.cosmetics.forEach((cosmetic) => {

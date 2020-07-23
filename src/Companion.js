@@ -4,13 +4,15 @@ const { items, loadMods } = require('./utils');
 
 class WarframeCompanion {
   constructor(companion) {
-    this.companion = (items.find((item) => item.uniqueName === companion.uniqueName));
-    if (this.companion) delete this.companion.patchlogs;
+    this.companion = (items.find((item) => item.uniqueName === companion.uniqueName))
+          || companion;
+    delete this.companion.patchlogs;
+    delete this.companion.components;
 
     this.xp = companion.xp;
     this.polarized = companion.polarized;
     if (companion.skins) {
-      this.cosmetics = companion.skins
+      this.cosmetics = (companion.skins || [])
         .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName))
                  || cosmetic);
 
