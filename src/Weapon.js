@@ -12,15 +12,15 @@ class WarframeWeapon {
     if (weapon.modularParts) {
       const parts = {};
       Object.keys(weapon.modularParts).forEach((part) => {
-          parts[part] = (items.find((item) => item.uniqueName === weapon.modularParts[part])) 
-              || {uniqueName: weapon.modularParts[part]};
+        parts[part] = (items.find((item) => item.uniqueName === weapon.modularParts[part]))
+              || { uniqueName: weapon.modularParts[part] };
       });
 
       Object.keys(parts).forEach((partKey) => {
         delete parts[partKey].patchlogs;
-          delete parts[partKey].damagePerShot;
-	  delete parts[partKey].components;
-	  delete parts[partKey].tradable;
+        delete parts[partKey].damagePerShot;
+        delete parts[partKey].components;
+        delete parts[partKey].tradable;
         delete parts[partKey].buildPrice;
         delete parts[partKey].buildTime;
         delete parts[partKey].skipBuildTimePrice;

@@ -8,7 +8,7 @@ class WarframePlayer {
     this.masteryRank = data.masteryRank;
     this.lastUpdated = new Date(data.lastUpdated * 1000);
     this.glyph = (items.find((item) => item.uniqueName === data.glyph)) || data.glyph;
-    this.focusSchool = translateFocus(data.focus || "");
+    this.focusSchool = translateFocus(data.focus || '');
   }
 }
 

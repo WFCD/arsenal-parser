@@ -11,18 +11,20 @@ class WarframeCompanion {
     this.polarized = companion.polarized;
     if (companion.skins) {
       this.cosmetics = companion.skins
-            .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName)) || cosmetic);
+        .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName))
+                 || cosmetic);
 
-	this.cosmetics.forEach((cosmetic) => {
-	    delete cosmetic.components;
-	    delete cosmetic.patchlogs;
-	    delete cosmetic.tradable;
-	    delete cosmetic.buildPrice;
-	    delete cosmetic.buildTime;
-	    delete cosmetic.skipBuildTimePrice;
-	    delete cosmetic.buildQuantity;
-	    delete cosmetic.consumeOnBuild;
-	});
+      this.cosmetics.forEach((cosmetic) => {
+        /* eslint-disable no-param-reassign */
+        delete cosmetic.components;
+        delete cosmetic.patchlogs;
+        delete cosmetic.tradable;
+        delete cosmetic.buildPrice;
+        delete cosmetic.buildTime;
+        delete cosmetic.skipBuildTimePrice;
+        delete cosmetic.buildQuantity;
+        delete cosmetic.consumeOnBuild;
+      });
     }
     this.colors = companion.pricol;
     this.upgrades = loadMods(companion.upgrades);

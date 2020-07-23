@@ -41,14 +41,17 @@ function loadMods(upgrades) {
     if (upgrade.uniqueName === '') return;
     if (!items) return;
     let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName));
-    
+
     upgradeData.rank = upgrade.rank;
-    if(upgradeData.levelStats)  upgradeData.levelStats = upgradeData.levelStats[upgrade.rank] || upgradeData.levelStats;
+    if (upgradeData.levelStats) {
+      upgradeData.levelStats = upgradeData.levelStats[upgrade.rank]
+          || upgradeData.levelStats;
+    }
     delete upgradeData.drops;
     delete upgradeData.patchlogs;
-    
+
     if (upgradeData.category === 'Arcanes') {
-	    delete upgradeData.tradeable;
+      delete upgradeData.tradeable;
       arcanes.push(upgradeData);
     } else if (upgradeData.category === 'Mods') {
       if (upgradeData.name.includes('Riven Mod')) {
@@ -68,8 +71,8 @@ function loadMods(upgrades) {
           masteryReq: upgrade.lvlReq,
         };
       }
-	delete upgradeData.transmutable;
-	delete upgradeData.tradable;
+      delete upgradeData.transmutable;
+      delete upgradeData.tradable;
       mods.push(upgradeData);
     }
   });
