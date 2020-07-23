@@ -38,5 +38,9 @@
     "branch": "master"
   },
   "repository": "https://github.com/wfcd/arsenal-parser",
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=12.18.3",
+    "npm": ">=6.14.6"
+  }
 }
