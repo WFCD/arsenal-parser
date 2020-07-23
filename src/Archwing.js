@@ -4,7 +4,7 @@ const { items, loadMods } = require('./utils');
 
 class WarframeArchwing {
   constructor(archwing) {
-    this.archwing = (items.find((item) => item.uniqueName === archwing.uniqueName));
+    this.archwing = (items.find((item) => item.uniqueName === archwing.uniqueName)) || archwing;
     delete this.archwing.components;
     delete this.archwing.patchlogs;
     this.xp = archwing.xp;
