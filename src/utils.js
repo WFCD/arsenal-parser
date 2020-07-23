@@ -40,7 +40,8 @@ function loadMods(upgrades) {
   upgrades.forEach((upgrade) => {
     if (upgrade.uniqueName === '') return;
     if (!items) return;
-    let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName));
+    let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName))
+          || upgrade;
 
     upgradeData.rank = upgrade.rank;
     if (upgradeData.levelStats) {
