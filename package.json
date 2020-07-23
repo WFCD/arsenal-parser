@@ -6,7 +6,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "warframe-items": "^1.1016.0"
+  },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
     "eslint": "^7.2.0",
@@ -35,8 +37,6 @@
   "release": {
     "branch": "master"
   },
-  "peerDependencies": {
-    "warframe-items": "^1.1016.0"
-  },
-  "repository": "https://github.com/wfcd/arsenal-parser"
+  "repository": "https://github.com/wfcd/arsenal-parser",
+  "optionalDependencies": {}
 }

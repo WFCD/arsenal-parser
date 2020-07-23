@@ -1,14 +1,8 @@
 'use strict';
 
-let items;
+const Items = require('warframe-items');
 
-try {
-  require.resolve('warframe-items');
-  const Items = require('warframe-items'); // eslint-disable-line global-require
-  items = new Items();
-} catch (ignored) {
-  // ignored
-}
+const items = new Items();
 
 function translateFocus(focus) {
   if (focus.includes('Focus/Attack')) {
