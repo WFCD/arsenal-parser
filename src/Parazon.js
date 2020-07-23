@@ -10,7 +10,18 @@ class WarframeParazon {
     this.upgrades = loadMods(parazon.upgrades);
     if (parazon.cosmetics) {
       this.cosmetics = parazon.skins
-        .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName)));
+            .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName)) || cosmetic);
+
+	this.cosmetics.forEach((cosmetic) => {
+	    delete cosmetic.components;
+	    delete cosmetic.patchlogs;
+	    delete cosmetic.tradable;
+	    delete cosmetic.buildPrice;
+	    delete cosmetic.buildTime;
+	    delete cosmetic.skipBuildTimePrice;
+	    delete cosmetic.buildQuantity;
+	    delete cosmetic.consumeOnBuild;
+	});
     }
 
     this.colors = parazon.pricol;
