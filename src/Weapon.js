@@ -16,12 +16,21 @@ class WarframeWeapon {
           || weapon.modularParts[part];
       });
 
+      Object.keys(parts).forEach((partKey) => {
+        delete parts[partKey].patchlogs;
+        delete parts[partKey].damagePerShot;
+      });
+
       this.parts = parts;
     } else {
       this.weapon = (items.find((item) => item.uniqueName === weapon.uniqueName));
       delete this.weapon.components;
       delete this.weapon.patchlogs;
       this.colors = weapon.pricol;
+    }
+
+    if (this.weapon) {
+      delete this.weapon.damagePerShot;
     }
   }
 }

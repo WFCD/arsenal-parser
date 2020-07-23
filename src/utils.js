@@ -1,8 +1,14 @@
 'use strict';
 
-const Items = require('warframe-items');
+let items;
 
-const items = new Items();
+try {
+  require.resolve('warframe-items');
+  const Items = require('warframe-items'); // eslint-disable-line global-require
+  items = new Items();
+} catch (ignored) {
+  // ignored
+}
 
 function translateFocus(focus) {
   if (focus.includes('Focus/Attack')) {
@@ -39,6 +45,7 @@ function loadMods(upgrades) {
   const mods = [];
   upgrades.forEach((upgrade) => {
     if (upgrade.uniqueName === '') return;
+    if (!items) return;
     let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName));
     upgradeData.rank = upgrade.rank;
     delete upgradeData.drops;
@@ -46,23 +53,22 @@ function loadMods(upgrades) {
     if (upgradeData.category === 'Arcanes') {
       arcanes.push(upgradeData);
     } else if (upgradeData.category === 'Mods') {
-      let rivenData;
       if (upgradeData.name.includes('Riven Mod')) {
-        rivenData = {};
-        rivenData.uniqueName = upgradeData.uniqueName;
-        rivenData.polarity = translatePolarity(upgrade.pol);
-        rivenData.rarity = upgradeData.rarity;
-        rivenData.baseDrain = upgradeData.baseDrain;
-        rivenData.fusionLimit = upgradeData.fusionLimit;
-        rivenData.imageName = upgradeData.imageName;
-        rivenData.category = upgradeData.category;
-        rivenData.tradeable = upgradeData.tradeable;
-        rivenData.wikiaThumbnail = upgradeData.wikiaThumbnail;
-        rivenData.wikiaUrl = upgradeData.wikiaUrl;
-        rivenData.buffs = upgrade.buffs;
-        rivenData.curses = upgrade.curses;
-        rivenData.masteryReq = upgrade.lvlReq;
-        upgradeData = rivenData;
+        upgradeData = {
+          uniqueName: upgradeData.uniqueName,
+          polarity: translatePolarity(upgrade.pol),
+          rarity: upgradeData.rarity,
+          baseDrain: upgradeData.baseDrain,
+          fusionLimit: upgradeData.fusionLimit,
+          imageName: upgradeData.imageName,
+          category: upgradeData.category,
+          tradeable: upgradeData.tradeable,
+          wikiaThumbnail: upgradeData.wikiaThumbnail,
+          wikiaUrl: upgradeData.wikiaUrl,
+          buffs: upgrade.buffs,
+          curses: upgrade.curses,
+          masteryReq: upgrade.lvlReq,
+        };
       }
       mods.push(upgradeData);
     }

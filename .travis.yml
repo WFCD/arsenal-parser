@@ -20,10 +20,10 @@ stages:
   - lint
   - test
   - coverage
-  - name: release
-    if: branch = master && type NOT IN (pull_request)
-  - name: docs
-    if: branch = master && type NOT IN (pull_request)
+  # - name: release
+  #   if: branch = master && type NOT IN (pull_request)
+  # - name: docs
+  #   if: branch = master && type NOT IN (pull_request)
 
 jobs:
   include:
@@ -31,13 +31,13 @@ jobs:
       script: npm run lint
     - stage: coverage
       script: npm run coverage
-    - stage: release
-      node_js: node
-      deploy:
-        provider: script
-        cleanup: false
-        script: npx semantic-release
-    - stage: docs
-      script:
-        - chmod +x ./.github/update_docs.sh
-        - ./.github/update_docs.sh
+    # - stage: release
+    #   node_js: node
+    #   deploy:
+    #     provider: script
+    #     cleanup: false
+    #     script: npx semantic-release
+    # - stage: docs
+    #   script:
+    #     - chmod +x ./.github/update_docs.sh
+    #     - ./.github/update_docs.sh
