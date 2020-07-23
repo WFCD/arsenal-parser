@@ -1,14 +1,8 @@
 'use strict';
 
-let items;
+const Items = require('warframe-items');
 
-try {
-  require.resolve('warframe-items');
-  const Items = require('warframe-items'); // eslint-disable-line global-require
-  items = new Items();
-} catch (ignored) {
-  // ignored
-}
+const items = new Items();
 
 function translateFocus(focus) {
   if (focus.includes('Focus/Attack')) {
@@ -47,12 +41,14 @@ function loadMods(upgrades) {
     if (upgrade.uniqueName === '') return;
     if (!items) return;
     let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName));
-      upgradeData.rank = upgrade.rank;
-      if(upgradeData.levelStats)  upgradeData.levelStats = upgradeData.levelStats[upgrade.rank] || upgradeData.levelStats;
+    
+    upgradeData.rank = upgrade.rank;
+    if(upgradeData.levelStats)  upgradeData.levelStats = upgradeData.levelStats[upgrade.rank] || upgradeData.levelStats;
     delete upgradeData.drops;
     delete upgradeData.patchlogs;
-      if (upgradeData.category === 'Arcanes') {
-	  delete upgradeData.tradeable;
+    
+    if (upgradeData.category === 'Arcanes') {
+	    delete upgradeData.tradeable;
       arcanes.push(upgradeData);
     } else if (upgradeData.category === 'Mods') {
       if (upgradeData.name.includes('Riven Mod')) {
