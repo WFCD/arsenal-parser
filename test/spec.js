@@ -2,7 +2,6 @@
 
 const util = require('util');
 const fetch = require('node-fetch');
-const fs = require('fs');
 
 const ArsenalData = require('../src/ArsenalParser');
 
@@ -21,7 +20,6 @@ async function fetchArsenal(username) {
 
 fetchArsenal('tobiah')
   .then((data) => {
-    // fs.writeFileSync('data.json', JSON.stringify(data));
     console.log(util.inspect(data, false, null, true)); // eslint-disable-line no-console
   })
   .catch((err) => {

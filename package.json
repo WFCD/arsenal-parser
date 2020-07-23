@@ -21,8 +21,8 @@
   "scripts": {
     "test": "npx nyc --reporter=text mocha --exit",
     "coverage": "npm test && npx nyc report --reporter=text-lcov | npx coveralls",
-    "lint": "npx eslint main.js lib/ test/",
-    "lint:fix": "npx eslint main.js lib/ test/ --fix",
+    "lint": "npx eslint src/ test/",
+    "lint:fix": "npx eslint src/ test/ --fix",
     "prepublishOnly": "npm run build:types",
     "build:types": "npx -p typescript tsc -p tsconfig.declaration.json"
   },
