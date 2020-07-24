@@ -36,7 +36,7 @@
   "author": "NicksWorld",
   "license": "MIT",
   "release": {
-    "branch": "master"
+    "branch": "main"
   },
   "repository": "https://github.com/wfcd/arsenal-parser",
   "optionalDependencies": {},
