@@ -5,8 +5,10 @@ const fetch = require('node-fetch');
 
 const { assert } = require('chai');
 const exampleData = require('./exampleData.json');
-const exampleData2 = require('./exampleData.json');
-const exampleData3 = require('./exampleData.json');
+const exampleData2 = require('./exampleData2.json');
+const exampleData3 = require('./exampleData3.json');
+const exampleData4 = require('./exampleData4.json');
+const exampleData5 = require('./exampleData5.json');
 
 const ArsenalData = require('../src/ArsenalParser');
 
@@ -32,6 +34,14 @@ fetchArsenal('tobiah')
   });
 
 // Testing the main class
-assert.isOk(new ArsenalData(exampleData));
-assert.isOk(new ArsenalData(exampleData2));
-assert.isOk(new ArsenalData(exampleData3));
+describe('ArsenalData', () => {
+  describe('#constructor', () => {
+    it('should handle real data', () => {
+      assert.isOk(new ArsenalData(exampleData));
+      assert.isOk(new ArsenalData(exampleData2));
+      assert.isOk(new ArsenalData(exampleData3));
+      assert.isOk(new ArsenalData(exampleData4));
+      assert.isOk(new ArsenalData(exampleData5));
+    });
+  });
+});
