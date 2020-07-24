@@ -12,7 +12,7 @@ class WarframeCompanion {
     this.xp = companion.xp;
     this.polarized = companion.polarized;
     if (companion.skins) {
-      this.cosmetics = (companion.skins || [])
+      this.cosmetics = companion.skins
         .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName))
                  || cosmetic);
 

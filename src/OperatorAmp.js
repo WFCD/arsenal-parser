@@ -26,6 +26,7 @@ class OperatorAmp {
       delete this.parts[partKey].consumeOnBuild;
       delete this.parts[partKey].buildTime;
       delete this.parts[partKey].tradable;
+      delete this.parts[partKey].damagePerShot;
     });
   }
 }

@@ -4,7 +4,7 @@ const Items = require('warframe-items');
 
 const items = new Items();
 
-function translateFocus(focus) {
+function translateFocus(focus = '') {
   if (focus.includes('Focus/Attack')) {
     return 'Madurai';
   } if (focus.includes('Focus/Defense')) {
@@ -19,8 +19,8 @@ function translateFocus(focus) {
   return 'None';
 }
 
-function translatePolarity(pol) {
-  if (pol.includes('AP_Attack')) {
+function translatePolarity(pol = '') {
+  if (pol.includes('AP_ATTACK')) {
     return 'Madurai';
   } if (pol.includes('AP_DEFENSE')) {
     return 'Varazin';
@@ -38,9 +38,7 @@ function loadMods(upgrades = []) {
   const arcanes = [];
   const mods = [];
   upgrades.forEach((upgrade) => {
-    if (!items) return;
     let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName)) || upgrade;
-    if (!upgradeData) return;
 
     upgradeData.rank = upgrade.rank;
     upgradeData.uniqueName = upgrade.uniqueName;
