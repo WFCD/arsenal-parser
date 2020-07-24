@@ -3,6 +3,11 @@
 const util = require('util');
 const fetch = require('node-fetch');
 
+const { assert } = require('chai');
+const exampleData = require('./exampleData.json');
+const exampleData2 = require('./exampleData.json');
+const exampleData3 = require('./exampleData.json');
+
 const ArsenalData = require('../src/ArsenalParser');
 
 const baseURL = 'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
@@ -25,3 +30,8 @@ fetchArsenal('tobiah')
   .catch((err) => {
     console.log(err); // eslint-disable-line no-console
   });
+
+// Testing the main class
+assert.isOk(new ArsenalData(exampleData));
+assert.isOk(new ArsenalData(exampleData2));
+assert.isOk(new ArsenalData(exampleData3));

@@ -4,7 +4,7 @@ const Items = require('warframe-items');
 
 const items = new Items();
 
-function translateFocus(focus) {
+function translateFocus(focus = '') {
   if (focus.includes('Focus/Attack')) {
     return 'Madurai';
   } if (focus.includes('Focus/Defense')) {
@@ -19,8 +19,8 @@ function translateFocus(focus) {
   return 'None';
 }
 
-function translatePolarity(pol) {
-  if (pol.includes('AP_Attack')) {
+function translatePolarity(pol = '') {
+  if (pol.includes('AP_ATTACK')) {
     return 'Madurai';
   } if (pol.includes('AP_DEFENSE')) {
     return 'Varazin';
@@ -34,24 +34,23 @@ function translatePolarity(pol) {
   return 'None';
 }
 
-function loadMods(upgrades) {
+function loadMods(upgrades = []) {
   const arcanes = [];
   const mods = [];
   upgrades.forEach((upgrade) => {
-    if (upgrade.uniqueName === '') return;
-    if (!items) return;
-    let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName));
+    let upgradeData = (items.find((item) => item.uniqueName === upgrade.uniqueName)) || upgrade;
 
     upgradeData.rank = upgrade.rank;
+    upgradeData.uniqueName = upgrade.uniqueName;
     if (upgradeData.levelStats) {
       upgradeData.levelStats = upgradeData.levelStats[upgrade.rank]
-          || upgradeData.levelStats;
+            || upgradeData.levelStats;
     }
     delete upgradeData.drops;
     delete upgradeData.patchlogs;
 
     if (upgradeData.category === 'Arcanes') {
-      delete upgradeData.tradeable;
+      delete upgradeData.tradable;
       arcanes.push(upgradeData);
     } else if (upgradeData.category === 'Mods') {
       if (upgradeData.name.includes('Riven Mod')) {
@@ -63,7 +62,7 @@ function loadMods(upgrades) {
           fusionLimit: upgradeData.fusionLimit,
           imageName: upgradeData.imageName,
           category: upgradeData.category,
-          tradeable: upgradeData.tradeable,
+          tradable: upgradeData.tradable,
           wikiaThumbnail: upgradeData.wikiaThumbnail,
           wikiaUrl: upgradeData.wikiaUrl,
           buffs: upgrade.buffs,
