@@ -29,6 +29,8 @@ jobs:
       script: npm run coverage
     - stage: release
       node_js: node
+      on:
+        branch: main
       deploy:
         provider: script
         cleanup: false
