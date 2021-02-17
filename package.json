@@ -5,7 +5,7 @@
   "main": "src/ArsenalParser.js",
   "types": "./types/src/ArsenalParser.d.ts",
   "public": true,
-  "dependencies": {
+  "peerDependencies": {
     "warframe-items": "^1.1246.5"
   },
   "files": [
