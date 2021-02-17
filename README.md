@@ -7,6 +7,8 @@ Parse the Warframe Arsenal Twitch extension data into useable javascript objects
 [![Build Status](https://travis-ci.com/WFCD/arsenal-parser.svg?branch=main)](https://travis-ci.com/WFCD/arsenal-parser)
 [![Discord](https://img.shields.io/discord/256087517353213954.svg?logo=discord)](https://discord.gg/jGZxH9f)
 
+Documentation is available [here](https://wfcd.github.io/arsenal-parser/)
+
 ## Example usage
 
 ```javascript
