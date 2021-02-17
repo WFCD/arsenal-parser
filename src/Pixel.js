@@ -14,25 +14,33 @@ module.exports = class Pixel {
     this.hex = hex;
     this.matches = [];
 
-    const usedPalettes = [];
+    this.isTransparent = hex === '0';
 
-    items.forEach((item) => {
-      item.hexColours.forEach(({ value }, index) => {
-        if (value.toLowerCase().includes(hex.toLowerCase())) {
-          if (!usedPalettes.includes(item.name)) {
-            this.matches.push({
-              palette: {
-                name: item.name,
-                description: item.description,
-              },
-              position: position(index),
-            });
+    if (!this.isTransparent) {
+      delete this.isTransparent;
+    }
 
-            usedPalettes.push(item.name);
+    if (!this.isTransparent) {
+      const usedPalettes = [];
+
+      items.forEach((item) => {
+        item.hexColours.forEach(({ value }, index) => {
+          if (value.toLowerCase().includes(hex.toLowerCase())) {
+            if (!usedPalettes.includes(item.name)) {
+              this.matches.push({
+                palette: {
+                  name: item.name,
+                  description: item.description,
+                },
+                position: position(index),
+              });
+
+              usedPalettes.push(item.name);
+            }
           }
-        }
+        });
       });
-    });
+    }
   }
 
   get palettes() {

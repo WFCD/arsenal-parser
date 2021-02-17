@@ -17,7 +17,7 @@ describe('WarframeCompanion', () => {
           t1: '9C5D42',
           t2: '9C5D42',
           t3: '413E3B',
-          en: 'F6DC13',
+          en: '0',
         },
         attcol: {
           t0: 'B0BDB8',
@@ -62,7 +62,8 @@ describe('WarframeCompanion', () => {
           emissive: [],
           energy: [
             {
-              hex: 'F6DC13',
+              hex: '0',
+              isTransparent: true,
               matches: [],
             },
           ],
