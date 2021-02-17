@@ -23,4 +23,5 @@ jobs:
     - name: Test
       run: |
         npm install
+        npm i warframe-items@latest
         npm test

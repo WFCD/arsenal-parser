@@ -18,8 +18,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run lint
+    - run: |
+        npm install
+        npm i warframe-items@latest
+        npm run lint
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -39,6 +41,7 @@ jobs:
         CI: true
       run: | 
         npm install
+        npm i warframe-items@latest
         npm test
       
     - name: Coveralls Parallel
