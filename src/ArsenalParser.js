@@ -7,15 +7,16 @@ const Archwing = require('./Archwing');
 const Parazon = require('./Parazon');
 const Amp = require('./OperatorAmp');
 const Companion = require('./Companion');
+const Mech = require('./Mech');
 
 class ArsenalData {
   constructor(data) {
-    this.account = new Player(data.accountInfo);
+    this.account = new Player(data.account || data.accountInfo);
 
     this.loadout = {};
 
     const {
-      NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL,
+      NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH,
     } = data.loadOuts;
 
     const {
@@ -56,6 +57,15 @@ class ArsenalData {
 
     if (companion) this.loadout.companion = new Companion(companion);
     if (roboticweapon) this.loadout.roboticweapon = new Weapon(roboticweapon);
+
+    if (MECH) {
+      const { mech, heavy: mechLong, exalted: mechExalted } = MECH;
+
+      this.loadout.mech = {};
+      this.loadout.mech = new Mech(mech);
+      this.loadout.mech.heavy = new Weapon(mechLong);
+      this.loadout.mech.exalted = new Weapon(mechExalted);
+    }
   }
 }
 

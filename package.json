@@ -1,13 +1,11 @@
 {
-  "name": "arsenal-parser",
+  "name": "@wfcd/arsenal-parser",
   "version": "0.0.1",
   "description": "Parser for Digital Extreme's Twitch Arsenal Extension data",
   "main": "src/ArsenalParser.js",
-  "directories": {
-    "test": "test"
-  },
+  "public": true,
   "dependencies": {
-    "warframe-items": "^1.1016.0"
+    "warframe-items": "^1.1246.5"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
@@ -16,16 +14,17 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.21.2",
     "mocha": "^7.2.0",
-    "node-fetch": "^2.6.0",
-    "nyc": "^15.1.0"
+    "node-fetch": "^2.6.1",
+    "nyc": "^15.1.0",
+    "typescript": "^4.1.5"
   },
   "scripts": {
-    "test": "npx nyc --reporter=text mocha --exit",
+    "test": "nyc --reporter=text mocha \"test/**/*.spec.js\" --exit",
     "coverage": "npm test && npx nyc report --reporter=text-lcov | npx coveralls",
-    "lint": "npx eslint src/ test/",
-    "lint:fix": "npx eslint src/ test/ --fix",
+    "lint": "eslint src/ test/",
+    "lint:fix": "eslint src/ test/ --fix",
     "prepublishOnly": "npm run build:types",
-    "build:types": "npx -p typescript tsc -p tsconfig.declaration.json"
+    "build:types": "tsc -p tsconfig.declaration.json"
   },
   "keywords": [
     "warframe",
@@ -34,14 +33,53 @@
     "arsenal"
   ],
   "author": "NicksWorld",
+  "contributors": [
+    "TobiTenno <tobiah@pm.me>"
+  ],
   "license": "MIT",
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "repository": "https://github.com/wfcd/arsenal-parser",
   "optionalDependencies": {},
   "engines": {
     "node": ">=12.18.3",
     "npm": ">=6.14.6"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "parserOptions": {
+      "sourceType": "script"
+    },
+    "rules": {
+      "valid-jsdoc": [
+        "error",
+        {
+          "requireReturn": false,
+          "requireReturnDescription": false,
+          "preferType": {
+            "String": "string",
+            "Number": "number",
+            "Boolean": "boolean",
+            "Function": "function",
+            "object": "Object",
+            "date": "Date",
+            "error": "Error"
+          },
+          "prefer": {
+            "return": "returns"
+          }
+        }
+      ],
+      "no-underscore-dangle": "off",
+      "strict": [
+        "error",
+        "safe"
+      ],
+      "linebreak-style": "off",
+      "import/no-unresolved": 0
+    }
   }
 }

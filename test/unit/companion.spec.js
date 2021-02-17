@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Companion.js testing
-const WarframeCompanion = require('../src/Companion.js');
+const WarframeCompanion = require('../../src/Companion.js');
 
 describe('WarframeCompanion', () => {
   describe('#constructor', () => {
@@ -66,7 +66,7 @@ describe('WarframeCompanion', () => {
         name: 'Anger',
       }, 'Incorect companion output');
     });
-    it('should handle getting a unknown companion id', () => {
+    it('should handle getting an unknown companion id', () => {
       const unknownCompanion = {
         uniqueName: 'ExtremlyUnkownCompanion',
         skins: [

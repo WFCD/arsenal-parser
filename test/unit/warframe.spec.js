@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Warframe.js testing
-const Warframe = require('../src/Warframe.js');
+const Warframe = require('../../src/Warframe.js');
 
 describe('Warframe', () => {
   describe('#constructor', () => {
@@ -109,11 +109,11 @@ describe('Warframe', () => {
       );
     });
 
-    it('should handle a unknown warframe id', () => {
+    it('should handle an unknown warframe id', () => {
       assert.deepEqual(new Warframe({ uniqueName: 'UnknownFrame' }).warframe, { uniqueName: 'UnknownFrame' });
     });
 
-    it('should handle a unknown cosmetic id', () => {
+    it('should handle an unknown cosmetic id', () => {
       assert.deepEqual(new Warframe({ skins: [{ uniqueName: 'UnknownCosmetic' }] }).cosmetics, [{ uniqueName: 'UnknownCosmetic' }]);
     });
   });

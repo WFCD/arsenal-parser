@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Utils.js Testing
-const utils = require('../src/utils.js');
+const utils = require('../../src/utils.js');
 
 describe('utils', () => {
   describe('#loadMods', () => {
@@ -56,12 +56,14 @@ describe('utils', () => {
           levelStats: {
             stats: ['Applying a <DT_SLASH>Slash Status to an enemy causes the Companion to attack them for 6s.'],
           },
+          modSet: '/Lotus/Upgrades/Mods/Sets/Hunter/HunterSetMod',
           imageName: 'hunter-command.jpg',
           category: 'Mods',
-          wikiaThumbnail: 'https://vignette.wikia.nocookie.net/warframe/images/1/17/HunterCommandMod.png/revision/latest?cb=20181130034216',
+          wikiaThumbnail: 'https://static.wikia.nocookie.net/warframe/images/1/17/HunterCommandMod.png/revision/latest?cb=20181130034216',
           wikiaUrl: 'http://warframe.fandom.com/wiki/Hunter_Command',
           rank: 5,
         }),
+        'Mod mismatch',
       );
     });
 
@@ -88,10 +90,10 @@ describe('utils', () => {
         JSON.stringify({
           uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
           polarity: 'Varazin',
-          rarity: 'Rare',
-          baseDrain: 0,
-          fusionLimit: 8,
-          imageName: 'rifle-riven-mod.jpg',
+          rarity: 'Common',
+          baseDrain: 3,
+          fusionLimit: 0,
+          imageName: 'rifle-riven-mod.png',
           category: 'Mods',
           buffs: [
             { tag: 'WeaponCritDamageMod', val: 0.3296302411049886 },

@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Weapon.js testing
-const WarframeWeapon = require('../src/Weapon.js');
+const WarframeWeapon = require('../../src/Weapon.js');
 
 describe('WarframeWeapon', () => {
   describe('#constructor', () => {

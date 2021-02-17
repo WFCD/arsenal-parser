@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Parazon.js testing
-const WarframeParazon = require('../src/Parazon.js');
+const WarframeParazon = require('../../src/Parazon.js');
 
 describe('WarframeParazon', () => {
   describe('#constructor', () => {
@@ -102,7 +102,7 @@ describe('WarframeParazon', () => {
       );
     });
 
-    it('should handle a parazon with a unknown cosmetic', () => {
+    it('should handle a parazon with an unknown cosmetic', () => {
       const sampleParazon = {
         xp: 450000,
         polarized: 0,

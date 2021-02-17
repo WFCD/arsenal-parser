@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Player.js testing
-const WarframePlayer = require('../src/Player.js');
+const WarframePlayer = require('../../src/Player.js');
 
 describe('WarframePlayer', () => {
   describe('#constructor', () => {
@@ -37,7 +37,7 @@ describe('WarframePlayer', () => {
       );
     });
 
-    it('should handle a unknown glyph', () => {
+    it('should handle an unknown glyph', () => {
       assert.equal(new WarframePlayer({ glyph: 'UnknownGlyph' }).glyph, 'UnknownGlyph', 'Unknown glyph incorrectly handled');
     });
   });
