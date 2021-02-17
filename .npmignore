@@ -1,0 +1,12 @@
+.github/
+test/
+.gitattributes
+.gitignore
+tsconfig.declaration.json
+node_modules/
+docs/
+.nyc_output/
+coverage/
+docs/
+wfcd-arsenal-parser-*.tgz
+jsdoc-config.json

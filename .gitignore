@@ -38,3 +38,6 @@ node_modules
 
 # Test artifacts
 test/data.json
+docs/
+wfcd-arsenal-parser-*.tgz
+!.github/docs
