@@ -59,21 +59,21 @@ jobs:
       with:
         github-token: ${{ secrets.github_token }}
         parallel-finished: true
-  # release:
-  #   name: Release
-  #   runs-on: ubuntu-latest
-  #   needs: [lint, test, report-coverage]
-  #   strategy:
-  #     matrix:
-  #       node-version: [15.x]
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Semantic Release
-  #       uses: cycjimmy/semantic-release-action@v2.5.0
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #       with:
-  #         branches: |
-  #           ['main']
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: [lint, test, report-coverage]
+    strategy:
+      matrix:
+        node-version: [15.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v2.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          branches: |
+            ['main']
