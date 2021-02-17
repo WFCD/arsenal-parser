@@ -14,16 +14,22 @@ module.exports = class Pixel {
     this.hex = hex;
     this.matches = [];
 
+    const usedPalettes = [];
+
     items.forEach((item) => {
       item.hexColours.forEach(({ value }, index) => {
         if (value.toLowerCase().includes(hex.toLowerCase())) {
-          this.matches.push({
-            palette: {
-              name: item.name,
-              description: item.description,
-            },
-            position: position(index),
-          });
+          if (!usedPalettes.includes(item.name)) {
+            this.matches.push({
+              palette: {
+                name: item.name,
+                description: item.description,
+              },
+              position: position(index),
+            });
+
+            usedPalettes.push(item.name);
+          }
         }
       });
     });
