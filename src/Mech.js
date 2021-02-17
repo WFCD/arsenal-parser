@@ -1,6 +1,6 @@
 'use strict';
 
-const { items, loadMods } = require('./utils');
+const { items, loadMods, mapColors } = require('./utils');
 
 module.exports = class WarframeMech {
   constructor(mech) {
@@ -30,7 +30,7 @@ module.exports = class WarframeMech {
       });
     }
 
-    this.colors = mech.pricol;
+    this.colors = mapColors(mech.pricol);
     this.upgrades = loadMods(mech.upgrades);
 
     // ?? no idea what this is

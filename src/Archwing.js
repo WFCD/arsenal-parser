@@ -1,6 +1,6 @@
 'use strict';
 
-const { items, loadMods } = require('./utils');
+const { items, loadMods, mapColors } = require('./utils');
 
 class WarframeArchwing {
   constructor(archwing) {
@@ -11,7 +11,7 @@ class WarframeArchwing {
     this.polarized = archwing.polarized;
     this.upgrades = loadMods(archwing.upgrades);
 
-    this.colors = archwing.pricol;
+    this.colors = mapColors(archwing.pricol);
   }
 }
 

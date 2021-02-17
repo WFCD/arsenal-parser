@@ -55,11 +55,29 @@ describe('WarframeCompanion', () => {
         xp: 548455507,
         polarized: 7,
         colors: {
-          t0: '92B1C6',
-          t1: '9C5D42',
-          t2: '9C5D42',
-          t3: '413E3B',
-          en: 'F6DC13',
+          accents: {
+            hex: '413E3B',
+            matches: [],
+          },
+          emissive: [],
+          energy: [
+            {
+              hex: 'F6DC13',
+              matches: [],
+            },
+          ],
+          primary: {
+            hex: '92B1C6',
+            matches: [],
+          },
+          secondary: {
+            hex: '9C5D42',
+            matches: [],
+          },
+          tertiary: {
+            hex: '9C5D42',
+            matches: [],
+          },
         },
         upgrades: { arcanes: [], mods: [] },
         type: 'beast',

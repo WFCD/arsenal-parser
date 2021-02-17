@@ -20,15 +20,6 @@ describe('WarframeMech', () => {
             uniqueName: '/Lotus/Upgrades/Skins/Necramech/NecraMechCSkin',
           },
         ],
-        pricol: {
-          t0: '2E2E2D',
-          t1: '9FA1A2',
-          t2: '291D1C',
-          t3: '243445',
-          m0: 'EBFF67',
-          m1: '374B50',
-          en: 'FF3806',
-        },
         uniqueName: '/Lotus/Powersuits/EntratiMech/NechroTech',
         upgrades: [],
       };
@@ -36,15 +27,7 @@ describe('WarframeMech', () => {
       const mech = new WarframeMech(sampleMech);
 
       assert.deepEqual(mech, {
-        colors: {
-          en: 'FF3806',
-          m0: 'EBFF67',
-          m1: '374B50',
-          t0: '2E2E2D',
-          t1: '9FA1A2',
-          t2: '291D1C',
-          t3: '243445',
-        },
+        colors: undefined,
         cosmetics: [
           {
             category: 'Skins',

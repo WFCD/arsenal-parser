@@ -1,6 +1,6 @@
 'use strict';
 
-const { items, loadMods } = require('./utils');
+const { items, loadMods, mapColors } = require('./utils');
 
 class WarframeCompanion {
   constructor(companion) {
@@ -28,7 +28,7 @@ class WarframeCompanion {
         delete cosmetic.consumeOnBuild;
       });
     }
-    this.colors = companion.pricol;
+    this.colors = mapColors(companion.pricol);
     this.upgrades = loadMods(companion.upgrades);
     this.type = companion.type;
     if (companion.itemName) this.name = companion.itemName;

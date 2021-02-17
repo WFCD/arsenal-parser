@@ -4,6 +4,8 @@ const Items = require('warframe-items');
 
 const items = new Items();
 
+const Pixel = require('./Pixel');
+
 function translateFocus(focus = '') {
   if (focus.includes('Focus/Attack')) {
     return 'Madurai';
@@ -81,9 +83,32 @@ function loadMods(upgrades = []) {
   };
 }
 
+const exisColo = (color) => (color ? new Pixel(color) : null);
+
+function mapColors(colors = undefined) {
+  if (colors) {
+    return {
+      primary: exisColo(colors.t0),
+      secondary: exisColo(colors.t1),
+      tertiary: exisColo(colors.t2),
+      accents: exisColo(colors.t3),
+      emissive: [
+        exisColo(colors.m0),
+        exisColo(colors.m1),
+      ].filter((c) => c),
+      energy: [
+        exisColo(colors.en),
+        exisColo(colors.en1),
+      ].filter((c) => c),
+    };
+  }
+  return colors;
+}
+
 module.exports = {
   translateFocus,
   loadMods,
   translatePolarity,
   items,
+  mapColors,
 };

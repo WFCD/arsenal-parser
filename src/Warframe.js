@@ -1,6 +1,6 @@
 'use strict';
 
-const { items, loadMods } = require('./utils');
+const { items, loadMods, mapColors } = require('./utils');
 
 class Warframe {
   constructor(frame) {
@@ -35,10 +35,10 @@ class Warframe {
     this.upgrades = loadMods(frame.upgrades);
 
     this.colors = {
-      syandana: frame.eyecol,
-      primary: frame.pricol,
-      sigil: frame.sigcol,
-      attachments: frame.attcol,
+      syandana: mapColors(frame.eyecol),
+      primary: mapColors(frame.pricol),
+      sigil: mapColors(frame.sigcol),
+      attachments: mapColors(frame.attcol),
     };
   }
 }
