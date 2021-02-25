@@ -28,7 +28,10 @@ class WarframeCompanion {
         delete cosmetic.consumeOnBuild;
       });
     }
-    this.colors = mapColors(companion.pricol);
+    this.colors = {
+      primary: mapColors(companion.pricol),
+      attachments: mapColors(companion.attcol),
+    };
     this.upgrades = loadMods(companion.upgrades);
     this.type = companion.type;
     if (companion.itemName) this.name = companion.itemName;

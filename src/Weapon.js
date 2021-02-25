@@ -1,6 +1,6 @@
 'use strict';
 
-const { items, loadMods } = require('./utils');
+const { items, loadMods, mapColors } = require('./utils');
 
 class WarframeWeapon {
   constructor(weapon) {
@@ -35,7 +35,7 @@ class WarframeWeapon {
       this.weapon = (items.find((item) => item.uniqueName === weapon.uniqueName)) || weapon;
       delete this.weapon.components;
       delete this.weapon.patchlogs;
-      this.colors = weapon.pricol;
+      this.colors = mapColors(weapon.pricol);
     }
 
     if (this.weapon) {

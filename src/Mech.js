@@ -30,7 +30,11 @@ module.exports = class WarframeMech {
       });
     }
 
-    this.colors = mapColors(mech.pricol);
+    this.colors = {
+      primary: mapColors(mech.pricol),
+      sigil: mapColors(mech.sigcol),
+      attachments: mapColors(mech.attcol),
+    };
     this.upgrades = loadMods(mech.upgrades);
 
     // ?? no idea what this is

@@ -11,7 +11,10 @@ class WarframeArchwing {
     this.polarized = archwing.polarized;
     this.upgrades = loadMods(archwing.upgrades);
 
-    this.colors = mapColors(archwing.pricol);
+    this.colors = {
+      primary: mapColors(archwing.pricol),
+      attachments: mapColors(archwing.attcol),
+    };
   }
 }
 
