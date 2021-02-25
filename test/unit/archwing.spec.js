@@ -67,6 +67,7 @@ describe('WarframeArchwing', () => {
           arcanes: [],
           mods: [],
         },
+        colors: {},
       }));
     });
   });

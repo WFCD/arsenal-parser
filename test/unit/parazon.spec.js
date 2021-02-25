@@ -88,14 +88,7 @@ describe('WarframeParazon', () => {
           polarized: 0,
           upgrades: { arcanes: [], mods: [] },
           colors: {
-            t0: '808485',
-            t1: 'D2D3D3',
-            t2: '707475',
-            t3: '656869',
-            m0: '2F3132',
-            m1: '070B0B',
-            en: '070B0B',
-            e1: '111212',
+            primary: { hex: '808485', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
         }), 'Failed to parse parazon',
       );
