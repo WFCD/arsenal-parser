@@ -1,6 +1,6 @@
 'use strict';
 
-const { items } = require('./utils');
+const { items, mapColors } = require('./utils');
 
 class OperatorAmp {
   constructor(amp) {
@@ -28,6 +28,7 @@ class OperatorAmp {
       delete this.parts[partKey].tradable;
       delete this.parts[partKey].damagePerShot;
     });
+    this.colors = mapColors(amp.pricol);
   }
 }
 

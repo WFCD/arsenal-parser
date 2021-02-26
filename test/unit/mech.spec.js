@@ -27,7 +27,11 @@ describe('WarframeMech', () => {
       const mech = new WarframeMech(sampleMech);
 
       assert.deepEqual(mech, {
-        colors: undefined,
+        colors: {
+          attachments: undefined,
+          primary: undefined,
+          sigil: undefined,
+        },
         cosmetics: [
           {
             category: 'Skins',

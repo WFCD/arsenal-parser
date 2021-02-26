@@ -93,5 +93,6 @@
       "linebreak-style": "off",
       "import/no-unresolved": 0
     }
-  }
+  },
+  "dependencies": {}
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const { items, loadMods } = require('./utils');
+const { items, loadMods, mapColors } = require('./utils');
 
 class WarframeParazon {
   constructor(parazon) {
@@ -26,7 +26,7 @@ class WarframeParazon {
       });
     }
 
-    this.colors = parazon.pricol;
+    this.colors = mapColors(parazon.pricol);
   }
 }
 

@@ -5,7 +5,7 @@ const fetch = require('./fetch');
 
 const ArsenalData = require('../../src/ArsenalParser');
 
-describe('ArsenalData', () => {
+xdescribe('ArsenalData', () => {
   describe('#constructor', () => {
     it('can parse live data', async () => {
       assert.isOk(new ArsenalData(await fetch('tobiah')));
