@@ -85,25 +85,27 @@ describe('utils', () => {
 
       const rivenMod = utils.loadMods([sampleRiven]);
 
+      const expectedRiven = {
+        uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
+        polarity: 'Varazin',
+        rarity: 'Common',
+        baseDrain: 0,
+        fusionLimit: 0,
+        imageName: 'rifle-riven-mod.png',
+        category: 'Mods',
+        buffs: [
+          { tag: 'WeaponCritDamageMod', val: 0.3296302411049886 },
+          { tag: 'WeaponCritChanceMod', val: 0.4403982743997111 },
+        ],
+        curses: [
+          { tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 },
+        ],
+        masteryReq: 15,
+      };
+
       assert.equal(
         JSON.stringify(rivenMod.mods[0]),
-        JSON.stringify({
-          uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
-          polarity: 'Varazin',
-          rarity: 'Common',
-          baseDrain: 3,
-          fusionLimit: 0,
-          imageName: 'rifle-riven-mod.png',
-          category: 'Mods',
-          buffs: [
-            { tag: 'WeaponCritDamageMod', val: 0.3296302411049886 },
-            { tag: 'WeaponCritChanceMod', val: 0.4403982743997111 },
-          ],
-          curses: [
-            { tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 },
-          ],
-          masteryReq: 15,
-        }), 'Riven parsing failed',
+        JSON.stringify(expectedRiven), 'Riven parsing failed',
       );
     });
 
