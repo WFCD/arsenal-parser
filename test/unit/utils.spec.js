@@ -89,7 +89,7 @@ describe('utils', () => {
         uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
         polarity: 'Varazin',
         rarity: 'Common',
-        baseDrain: 3,
+        baseDrain: 0,
         fusionLimit: 0,
         imageName: 'rifle-riven-mod.png',
         category: 'Mods',

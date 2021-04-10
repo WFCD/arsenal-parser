@@ -62,6 +62,7 @@ class ArsenalData {
       const { mech, heavy: mechLong, exalted: mechExalted } = MECH;
 
       this.loadout.mech = {};
+      console.log(mech && !mech.hide)
       if (mech && !mech.hide) this.loadout.mech = new Mech(mech);
       if (mechLong && !mechLong.hide) this.loadout.mech.heavy = new Weapon(mechLong);
       if (mechExalted && !mechExalted.hide) this.loadout.mech.exalted = new Weapon(mechExalted);
