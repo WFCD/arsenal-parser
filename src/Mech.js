@@ -1,11 +1,10 @@
 'use strict';
 
-const { items, loadMods, mapColors } = require('./utils');
+const { loadMods, mapColors, findItem } = require('./utils');
 
 module.exports = class WarframeMech {
   constructor(mech) {
-    this.mech = (items.find((item) => item.uniqueName === mech.uniqueName))
-      || mech;
+    this.mech = findItem(mech.uniqueName) || mech;
 
     delete this.mech.patchlogs;
     delete this.mech.components;
@@ -14,8 +13,8 @@ module.exports = class WarframeMech {
     this.polarized = mech.polarized;
     if (mech.skins) {
       this.cosmetics = mech.skins
-        .map((cosmetic) => (items.find((item) => item.uniqueName === cosmetic.uniqueName))
-                 || cosmetic);
+        .filter((cosmetic) => cosmetic)
+        .map((cosmetic) => findItem(cosmetic.uniqueName) || cosmetic);
 
       this.cosmetics.forEach((cosmetic) => {
         /* eslint-disable no-param-reassign */

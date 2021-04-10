@@ -105,10 +105,15 @@ function mapColors(colors = undefined) {
   return colors;
 }
 
+const findItem = (uname) => items
+  .filter((item) => item && typeof item !== 'undefined' && item.uniqueName)
+  .find((item) => item.uniqueName === uname);
+
 module.exports = {
   translateFocus,
   loadMods,
   translatePolarity,
   items,
+  findItem,
   mapColors,
 };
