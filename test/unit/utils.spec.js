@@ -15,25 +15,24 @@ describe('utils', () => {
 
       const arcaneEnergize = utils.loadMods([sampleArcane]);
 
-      assert.equal(
-        JSON.stringify(arcaneEnergize.arcanes[0]),
-        JSON.stringify({
+      assert.deepEqual(
+        arcaneEnergize.arcanes[0],
+        {
           uniqueName: '/Lotus/Upgrades/CosmeticEnhancers/Utility/GolemArcaneRadialEnergyOnEnergyPickup',
           name: 'Arcane Energize',
           rarity: 'Legendary',
           levelStats: {
             stats: [
-              'On Energy Pickup:60% chance to replenish Energy to nearby allies+1 Arcane Revive',
+              'On Energy Pickup:60% chance to replenish 150 Energy to allies within 15m15s cooldown+1 Arcane Revive',
             ],
           },
           type: 'Arcane',
           imageName: 'arcane-energize.png',
           category: 'Arcanes',
           rank: 5,
-        }), 'Arcane energize invalid',
+        }, 'Arcane energize invalid',
       );
     });
-
     it('Should parse a mod correctly', () => {
       const sampleMod = {
         uniqueName: '/Lotus/Upgrades/Mods/Sets/Hunter/CompanionHunterCommandMod',
@@ -42,9 +41,9 @@ describe('utils', () => {
 
       const hunterCommand = utils.loadMods([sampleMod]);
 
-      assert.equal(
-        JSON.stringify(hunterCommand.mods[0]),
-        JSON.stringify({
+      assert.deepEqual(
+        hunterCommand.mods[0],
+        {
           uniqueName: '/Lotus/Upgrades/Mods/Sets/Hunter/CompanionHunterCommandMod',
           name: 'Hunter Command',
           polarity: 'Madurai',
@@ -62,11 +61,10 @@ describe('utils', () => {
           wikiaThumbnail: 'https://static.wikia.nocookie.net/warframe/images/1/17/HunterCommandMod.png/revision/latest?cb=20181130034216',
           wikiaUrl: 'http://warframe.fandom.com/wiki/Hunter_Command',
           rank: 5,
-        }),
+        },
         'Mod mismatch',
       );
     });
-
     it('Should parse a riven mod correctly', () => {
       const sampleRiven = {
         uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
@@ -89,8 +87,8 @@ describe('utils', () => {
         uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
         polarity: 'Varazin',
         rarity: 'Common',
-        baseDrain: 0,
-        fusionLimit: 0,
+        baseDrain: -836501504,
+        fusionLimit: 639,
         imageName: 'rifle-riven-mod.png',
         category: 'Mods',
         buffs: [
@@ -101,21 +99,18 @@ describe('utils', () => {
           { tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 },
         ],
         masteryReq: 15,
+        wikiaThumbnail: undefined,
+        wikiaUrl: undefined,
       };
 
-      assert.equal(
-        JSON.stringify(rivenMod.mods[0]),
-        JSON.stringify(expectedRiven), 'Riven parsing failed',
-      );
+      assert.deepEqual(rivenMod.mods[0], expectedRiven, 'Riven parsing failed');
     });
-
     it('should ignore mods that are unknown', () => {
       assert.deepEqual(utils.loadMods([{ uniqueName: 'MyFakeModName' }]), { arcanes: [], mods: [] }, 'Nonexistant mods not ignored');
     });
     it('should handle being passed an undefined value', () => {
       assert.deepEqual(utils.loadMods(undefined), { arcanes: [], mods: [] }, 'Failed with no input');
     });
-
     it('should handle being passed a mod that should not have a rank assigned', () => {
       const sampleParazonMod = {
         uniqueName: '/Lotus/Upgrades/Mods/DataSpike/Cipher/AutoHackMod',
@@ -137,7 +132,6 @@ describe('utils', () => {
       assert.equal(utils.translateFocus('Focus/Ward'), 'Unairu', 'Focus school incorrect');
     });
   });
-
   describe('#translatePolarity', () => {
     it('should respond with None if undefined', () => {
       assert.equal(utils.translatePolarity(undefined), 'None', 'Undefined polarity was not None');

@@ -1,6 +1,13 @@
 'use strict';
 
 const { assert } = require('chai');
+const Items = require('warframe-items');
+
+const items = new Items({ category: ['Pets'] });
+
+const cheshire = items.find((i) => i.uniqueName === '/Lotus/Types/Game/CatbrowPet/CheshireCatbrowPetPowerSuit');
+delete cheshire.patchlogs;
+
 
 // Companion.js testing
 const WarframeCompanion = require('../../src/Companion.js');
@@ -36,6 +43,7 @@ describe('WarframeCompanion', () => {
       };
 
       const companion = new WarframeCompanion(sampleCompanion);
+
       assert.deepEqual(companion, {
         colors: {
           attachments: {
@@ -186,21 +194,7 @@ describe('WarframeCompanion', () => {
             },
           },
         },
-        companion: {
-          armor: 50,
-          category: 'Pets',
-          description: 'This sly feline is playful yet devious.',
-          health: 50,
-          imageName: 'smeeta-kavat.png',
-          name: 'Smeeta Kavat',
-          power: 100,
-          productCategory: 'KubrowPets',
-          shield: 60,
-          stamina: 8,
-          tradable: false,
-          type: 'Pets',
-          uniqueName: '/Lotus/Types/Game/CatbrowPet/CheshireCatbrowPetPowerSuit',
-        },
+        companion: cheshire,
         name: 'Anger',
         polarized: 7,
         type: 'beast',

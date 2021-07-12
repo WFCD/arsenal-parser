@@ -30,7 +30,7 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha \"test/**/*.spec.js\" --exit",
+    "test": "nyc mocha ",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src/ test/",
     "lint:fix": "eslint src/ test/ --fix",
@@ -95,6 +95,17 @@
     }
   },
   "dependencies": {
-    "warframe-items": "^1.1246.38"
+    "warframe-items": "^1.1246.450"
+  },
+  "mocha": {
+    "exit": true,
+    "spec": "test/**/*.spec.js"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "skip-full": true
   }
 }

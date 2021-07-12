@@ -38,8 +38,8 @@ describe('OperatorAmp', () => {
       };
 
       const amp = new OperatorAmp(sampleAmp);
-      assert.equal(JSON.stringify(amp),
-        JSON.stringify({
+      assert.deepEqual(amp,
+        {
           xp: 5458755,
           polarized: 0,
           amp: {
@@ -56,19 +56,70 @@ describe('OperatorAmp', () => {
           },
           parts: {
             prism: {
-              name: 'Klamora Prism', uniqueName: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC', totalDamage: 0, description: '', criticalChance: 0, criticalMultiplier: 0, procChance: 0, fireRate: 0, masteryReq: 0, productCategory: 'Pistols', omegaAttenuation: 1, type: 'Amp', imageName: 'klamora-prism.png', category: 'Misc',
+              name: 'Klamora Prism',
+              uniqueName: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC',
+              totalDamage: 0,
+              description: '',
+              criticalChance: 0,
+              criticalMultiplier: 0,
+              procChance: 0,
+              fireRate: 0,
+              masteryReq: 0,
+              productCategory: 'Pistols',
+              omegaAttenuation: 1,
+              imageName: 'klamora-prism.png',
+              category: 'Misc',
+              wikiaThumbnail: 'https://static.wikia.nocookie.net/warframe/images/2/2c/KlamoraPrism.png/revision/latest?cb=20210321020721',
+              wikiaUrl: 'http://warframe.fandom.com/wiki/Klamora_Prism',
+              polarities: [],
+              tags: ['Sentient'],
+              damageTypes: {},
+              type: '',
+              disposition: 3,
             },
             scaffold: {
-              name: 'Shraksun Scaffold', uniqueName: '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB', totalDamage: 0, description: '', criticalChance: 0, criticalMultiplier: 0, procChance: 0, fireRate: 0, masteryReq: 0, productCategory: 'Pistols', omegaAttenuation: 1, type: 'Amp', imageName: 'shraksun-scaffold.png', category: 'Misc',
+              name: 'Shraksun Scaffold',
+              uniqueName: '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB',
+              totalDamage: 0,
+              description: '',
+              criticalChance: 0,
+              criticalMultiplier: 0,
+              procChance: 0,
+              fireRate: 0,
+              masteryReq: 0,
+              productCategory: 'Pistols',
+              omegaAttenuation: 1,
+              imageName: 'shraksun-scaffold.png',
+              category: 'Misc',
+              wikiaThumbnail: 'https://static.wikia.nocookie.net/warframe/images/a/a0/SentAmpSet1ChassisB.png/revision/latest?cb=20210322130753',
+              wikiaUrl: 'http://warframe.fandom.com/wiki/Shraksun_Scaffold',
+              polarities: [],
+              tags: ['Sentient'],
+              damageTypes: {},
+              type: '',
+              disposition: 3,
             },
             brace: {
-              name: 'Certus Brace', uniqueName: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC', totalDamage: 0, description: '', criticalChance: 0, criticalMultiplier: 0, procChance: 0, fireRate: 0, masteryReq: 0, productCategory: 'Pistols', omegaAttenuation: 1, type: 'Amp', imageName: 'certus-brace.png', category: 'Misc',
+              name: 'Certus Brace',
+              uniqueName: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC',
+              totalDamage: 0,
+              description: '',
+              criticalChance: 0,
+              criticalMultiplier: 0,
+              procChance: 0,
+              fireRate: 0,
+              masteryReq: 0,
+              productCategory: 'Pistols',
+              omegaAttenuation: 1,
+              type: 'Amp',
+              imageName: 'certus-brace.png',
+              category: 'Misc',
             },
           },
           colors: {
             primary: { hex: '5B73D6', matches: [{ palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' }, position: { row: 5, col: 4 } }] }, secondary: { hex: '4559A5', matches: [{ palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' }, position: { row: 2, col: 4 } }] }, tertiary: { hex: '33589B', matches: [{ palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' }, position: { row: 18, col: 4 } }] }, accents: { hex: '6F7DB3', matches: [{ palette: { name: 'Lotus', description: 'A set of colors inspired by the Lotus.Unlocks additional color options for Warframe customization.' }, position: { row: 4, col: 5 } }] }, emissive: [{ hex: '33589B', matches: [{ palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' }, position: { row: 18, col: 4 } }] }, { hex: '5E71B3', matches: [{ palette: { name: 'Discord', description: 'Unlocks a collection of Blurple, Greyple and not quite black colors.' }, position: { row: 8, col: 1 } }] }], energy: [{ hex: '33589B', matches: [{ palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' }, position: { row: 18, col: 4 } }] }],
           },
-        }));
+        });
     });
 
     it('should handle unknown modularpart ids', () => {

@@ -31,9 +31,9 @@ describe('WarframeParazon', () => {
       };
 
       const parazon = new WarframeParazon(sampleParazon);
-      assert.equal(
-        JSON.stringify(parazon),
-        JSON.stringify({
+      assert.deepEqual(
+        parazon,
+        {
           uniqueName: '/Lotus/Weapons/Tenno/HackingDevices/TnHackingDevice/TnHackingDeviceWeapon',
           xp: 450000,
           polarized: 0,
@@ -42,22 +42,22 @@ describe('WarframeParazon', () => {
             uniqueName: '/Lotus/Upgrades/Skins/Parazon/TnRailjackDataKnife', name: 'Sigma Series Parazon Skin', description: 'This Parazon model was gifted to the first Warframe Railjack crews.', type: 'Skin', imageName: 'sigma-series-parazon-skin.png', category: 'Skins',
           }],
           colors: {
-            primary: { hex: '808485', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] },
-            secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] },
+            primary: { hex: '808485', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] },
+            secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] },
             tertiary: {
               hex: '707475',
               matches: [{
                 palette: {
-                  name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.',
+                  name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.',
                 },
                 position: { row: 7, col: 3 },
               }],
             },
-            accents: { hex: '656869', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] },
-            emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
-            energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
+            accents: { hex: '656869', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] },
+            emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
+            energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
-        }), 'Failed to parse parazon',
+        }, 'Failed to parse parazon',
       );
     });
 
@@ -80,17 +80,17 @@ describe('WarframeParazon', () => {
       };
 
       const parazon = new WarframeParazon(sampleParazon);
-      assert.equal(
-        JSON.stringify(parazon),
-        JSON.stringify({
+      assert.deepEqual(
+        parazon,
+        {
           uniqueName: '/Lotus/Weapons/Tenno/HackingDevices/TnHackingDevice/TnHackingDeviceWeapon',
           xp: 450000,
           polarized: 0,
           upgrades: { arcanes: [], mods: [] },
           colors: {
-            primary: { hex: '808485', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
+            primary: { hex: '808485', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
-        }), 'Failed to parse parazon',
+        }, 'Failed to parse parazon',
       );
     });
 
@@ -114,20 +114,18 @@ describe('WarframeParazon', () => {
       };
 
       const parazon = new WarframeParazon(sampleParazon);
-      assert.equal(
-        JSON.stringify(parazon),
-        JSON.stringify(
-          {
-            uniqueName: '/Lotus/Weapons/Tenno/HackingDevices/TnHackingDevice/TnHackingDeviceWeapon',
-            xp: 450000,
-            polarized: 0,
-            upgrades: { arcanes: [], mods: [] },
-            cosmetics: [{ uniqueName: 'UnknownCosmetic' }],
-            colors: {
-              primary: { hex: '808485', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke Colors', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
-            },
+      assert.deepEqual(
+        parazon,
+        {
+          uniqueName: '/Lotus/Weapons/Tenno/HackingDevices/TnHackingDevice/TnHackingDeviceWeapon',
+          xp: 450000,
+          polarized: 0,
+          upgrades: { arcanes: [], mods: [] },
+          cosmetics: [{ uniqueName: 'UnknownCosmetic' }],
+          colors: {
+            primary: { hex: '808485', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
-        ), 'Failed to parse parazon',
+        }, 'Failed to parse parazon',
       );
     });
   });

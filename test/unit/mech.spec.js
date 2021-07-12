@@ -81,6 +81,7 @@ describe('WarframeMech', () => {
           description: 'Nothing fancy but gets the job done and then some. With its electrified armor, this rough and ready mech can make the battlefield treacherous for the enemy with an arsenal of explosives.',
           exalted: [
             '/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/ExaltedArtilleryWeapon',
+            '/Lotus/Weapons/Tenno/Archwing/Primary/ThanoTechArchLongGun/ThanoTechLongGun',
           ],
           health: 1500,
           imageName: 'voidrig.png',
