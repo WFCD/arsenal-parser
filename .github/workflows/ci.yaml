@@ -65,6 +65,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: [lint, test, report-coverage]
     strategy:
       matrix:
