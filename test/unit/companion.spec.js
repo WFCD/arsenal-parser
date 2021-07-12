@@ -8,7 +8,6 @@ const items = new Items({ category: ['Pets'] });
 const cheshire = items.find((i) => i.uniqueName === '/Lotus/Types/Game/CatbrowPet/CheshireCatbrowPetPowerSuit');
 delete cheshire.patchlogs;
 
-
 // Companion.js testing
 const WarframeCompanion = require('../../src/Companion.js');
 
