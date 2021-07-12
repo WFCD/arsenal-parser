@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Archwing.js testing
-const Pixel = require('../../src/Pixel.js');
+const Pixel = require('../../src/Pixel');
 
 describe('Pixel', () => {
   describe('#constructor', () => {

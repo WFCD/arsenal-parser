@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Companion.js testing
-const WarframeMech = require('../../src/Mech.js');
+const WarframeMech = require('../../src/Mech');
 
 describe('WarframeMech', () => {
   describe('#constructor', () => {

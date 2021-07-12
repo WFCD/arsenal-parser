@@ -9,7 +9,7 @@ const cheshire = items.find((i) => i.uniqueName === '/Lotus/Types/Game/CatbrowPe
 delete cheshire.patchlogs;
 
 // Companion.js testing
-const WarframeCompanion = require('../../src/Companion.js');
+const WarframeCompanion = require('../../src/Companion');
 
 describe('WarframeCompanion', () => {
   describe('#constructor', () => {

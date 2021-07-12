@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Player.js testing
-const WarframePlayer = require('../../src/Player.js');
+const WarframePlayer = require('../../src/Player');
 
 describe('WarframePlayer', () => {
   describe('#constructor', () => {

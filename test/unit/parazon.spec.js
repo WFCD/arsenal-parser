@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Parazon.js testing
-const WarframeParazon = require('../../src/Parazon.js');
+const WarframeParazon = require('../../src/Parazon');
 
 describe('WarframeParazon', () => {
   describe('#constructor', () => {

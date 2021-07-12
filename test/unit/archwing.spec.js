@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // Archwing.js testing
-const WarframeArchwing = require('../../src/Archwing.js');
+const WarframeArchwing = require('../../src/Archwing');
 
 describe('WarframeArchwing', () => {
   describe('#constructor', () => {

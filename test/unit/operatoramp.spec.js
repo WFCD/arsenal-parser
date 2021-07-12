@@ -3,7 +3,7 @@
 const { assert } = require('chai');
 
 // OperatorAmp.js testing
-const OperatorAmp = require('../../src/OperatorAmp.js');
+const OperatorAmp = require('../../src/OperatorAmp');
 
 describe('OperatorAmp', () => {
   describe('#constructor', () => {
