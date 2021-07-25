@@ -17,12 +17,11 @@ describe('WarframePlayer', () => {
       };
 
       const player = new WarframePlayer(samplePlayer);
-      assert.equal(
-        JSON.stringify(player),
-        JSON.stringify({
+      assert.deepEqual(player,
+        {
           name: 'MainlandHero',
           masteryRank: 29,
-          lastUpdated: '2020-07-24T01:53:11.000Z',
+          lastUpdated: new Date('2020-07-24T01:53:11.000Z'),
           glyph: {
             uniqueName: '/Lotus/Types/StoreItems/AvatarImages/FanChannel/AvatarImageArgonSix',
             name: 'Argonsix Glyph',
@@ -33,8 +32,7 @@ describe('WarframePlayer', () => {
             tradable: false,
           },
           focusSchool: 'Varazin',
-        }), 'Player object invalid',
-      );
+        }, 'Player object invalid');
     });
 
     it('should handle an unknown glyph', () => {

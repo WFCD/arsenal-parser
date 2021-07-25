@@ -5,9 +5,6 @@
   "main": "src/ArsenalParser.js",
   "types": "./types/src/ArsenalParser.d.ts",
   "public": true,
-  "peerDependencies": {
-    "warframe-items": "^1.1246.38"
-  },
   "files": [
     "src",
     "LICENSE",
@@ -55,7 +52,6 @@
     ]
   },
   "repository": "https://github.com/wfcd/arsenal-parser",
-  "optionalDependencies": {},
   "engines": {
     "node": ">=12.18.3",
     "npm": ">=6.14.6"
@@ -94,9 +90,6 @@
       "import/no-unresolved": 0
     }
   },
-  "dependencies": {
-    "warframe-items": "^1.1246.450"
-  },
   "mocha": {
     "exit": true,
     "spec": "test/**/*.spec.js"
@@ -107,5 +100,8 @@
       "text"
     ],
     "skip-full": true
+  },
+  "dependencies": {
+    "warframe-items": "1.x"
   }
 }
