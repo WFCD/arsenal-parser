@@ -57,7 +57,8 @@ describe('WarframeParazon', () => {
             emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
             energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
-        }, 'Failed to parse parazon',
+        },
+        'Failed to parse parazon',
       );
     });
 
@@ -90,7 +91,8 @@ describe('WarframeParazon', () => {
           colors: {
             primary: { hex: '808485', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
-        }, 'Failed to parse parazon',
+        },
+        'Failed to parse parazon',
       );
     });
 
@@ -125,7 +127,8 @@ describe('WarframeParazon', () => {
           colors: {
             primary: { hex: '808485', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 3 } }] }, secondary: { hex: 'D2D3D3', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 1 } }] }, tertiary: { hex: '707475', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 7, col: 3 } }] }, accents: { hex: '656869', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 5, col: 3 } }] }, emissive: [{ hex: '2F3132', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 2, col: 4 } }] }, { hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }], energy: [{ hex: '070B0B', matches: [{ palette: { name: 'Smoke', description: 'Unlocks additional color options for Warframe customization.' }, position: { row: 17, col: 4 } }] }],
           },
-        }, 'Failed to parse parazon',
+        },
+        'Failed to parse parazon',
       );
     });
   });
