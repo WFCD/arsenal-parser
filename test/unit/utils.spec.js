@@ -33,7 +33,8 @@ describe('utils', () => {
           imageName: 'arcane-energize.png',
           category: 'Arcanes',
           rank: 5,
-        }, 'Arcane energize invalid',
+        },
+        'Arcane energize invalid',
       );
     });
     it('Should parse a mod correctly', () => {

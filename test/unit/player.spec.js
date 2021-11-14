@@ -17,7 +17,8 @@ describe('WarframePlayer', () => {
       };
 
       const player = new WarframePlayer(samplePlayer);
-      assert.deepEqual(player,
+      assert.deepEqual(
+        player,
         {
           name: 'MainlandHero',
           masteryRank: 29,
@@ -32,7 +33,9 @@ describe('WarframePlayer', () => {
             tradable: false,
           },
           focusSchool: 'Varazin',
-        }, 'Player object invalid');
+        },
+        'Player object invalid',
+      );
     });
 
     it('should handle an unknown glyph', () => {
