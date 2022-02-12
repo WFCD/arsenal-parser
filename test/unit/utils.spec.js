@@ -10,7 +10,7 @@ const utils = require('../../src/utils');
 
 describe('utils', () => {
   describe('#loadMods', () => {
-    it('Should parse a arcane correctly', () => {
+    it('Should parse an arcane correctly', () => {
       const sampleArcane = {
         uniqueName: '/Lotus/Upgrades/CosmeticEnhancers/Utility/GolemArcaneRadialEnergyOnEnergyPickup',
         rank: 5,
@@ -20,20 +20,7 @@ describe('utils', () => {
 
       assert.deepEqual(
         arcaneEnergize.arcanes[0],
-        {
-          uniqueName: '/Lotus/Upgrades/CosmeticEnhancers/Utility/GolemArcaneRadialEnergyOnEnergyPickup',
-          name: 'Arcane Energize',
-          rarity: 'Legendary',
-          levelStats: {
-            stats: [
-              'On Energy Pickup:60% chance to replenish 150 Energy to allies within 15m15s cooldown+1 Arcane Revive',
-            ],
-          },
-          type: 'Arcane',
-          imageName: 'arcane-energize.png',
-          category: 'Arcanes',
-          rank: 5,
-        },
+        items.find((i) => i.name === 'Arcane Energize'),
         'Arcane energize invalid',
       );
     });
