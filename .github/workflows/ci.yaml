@@ -1,6 +1,5 @@
-name: Actions
+name: CI
 on:
-  push:
   pull_request:
     branches:
       - main
@@ -11,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [15.x]
-
+        node-version: ['lts/*']
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
@@ -28,12 +26,12 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        node-version: [11.x, 12.x, 13.x, 14.x, 15.x]
+        node-version: [12, 14, 16, 'lts/*']
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
     - name: Test
@@ -43,7 +41,7 @@ jobs:
         npm install
         npm i warframe-items@latest
         npm test
-      
+
     - name: Coveralls Parallel
       uses: coverallsapp/github-action@master
       with:
@@ -55,32 +53,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: ['lts/*']
     steps:
     - name: Coveralls Finished
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.github_token }}
         parallel-finished: true
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [lint, test, report-coverage]
-    strategy:
-      matrix:
-        node-version: [15.x]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2.5.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        with:
-          semantic_version: 17
-          branches: |
-            ['main']
