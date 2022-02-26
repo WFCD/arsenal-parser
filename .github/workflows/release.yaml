@@ -22,9 +22,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Test
         run: |
-          npm install
+          npm ci
           npm i warframe-items@latest
           npm run lint
+          npm test
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2.5.0
         env:
