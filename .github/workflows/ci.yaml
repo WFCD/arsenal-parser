@@ -41,22 +41,25 @@ jobs:
         npm install
         npm i warframe-items@latest
         npm test
-
-    - name: Coveralls Parallel
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        flag-name: run-${{ matrix.node-version }}
-        parallel: true
-  report-coverage:
-    needs: [lint, test]
+  coverage:
+    name: Coverage
     runs-on: ubuntu-latest
+    needs: lint
     strategy:
       matrix:
         node-version: ['lts/*']
     steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel-finished: true
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm test
+        env:
+          CI: true
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }
