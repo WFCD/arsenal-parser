@@ -2,19 +2,22 @@
 
 const { items, mapColors } = require('./utils');
 
-class OperatorAmp {
+module.exports = class OperatorAmp {
   constructor(amp) {
     this.xp = amp.xp;
     this.polarized = amp.polarized;
-    this.amp = (items.find((item) => item.uniqueName === amp.uniqueName)) || amp;
+    this.amp = items.find((item) => item.uniqueName === amp.uniqueName) || amp;
     if (!amp.modularParts) return;
     this.parts = {
-      prism: (items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_OCULUS))
-            || { uniqueName: amp.modularParts.LWPT_AMP_OCULUS },
-      scaffold: (items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_CORE))
-            || { uniqueName: amp.modularParts.LWPT_AMP_CORE },
-      brace: (items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_BRACE))
-            || { uniqueName: amp.modularParts.LWPT_AMP_BRACE },
+      prism: items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_OCULUS) || {
+        uniqueName: amp.modularParts.LWPT_AMP_OCULUS,
+      },
+      scaffold: items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_CORE) || {
+        uniqueName: amp.modularParts.LWPT_AMP_CORE,
+      },
+      brace: items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_BRACE) || {
+        uniqueName: amp.modularParts.LWPT_AMP_BRACE,
+      },
     };
 
     Object.keys(this.parts).forEach((partKey) => {
@@ -30,6 +33,4 @@ class OperatorAmp {
     });
     this.colors = mapColors(amp.pricol);
   }
-}
-
-module.exports = OperatorAmp;
+};

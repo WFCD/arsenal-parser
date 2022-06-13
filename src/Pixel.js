@@ -2,40 +2,79 @@
 
 const Items = require('warframe-items');
 
-const items = new Items(['Skins']).filter((i) => i.hexColours);
+const items = new Items().filter((i) => i.hexColours);
 
+/**
+ * Palette Coordinate representation
+ * @typedef {Object} PaletteCoordinate
+ * @property {number} row row in palette to which this coordinate corresponds
+ * @property {number} col column in palette to which this coordinate corresponds
+ */
+
+/**
+ * Determine row/column from an index
+ * @param {number} [ind] array index of a coordinate
+ * @returns {PaletteCoordinate}
+ */
 const position = (ind) => ({
   row: (ind % 18) + 1,
   col: Math.ceil(ind / 18),
 });
 
+/**
+ * Generic palette descriptor
+ * @typedef {Object} Palette
+ * @property {string} name Palette name (as seen in-game)
+ * @property {string} description Description of the palette
+ */
+/**
+ * Palette Entry
+ * @typedef {Object} PaletteEntry
+ * @property {Palette} palette
+ * @property {PaletteCoordinate}
+ */
+
 module.exports = class Pixel {
+  /** Raw hex value
+   * @type string
+   */
+  #hex;
+  /**
+   * Matching palette entries
+   * @type {Array<PaletteEntry>}
+   */
+  #matches = [];
+  /**
+   * Matched palette list of names
+   * @type {Array<string>}
+   */
+  #palettes = [];
+  /**
+   * Whether this pixel is transparent
+   * @type {boolean}
+   */
+  #isTransparent = false;
+
+  /**
+   * Generate a pixel descriptive object
+   * @param {string} hex string-represented hex code
+   * @constructor
+   */
   constructor(hex) {
-    this.hex = hex;
-    this.matches = [];
+    this.#hex = hex;
+    this.#isTransparent = hex === '0';
 
-    this.isTransparent = hex === '0';
-
-    if (!this.isTransparent) {
-      delete this.isTransparent;
-    }
-
-    if (!this.isTransparent) {
-      const usedPalettes = [];
-
-      items.forEach((item) => {
-        item.hexColours.forEach(({ value }, index) => {
+    if (!this.#isTransparent) {
+      this.#isTransparent = undefined;
+      items.forEach(({ name, description, hexColours }) => {
+        hexColours.forEach(({ value }, index) => {
           if (value.toLowerCase().includes(hex.toLowerCase())) {
-            if (!usedPalettes.includes(item.name)) {
-              this.matches.push({
-                palette: {
-                  name: item.name,
-                  description: item.description,
-                },
+            if (!this.#palettes.includes(name)) {
+              this.#matches.push({
+                palette: { name, description },
                 position: position(index),
               });
-
-              usedPalettes.push(item.name);
+              this.#palettes.push(name);
             }
           }
         });
@@ -43,7 +82,39 @@ module.exports = class Pixel {
     }
   }
 
+  /**
+   * Palette within the
+   * @returns {Array<string>}
+   */
   get palettes() {
-    return Array.from(new Set(this.matches.map((match) => match.palette.name)));
+    return this.#palettes;
+  }
+
+  /**
+   * Pixel Coordinate matches
+   * @returns {Array<PaletteEntry>}
+   */
+  get matches() {
+    return this.#matches;
+  }
+
+  /**
+   * Whether this pixel is transparent
+   * @returns {boolean}
+   */
+  get isTransparent() {
+    return this.#isTransparent;
+  }
+
+  get hex() {
+    return this.#hex;
+  }
+
+  toJSON() {
+    return {
+      matches: this.#matches,
+      isTransparent: this.#isTransparent,
+      hex: this.#hex,
+    };
   }
 };

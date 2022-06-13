@@ -9,24 +9,15 @@ const Amp = require('./OperatorAmp');
 const Companion = require('./Companion');
 const Mech = require('./Mech');
 
-class ArsenalData {
+module.exports = class ArsenalData {
   constructor(data) {
     this.account = new Player(data.account || data.accountInfo);
 
     this.loadout = {};
 
-    const {
-      NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH,
-    } = data.loadOuts;
+    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH } = data.loadOuts;
 
-    const {
-      warframe,
-      primary,
-      secondary,
-      melee,
-      heavy,
-      exalted,
-    } = NORMAL;
+    const { warframe, primary, secondary, melee, heavy, exalted } = NORMAL;
 
     const { archwing, primary: archPrimary, melee: archMelee } = ARCHWING;
     const { parazon } = DATAKNIFE;
@@ -67,6 +58,4 @@ class ArsenalData {
       if (mechExalted && !mechExalted.hide) this.loadout.mech.exalted = new Weapon(mechExalted);
     }
   }
-}
-
-module.exports = ArsenalData;
+};

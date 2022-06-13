@@ -21,7 +21,7 @@ describe('utils', () => {
       assert.deepEqual(
         arcaneEnergize.arcanes[0],
         items.find((i) => i.name === 'Arcane Energize'),
-        'Arcane energize invalid',
+        'Arcane energize invalid'
       );
     });
     it('Should parse a mod correctly', () => {
@@ -35,7 +35,7 @@ describe('utils', () => {
       assert.deepEqual(
         hunterCommand.mods[0],
         items.find((i) => i.uniqueName === '/Lotus/Upgrades/Mods/Sets/Hunter/CompanionHunterCommandMod'),
-        'Mod mismatch',
+        'Mod mismatch'
       );
     });
     it('Should parse a riven mod correctly', () => {
@@ -46,9 +46,7 @@ describe('utils', () => {
           { tag: 'WeaponCritDamageMod', val: 0.3296302411049886 },
           { tag: 'WeaponCritChanceMod', val: 0.4403982743997111 },
         ],
-        curses: [
-          { tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 },
-        ],
+        curses: [{ tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 }],
         compat: '/Lotus/Weapons/Grineer/LongGuns/GrineerM16Homage/GrineerM16Rifle',
         lvlReq: 15,
         pol: 'AP_DEFENSE',
@@ -66,9 +64,7 @@ describe('utils', () => {
           { tag: 'WeaponCritDamageMod', val: 0.3296302411049886 },
           { tag: 'WeaponCritChanceMod', val: 0.4403982743997111 },
         ],
-        curses: [
-          { tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 },
-        ],
+        curses: [{ tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 }],
         masteryReq: 15,
         wikiaThumbnail: undefined,
         wikiaUrl: undefined,
@@ -81,7 +77,11 @@ describe('utils', () => {
       assert.deepEqual(rivenMod.mods[0], expectedRiven, 'Riven parsing failed');
     });
     it('should ignore mods that are unknown', () => {
-      assert.deepEqual(utils.loadMods([{ uniqueName: 'MyFakeModName' }]), { arcanes: [], mods: [] }, 'Nonexistant mods not ignored');
+      assert.deepEqual(
+        utils.loadMods([{ uniqueName: 'MyFakeModName' }]),
+        { arcanes: [], mods: [] },
+        'Nonexistant mods not ignored'
+      );
     });
     it('should handle being passed an undefined value', () => {
       assert.deepEqual(utils.loadMods(undefined), { arcanes: [], mods: [] }, 'Failed with no input');
@@ -91,7 +91,11 @@ describe('utils', () => {
         uniqueName: '/Lotus/Upgrades/Mods/DataSpike/Cipher/AutoHackMod',
       };
       const parazonMod = utils.loadMods([sampleParazonMod]);
-      assert.deepEqual(parazonMod.mods[0].levelStats[0], { stats: ['+30% chance to auto complete Hacking'] }, 'Mod not correctly found');
+      assert.deepEqual(
+        parazonMod.mods[0].levelStats[0],
+        { stats: ['+30% chance to auto complete Hacking'] },
+        'Mod not correctly found'
+      );
     });
   });
 

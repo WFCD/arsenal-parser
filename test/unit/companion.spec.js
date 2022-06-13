@@ -10,6 +10,7 @@ delete cheshire.patchlogs;
 
 // Companion.js testing
 const WarframeCompanion = require('../../src/Companion');
+const { marshall } = require('../utils');
 
 describe('WarframeCompanion', () => {
   describe('#constructor', () => {
@@ -41,9 +42,8 @@ describe('WarframeCompanion', () => {
         upgrades: [],
       };
 
-      const companion = new WarframeCompanion(sampleCompanion);
-
-      assert.deepEqual(companion, {
+      const companion = marshall(new WarframeCompanion(sampleCompanion));
+      const expectedCompanion = marshall({
         colors: {
           attachments: {
             accents: {
@@ -109,7 +109,8 @@ describe('WarframeCompanion', () => {
                 matches: [
                   {
                     palette: {
-                      description: 'Unlocks a collection of Ghastly Greens, Pumpkin Orange and Blood Red colors to customize your Warframe with.',
+                      description:
+                        'Unlocks a collection of Ghastly Greens, Pumpkin Orange and Blood Red colors to customize your Warframe with.',
                       name: 'Halloween',
                     },
                     position: {
@@ -125,7 +126,8 @@ describe('WarframeCompanion', () => {
               matches: [
                 {
                   palette: {
-                    description: 'Unlocks additional color options reflecting the default colors used on each standard Warframe.',
+                    description:
+                      'Unlocks additional color options reflecting the default colors used on each standard Warframe.',
                     name: 'Tenno',
                   },
                   position: {
@@ -202,7 +204,9 @@ describe('WarframeCompanion', () => {
           mods: [],
         },
         xp: 548455507,
-      }, 'Incorect companion output');
+      });
+
+      assert.deepEqual(companion, expectedCompanion, 'Incorrect companion output');
     });
     it('should handle getting an unknown companion id', () => {
       const unknownCompanion = {

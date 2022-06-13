@@ -2,9 +2,9 @@
 
 const { items, loadMods, mapColors } = require('./utils');
 
-class Warframe {
+module.exports = class Warframe {
   constructor(frame) {
-    this.warframe = (items.find((item) => item.uniqueName === frame.uniqueName)) || frame;
+    this.warframe = items.find((item) => item.uniqueName === frame.uniqueName) || frame;
     delete this.warframe.patchlogs;
     delete this.warframe.components;
     delete this.warframe.buildPrice;
@@ -18,8 +18,9 @@ class Warframe {
     this.xp = frame.xp;
     this.polarized = frame.polarized;
     this.features = frame.polarized;
-    this.cosmetics = (frame.skins || [])
-      .map((skin) => (items.find((item) => item.uniqueName === skin.uniqueName)) || skin);
+    this.cosmetics = (frame.skins || []).map(
+      (skin) => items.find((item) => item.uniqueName === skin.uniqueName) || skin
+    );
 
     this.cosmetics.forEach((cosmetic) => {
       /* eslint-disable no-param-reassign */
@@ -41,6 +42,4 @@ class Warframe {
       attachments: mapColors(frame.attcol),
     };
   }
-}
-
-module.exports = Warframe;
+};
