@@ -61,14 +61,17 @@ describe('WarframeArchwing', () => {
     it('should handle being passed an unknown archwing ID', () => {
       const fakeArchwing = new WarframeArchwing({ uniqueName: 'SomeNewUnknownArchwing' });
 
-      assert.equal(JSON.stringify(fakeArchwing), JSON.stringify({
-        archwing: { uniqueName: 'SomeNewUnknownArchwing' },
-        upgrades: {
-          arcanes: [],
-          mods: [],
-        },
-        colors: {},
-      }));
+      assert.equal(
+        JSON.stringify(fakeArchwing),
+        JSON.stringify({
+          archwing: { uniqueName: 'SomeNewUnknownArchwing' },
+          upgrades: {
+            arcanes: [],
+            mods: [],
+          },
+          colors: {},
+        })
+      );
     });
   });
 });

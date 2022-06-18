@@ -14,24 +14,25 @@
   "devDependencies": {
     "@types/chai": "^4.2.16",
     "@types/node-fetch": "^2.6.1",
+    "@wfcd/eslint-config": "^1.1.6",
     "chai": "^4.3.4",
+    "chai-json-equal": "^0.0.1",
     "coveralls": "^3.1.0",
-    "eslint": "^8.0.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.22.1",
+    "install-peerdeps": "^2.0.3",
     "mocha": "^10.0.0",
     "node-fetch": "^2.6.1",
     "nyc": "^15.1.0",
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "test": "nyc mocha ",
+    "test": "nyc mocha",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src/ test/",
     "lint:fix": "eslint src/ test/ --fix",
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
-    "build:types": "tsc -p tsconfig.declaration.json"
+    "build:types": "tsc -p tsconfig.declaration.json",
+    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.1.6 -S"
   },
   "keywords": [
     "warframe",
@@ -55,7 +56,8 @@
     "npm": ">=6.14.6"
   },
   "eslintConfig": {
-    "extends": "airbnb-base",
+    "extends": "@wfcd",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
       "sourceType": "script"
     },
@@ -80,12 +82,6 @@
         }
       ],
       "no-underscore-dangle": "off",
-      "strict": [
-        "error",
-        "safe"
-      ],
-      "linebreak-style": "off",
-      "import/no-unresolved": 0,
       "import/no-extraneous-dependencies": [
         "error",
         {
@@ -94,6 +90,21 @@
       ]
     }
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-private-methods"
+    ]
+  },
+  "pre-commit": [
+    "lint",
+    "test",
+    "validate"
+  ],
+  "prettier": "@wfcd/eslint-config/prettier",
   "mocha": {
     "exit": true,
     "spec": "test/**/*.spec.js"

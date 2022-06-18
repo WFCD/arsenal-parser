@@ -26,7 +26,7 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        node-version: [12, 14, 16, 'lts/*']
+        node-version: [14, 16, 'lts/*']
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -37,6 +37,7 @@ jobs:
     - name: Test
       env:
         CI: true
+        TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
       run: | 
         npm install
         npm i warframe-items@latest
@@ -57,6 +58,7 @@ jobs:
       - run: npm test
         env:
           CI: true
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:

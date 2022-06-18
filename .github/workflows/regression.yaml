@@ -12,15 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [11.x, 12.x, 13.x, 14.x, 15.x]
+        node-version: [14, 16, 'lts/*']
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
     - name: Test
+      env:
+        TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
       run: |
         npm install
         npm i warframe-items@latest

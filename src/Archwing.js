@@ -2,9 +2,9 @@
 
 const { items, loadMods, mapColors } = require('./utils');
 
-class WarframeArchwing {
+module.exports = class WarframeArchwing {
   constructor(archwing) {
-    this.archwing = (items.find((item) => item.uniqueName === archwing.uniqueName)) || archwing;
+    this.archwing = items.find((item) => item.uniqueName === archwing.uniqueName) || archwing;
     delete this.archwing.components;
     delete this.archwing.patchlogs;
     this.xp = archwing.xp;
@@ -16,6 +16,4 @@ class WarframeArchwing {
       attachments: mapColors(archwing.attcol),
     };
   }
-}
-
-module.exports = WarframeArchwing;
+};

@@ -34,7 +34,9 @@ describe('WarframeWeapon', () => {
     });
 
     it('should handle an unknown cosmetic id', () => {
-      assert.deepEqual(new WarframeWeapon({ skins: [{ uniqueName: 'UnknownSkin' }] }).cosmetics[0], { uniqueName: 'UnknownSkin' });
+      assert.deepEqual(new WarframeWeapon({ skins: [{ uniqueName: 'UnknownSkin' }] }).cosmetics[0], {
+        uniqueName: 'UnknownSkin',
+      });
     });
 
     it('should handle an unknown part id', () => {
@@ -56,9 +58,12 @@ describe('WarframeWeapon', () => {
         uniqueName: '/Lotus/Weapons/SolarisUnited/Secondary/LotusModularSecondaryShotgun',
         upgrades: [],
         modularParts: {
-          LWPT_GUN_BARREL: '/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Barrel/SUModularSecondaryBarrelAPart',
-          LWPT_GUN_CLIP: '/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritIICapIClipPart',
-          LWPT_GUN_SECONDARY_HANDLE: '/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Handle/SUModularSecondaryHandleCPart',
+          LWPT_GUN_BARREL:
+            '/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Barrel/SUModularSecondaryBarrelAPart',
+          LWPT_GUN_CLIP:
+            '/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritIICapIClipPart',
+          LWPT_GUN_SECONDARY_HANDLE:
+            '/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Handle/SUModularSecondaryHandleCPart',
         },
       };
 

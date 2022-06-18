@@ -2,20 +2,22 @@
 
 const { items, loadMods, mapColors } = require('./utils');
 
-class WarframeWeapon {
+module.exports = class WarframeWeapon {
   constructor(weapon) {
     this.xp = weapon.xp;
     this.polarized = weapon.polarized;
     this.upgrades = loadMods(weapon.upgrades);
     if (weapon.itemName) this.itemName = weapon.itemName;
-    this.cosmetics = (weapon.skins || [])
-      .map((skin) => (items.find((item) => item.uniqueName === skin.uniqueName)) || skin);
+    this.cosmetics = (weapon.skins || []).map(
+      (skin) => items.find((item) => item.uniqueName === skin.uniqueName) || skin
+    );
 
     if (weapon.modularParts) {
       const parts = {};
       Object.keys(weapon.modularParts).forEach((part) => {
-        parts[part] = (items.find((item) => item.uniqueName === weapon.modularParts[part]))
-              || { uniqueName: weapon.modularParts[part] };
+        parts[part] = items.find((item) => item.uniqueName === weapon.modularParts[part]) || {
+          uniqueName: weapon.modularParts[part],
+        };
       });
 
       Object.keys(parts).forEach((partKey) => {
@@ -32,7 +34,7 @@ class WarframeWeapon {
 
       this.parts = parts;
     } else {
-      this.weapon = (items.find((item) => item.uniqueName === weapon.uniqueName)) || weapon;
+      this.weapon = items.find((item) => item.uniqueName === weapon.uniqueName) || weapon;
       delete this.weapon.components;
       delete this.weapon.patchlogs;
       this.colors = mapColors(weapon.pricol);
@@ -42,6 +44,4 @@ class WarframeWeapon {
       delete this.weapon.damagePerShot;
     }
   }
-}
-
-module.exports = WarframeWeapon;
+};

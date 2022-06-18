@@ -14,6 +14,7 @@ describe('Pixel', () => {
         assert.equal(pixel.hex, hex, 'Hex mismatch');
         assert.isNotEmpty(pixel.matches, 'No matches resolved');
         assert.isNotEmpty(pixel.palettes, 'Real pixels should give palettes');
+        assert.isNotOk(pixel.isTransparent, 'not transparent!');
       });
     });
 
