@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/arsenal-parser Index</title>
+	<title>@wfcd/arsenal-parser Source: Pixel.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -67,61 +67,139 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	
-	
+		<h1 class="page-title">Source: Pixel.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">'use strict';
 
+const Items = require('warframe-items');
 
+const items = new Items().filter((i) => i.hexColours);
 
+/**
+ * Palette Coordinate representation
+ * @typedef {Object} PaletteCoordinate
+ * @property {number} row row in palette to which this coordinate corresponds
+ * @property {number} col column in palette to which this coordinate corresponds
+ */
 
+/**
+ * Determine row/column from an index
+ * @param {number} [ind] array index of a coordinate
+ * @returns {PaletteCoordinate}
+ */
+const position = (ind) => ({
+  row: (ind % 18) + 1,
+  col: Math.ceil(ind / 18),
+});
 
+/**
+ * Generic palette descriptor
+ * @typedef {Object} Palette
+ * @property {string} name Palette name (as seen in-game)
+ * @property {string} description Description of the palette
+ */
+/**
+ * Palette Entry
+ * @typedef {Object} PaletteEntry
+ * @property {Palette} palette
+ * @property {PaletteCoordinate}
+ */
 
+module.exports = class Pixel {
+  /** Raw hex value
+   * @type string
+   */
+  #hex;
+  /**
+   * Matching palette entries
+   * @type {Array&lt;PaletteEntry>}
+   */
+  #matches = [];
+  /**
+   * Matched palette list of names
+   * @type {Array&lt;string>}
+   */
+  #palettes = [];
+  /**
+   * Whether this pixel is transparent
+   * @type {boolean}
+   */
+  #isTransparent = false;
 
+  /**
+   * Generate a pixel descriptive object
+   * @param {string} hex string-represented hex code
+   * @constructor
+   */
+  constructor(hex) {
+    this.#hex = hex;
+    this.#isTransparent = hex === '0';
 
-
-
-
-	
-	
-
-
-
-
-
-    <section class="readme-section">
-        <article><h1>Arsenal Parser</h1>
-<p>Parse the Warframe Arsenal Twitch extension data into useable javascript objects.</p>
-<p><a href="https://github.com/WFCD/banner/blob/main/PROJECTS.md"><img src="https://img.shields.io/badge/Warframe_Comm_Devs-supported-blue.svg?color=2E96EF&amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOTgiIGhlaWdodD0iMTczIiB2aWV3Qm94PSIwIDAgMjk4IDE3MyI%2BPHBhdGggZD0iTTE4NSA2N2MxNSA4IDI4IDE2IDMxIDE5czIzIDE4LTcgNjBjMCAwIDM1LTMxIDI2LTc5LTE0LTctNjItMzYtNzAtNDUtNC01LTEwLTEyLTE1LTIyLTUgMTAtOSAxNC0xNSAyMi0xMyAxMy01OCAzOC03MiA0NS05IDQ4IDI2IDc5IDI2IDc5LTMwLTQyLTEwLTU3LTctNjBsMzEtMTkgMzYtMjIgMzYgMjJ6TTU1IDE3M2wtMTctM2MtOC0xOS0yMC00NC0yNC01MC01LTctNy0xMS0xNC0xNWwxOC0yYzE2LTMgMjItNyAzMi0xMyAxIDYgMCA5IDIgMTQtNiA0LTIxIDEwLTI0IDE2IDMgMTQgNSAyNyAyNyA1M3ptMTYtMTFsLTktMi0xNC0yOWEzMCAzMCAwIDAgMC04LThoN2wxMy00IDQgN2MtMyAyLTcgMy04IDZhODYgODYgMCAwIDAgMTUgMzB6bTE3MiAxMWwxNy0zYzgtMTkgMjAtNDQgMjQtNTAgNS03IDctMTEgMTQtMTVsLTE4LTJjLTE2LTMtMjItNy0zMi0xMy0xIDYgMCA5LTIgMTQgNiA0IDIxIDEwIDI0IDE2LTMgMTQtNSAyNy0yNyA1M3ptLTE2LTExbDktMiAxNC0yOWEzMCAzMCAwIDAgMSA4LThoLTdsLTEzLTQtNCA3YzMgMiA3IDMgOCA2YTg2IDg2IDAgMCAxLTE1IDMwem0tNzktNDBsLTYtNmMtMSAzLTMgNi02IDdsNSA1YTUgNSAwIDAgMSAyIDB6bS0xMy0yYTQgNCAwIDAgMSAxLTJsMi0yYTQgNCAwIDAgMSAyLTFsNC0xNy0xNy0xMC04IDcgMTMgOC0yIDctNyAyLTgtMTItOCA4IDEwIDE3em0xMiAxMWE1IDUgMCAwIDAtNC0yIDQgNCAwIDAgMC0zIDFsLTMwIDI3YTUgNSAwIDAgMCAwIDdsNCA0YTYgNiAwIDAgMCA0IDIgNSA1IDAgMCAwIDMtMWwyNy0zMWMyLTIgMS01LTEtN3ptMzkgMjZsLTMwLTI4LTYgNmE1IDUgMCAwIDEgMCAzbDI2IDI5YTEgMSAwIDAgMCAxIDBsNS0yIDItMmMxLTIgMy01IDItNnptNS00NWEyIDIgMCAwIDAtNCAwbC0xIDEtMi00YzEtMy01LTktNS05LTEzLTE0LTIzLTE0LTI3LTEzLTIgMS0yIDEgMCAyIDE0IDIgMTUgMTAgMTMgMTNhNCA0IDAgMCAwLTEgMyAzIDMgMCAwIDAgMSAxbC0yMSAyMmE3IDcgMCAwIDEgNCAyIDggOCAwIDAgMSAyIDNsMjAtMjFhNyA3IDAgMCAwIDEgMSA0IDQgMCAwIDAgNCAwYzEtMSA2IDMgNyA0aC0xYTMgMyAwIDAgMCAwIDQgMiAyIDAgMCAwIDQgMGw2LTZhMyAzIDAgMCAwIDAtM3oiIGZpbGw9IiMyZTk2ZWYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg%3D%3D" alt="Supported by the Warframe Community Developers"></a>
-<a href="https://coveralls.io/github/WFCD/arsenal-parser?branch=main"><img src="https://coveralls.io/repos/github/WFCD/arsenal-parser/badge.svg?branch=main" alt="Coverage Status"></a>
-<a href="https://travis-ci.com/WFCD/arsenal-parser"><img src="https://travis-ci.com/WFCD/arsenal-parser.svg?branch=main" alt="Build Status"></a>
-<a href="https://discord.gg/jGZxH9f"><img src="https://img.shields.io/discord/256087517353213954.svg?logo=discord" alt="Discord"></a></p>
-<p>Documentation is available <a href="https://wfcd.github.io/arsenal-parser/">here</a></p>
-<h2>Example usage</h2>
-<pre class="prettyprint source lang-javascript"><code>const ArsenalData = require('ArsenalParser');
-const fetch = require('node-fetch');
-
-const baseURL = 'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
-
-async function fetchArsenal(username) {
-  // Fetch the data for the specified username
-  const data = await fetch(baseURL + encodeURIComponent(username.toLowerCase()))
-    .then((res) => res.json());
-  if (data.errors) {
-    throw new Error(data.errors);
+    if (!this.#isTransparent) {
+      this.#isTransparent = undefined;
+      items.forEach(({ name, description, hexColours }) => {
+        hexColours.forEach(({ value }, index) => {
+          if (value.toLowerCase().includes(hex.toLowerCase())) {
+            if (!this.#palettes.includes(name)) {
+              this.#matches.push({
+                palette: { name, description },
+                position: position(index),
+              });
+              this.#palettes.push(name);
+            }
+          }
+        });
+      });
+    }
   }
 
-  return new ArsenalData(data);
-}
+  /**
+   * Palette within the
+   * @returns {Array&lt;string>}
+   */
+  get palettes() {
+    return this.#palettes;
+  }
 
+  /**
+   * Pixel Coordinate matches
+   * @returns {Array&lt;PaletteEntry>}
+   */
+  get matches() {
+    return this.#matches;
+  }
 
-</code></pre></article>
-    </section>
+  /**
+   * Whether this pixel is transparent
+   * @returns {boolean}
+   */
+  get isTransparent() {
+    return this.#isTransparent;
+  }
 
+  get hex() {
+    return this.#hex;
+  }
 
+  toJSON() {
+    return {
+      matches: this.#matches,
+      isTransparent: this.#isTransparent,
+      hex: this.#hex,
+    };
+  }
+};
+</pre>
+    </article>
+</section>
 
 
 
@@ -132,10 +210,6 @@ async function fetchArsenal(username) {
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>
