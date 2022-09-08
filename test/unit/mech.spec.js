@@ -38,6 +38,7 @@ describe('WarframeMech', () => {
             {
               category: 'Skins',
               description: 'Bear down on the enemy with this alternative Necramech helmet.',
+              excludeFromCodex: true,
               imageName: 'bruntspar-necramech-helmet.png',
               name: 'Bruntspar Necramech Helmet',
               type: 'Skin',
