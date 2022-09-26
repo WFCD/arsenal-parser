@@ -92,6 +92,7 @@ describe('WarframeMech', () => {
             ],
             health: 1500,
             imageName: 'voidrig.png',
+            isPrime: false,
             masteryReq: 0,
             name: 'Voidrig',
             power: 150,
