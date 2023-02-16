@@ -39,8 +39,8 @@ module.exports = class ArsenalData {
 
     this.loadout.archwing = {};
     if (archwing && !archwing.hide) this.loadout.archwing.archwing = new Archwing(archwing);
-    if (archPrimary && !archPrimary.hide) this.loadout.archwing.primary = new Weapon(primary);
-    if (archMelee && !archMelee.hide) this.loadout.archwing.melee = new Weapon(melee);
+    if (archPrimary && !archPrimary.hide) this.loadout.archwing.primary = new Weapon(archPrimary);
+    if (archMelee && !archMelee.hide) this.loadout.archwing.melee = new Weapon(archMelee);
 
     if (parazon && !parazon.hide) this.loadout.parazon = new Parazon(parazon);
 
