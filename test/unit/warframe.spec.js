@@ -71,6 +71,7 @@ describe('Warframe', () => {
               type: 'Skin',
               imageName: 'nova-atomica-helmet.png',
               category: 'Skins',
+              masterable: false,
             },
           ],
           upgrades: { arcanes: [], mods: [] },

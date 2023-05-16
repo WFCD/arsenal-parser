@@ -47,6 +47,7 @@ describe('WarframeParazon', () => {
               type: 'Skin',
               imageName: 'sigma-series-parazon-skin.png',
               category: 'Skins',
+              masterable: false
             },
           ],
           colors: {
