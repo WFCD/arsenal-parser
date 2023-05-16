@@ -28,6 +28,7 @@ describe('WarframePlayer', () => {
           imageName: 'argonsix-glyph.png',
           category: 'Glyphs',
           tradable: false,
+          masterable: false,
         },
         focusSchool: 'Varazin',
       };
