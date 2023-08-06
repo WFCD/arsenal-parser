@@ -7,6 +7,7 @@ const items = new Items();
 
 // Utils.js Testing
 const utils = require('../../src/utils');
+const { marshall } = require('../utils');
 
 describe('utils', () => {
   describe('#loadMods', () => {
@@ -19,8 +20,8 @@ describe('utils', () => {
       const arcaneEnergize = utils.loadMods([sampleArcane]);
 
       assert.deepEqual(
-        arcaneEnergize.arcanes[0],
-        items.find((i) => i.name === 'Arcane Energize'),
+        marshall(arcaneEnergize.arcanes[0]),
+        marshall(items.find((i) => i.name === 'Arcane Energize')),
         'Arcane energize invalid'
       );
     });
@@ -74,7 +75,7 @@ describe('utils', () => {
       delete rivenMod.mods[0].baseDrain;
       delete rivenMod.mods[0].fusionLimit;
 
-      assert.deepEqual(rivenMod.mods[0], expectedRiven, 'Riven parsing failed');
+      assert.deepEqual(marshall(rivenMod.mods[0]), marshall(expectedRiven), 'Riven parsing failed');
     });
     it('should ignore mods that are unknown', () => {
       assert.deepEqual(
