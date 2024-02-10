@@ -15,7 +15,7 @@
     "@types/chai": "^4.2.16",
     "@types/node-fetch": "^2.6.1",
     "@wfcd/eslint-config": "^1.1.6",
-    "chai": "^4.3.4",
+    "chai": "^5.0.3",
     "chai-json-equal": "^0.0.1",
     "coveralls": "^3.1.0",
     "install-peerdeps": "2.0.3",
