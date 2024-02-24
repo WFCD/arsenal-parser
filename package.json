@@ -5,6 +5,13 @@
   "main": "src/ArsenalParser.js",
   "types": "./types/src/ArsenalParser.d.ts",
   "public": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/ArsenalParser.js",
+      "types": "./types/src/ArsenalParser.d.ts"
+    }
+  },
   "files": [
     "src",
     "LICENSE",
@@ -13,26 +20,25 @@
   ],
   "devDependencies": {
     "@types/chai": "^4.2.16",
-    "@types/node-fetch": "^2.6.1",
-    "@wfcd/eslint-config": "^1.1.6",
+    "@wfcd/eslint-config": "^1.6.1",
+    "c8": "^9.1.0",
     "chai": "^4.3.4",
     "chai-json-equal": "^0.0.1",
     "coveralls": "^3.1.0",
-    "install-peerdeps": "2.0.3",
+    "install-peerdeps": "^3.0.3",
     "mocha": "^10.0.0",
-    "node-fetch": "^2.6.1",
-    "nyc": "^15.1.0",
     "typescript": "^5.0.2"
   },
   "scripts": {
-    "test": "nyc mocha",
+    "test": "c8 mocha",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src/ test/",
     "lint:fix": "eslint src/ test/ --fix",
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.1.6 -S"
+    "postinstall": "install-peerdeps @wfcd/eslint-config@latest -S",
+    "validate": "npm ls"
   },
   "keywords": [
     "warframe",
@@ -52,42 +58,13 @@
   },
   "repository": "https://github.com/wfcd/arsenal-parser",
   "engines": {
-    "node": ">=12.18.3",
-    "npm": ">=6.14.6"
+    "node": ">=18.19.0"
   },
   "eslintConfig": {
-    "extends": "@wfcd",
+    "extends": "@wfcd/eslint-config/esm",
     "parser": "@babel/eslint-parser",
     "parserOptions": {
-      "sourceType": "script"
-    },
-    "rules": {
-      "valid-jsdoc": [
-        "error",
-        {
-          "requireReturn": false,
-          "requireReturnDescription": false,
-          "preferType": {
-            "String": "string",
-            "Number": "number",
-            "Boolean": "boolean",
-            "Function": "function",
-            "object": "Object",
-            "date": "Date",
-            "error": "Error"
-          },
-          "prefer": {
-            "return": "returns"
-          }
-        }
-      ],
-      "no-underscore-dangle": "off",
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "peerDependencies": true
-        }
-      ]
+      "sourceType": "module"
     }
   },
   "babel": {
@@ -109,7 +86,7 @@
     "exit": true,
     "spec": "test/**/*.spec.js"
   },
-  "nyc": {
+  "c8": {
     "reporter": [
       "lcov",
       "text"
@@ -117,6 +94,7 @@
     "skip-full": true
   },
   "peerDependencies": {
-    "warframe-items": "^1.1260.46"
+    "warframe-items": "^1.1262.0",
+    "warframe-worldstate-data": "^2.3.1"
   }
 }

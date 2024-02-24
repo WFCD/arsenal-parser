@@ -1,16 +1,14 @@
-'use strict';
+import { assert } from 'chai';
+import Items from 'warframe-items';
 
-const { assert } = require('chai');
-const Items = require('warframe-items');
+// Companion.js testing
+import WarframeCompanion from '../../src/Companion.js';
+import { marshall } from '../utils.js';
 
 const items = new Items({ category: ['Pets'] });
 
 const cheshire = items.find((i) => i.uniqueName === '/Lotus/Types/Game/CatbrowPet/CheshireCatbrowPetPowerSuit');
 delete cheshire.patchlogs;
-
-// Companion.js testing
-const WarframeCompanion = require('../../src/Companion');
-const { marshall } = require('../utils');
 
 describe('WarframeCompanion', () => {
   describe('#constructor', () => {

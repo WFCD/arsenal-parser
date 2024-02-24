@@ -1,9 +1,7 @@
-'use strict';
-
-const { assert } = require('chai');
+import { assert } from 'chai';
 
 // Archwing.js testing
-const WarframeArchwing = require('../../src/Archwing');
+import WarframeArchwing from '../../src/Archwing.js';
 
 describe('WarframeArchwing', () => {
   describe('#constructor', () => {

@@ -1,10 +1,8 @@
-'use strict';
-
-const { assert } = require('chai');
+import { assert } from 'chai';
 // Companion.js testing
-const Items = require('warframe-items');
+import Items from 'warframe-items';
 
-const WarframeMech = require('../../src/Mech');
+import WarframeMech from '../../src/Mech.js';
 
 const items = new Items();
 

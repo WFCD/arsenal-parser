@@ -1,15 +1,16 @@
-'use strict';
+import { assert } from 'chai';
+import Items from 'warframe-items';
+import { find } from 'warframe-items/utilities';
+import { translateFocus, translatePolarity } from 'warframe-worldstate-data/utilities';
 
-const { assert } = require('chai');
-const Items = require('warframe-items');
+// js Testing
+import { marshall } from '../utils.js';
+
+const { loadMods } = find;
 
 const items = new Items();
 
-// Utils.js Testing
-const utils = require('../../src/utils');
-const { marshall } = require('../utils');
-
-describe('utils', () => {
+describe('utilities', () => {
   describe('#loadMods', () => {
     it('Should parse an arcane correctly', () => {
       const sampleArcane = {
@@ -17,7 +18,7 @@ describe('utils', () => {
         rank: 5,
       };
 
-      const arcaneEnergize = utils.loadMods([sampleArcane]);
+      const arcaneEnergize = loadMods([sampleArcane]);
 
       assert.deepEqual(
         marshall(arcaneEnergize.arcanes[0]),
@@ -31,7 +32,7 @@ describe('utils', () => {
         rank: 5,
       };
 
-      const hunterCommand = utils.loadMods([sampleMod]);
+      const hunterCommand = loadMods([sampleMod]);
 
       assert.deepEqual(
         hunterCommand.mods[0],
@@ -53,7 +54,7 @@ describe('utils', () => {
         pol: 'AP_DEFENSE',
       };
 
-      const rivenMod = utils.loadMods([sampleRiven]);
+      const rivenMod = loadMods([sampleRiven]);
 
       const expectedRiven = {
         uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
@@ -79,19 +80,19 @@ describe('utils', () => {
     });
     it('should ignore mods that are unknown', () => {
       assert.deepEqual(
-        utils.loadMods([{ uniqueName: 'MyFakeModName' }]),
+        loadMods([{ uniqueName: 'MyFakeModName' }]),
         { arcanes: [], mods: [] },
         'Nonexistant mods not ignored'
       );
     });
     it('should handle being passed an undefined value', () => {
-      assert.deepEqual(utils.loadMods(undefined), { arcanes: [], mods: [] }, 'Failed with no input');
+      assert.deepEqual(loadMods(undefined), { arcanes: [], mods: [] }, 'Failed with no input');
     });
     it('should handle being passed a mod that should not have a rank assigned', () => {
       const sampleParazonMod = {
         uniqueName: '/Lotus/Upgrades/Mods/DataSpike/Cipher/AutoHackMod',
       };
-      const parazonMod = utils.loadMods([sampleParazonMod]);
+      const parazonMod = loadMods([sampleParazonMod]);
       assert.deepEqual(
         parazonMod.mods[0].levelStats[0],
         { stats: ['+30% chance to auto complete Hacking'] },
@@ -102,26 +103,26 @@ describe('utils', () => {
 
   describe('#translateFocus', () => {
     it('should respond with None if undefined', () => {
-      assert.equal(utils.translateFocus(undefined), 'None', 'Undefined focus was not None');
+      assert.equal(translateFocus(undefined), 'None', 'Undefined focus was not None');
     });
     it('should correctly determine focus schools', () => {
-      assert.equal(utils.translateFocus('Focus/Attack'), 'Madurai', 'Focus school incorrect');
-      assert.equal(utils.translateFocus('Focus/Defense'), 'Varazin', 'Focus school incorrect');
-      assert.equal(utils.translateFocus('Focus/Tactic'), 'Naramon', 'Focus school incorrect');
-      assert.equal(utils.translateFocus('Focus/Power'), 'Zenurik', 'Focus school incorrect');
-      assert.equal(utils.translateFocus('Focus/Ward'), 'Unairu', 'Focus school incorrect');
+      assert.equal(translateFocus('Focus/Attack'), 'Madurai', 'Focus school incorrect');
+      assert.equal(translateFocus('Focus/Defense'), 'Varazin', 'Focus school incorrect');
+      assert.equal(translateFocus('Focus/Tactic'), 'Naramon', 'Focus school incorrect');
+      assert.equal(translateFocus('Focus/Power'), 'Zenurik', 'Focus school incorrect');
+      assert.equal(translateFocus('Focus/Ward'), 'Unairu', 'Focus school incorrect');
     });
   });
   describe('#translatePolarity', () => {
     it('should respond with None if undefined', () => {
-      assert.equal(utils.translatePolarity(undefined), 'None', 'Undefined polarity was not None');
+      assert.equal(translatePolarity(undefined), 'None', 'Undefined polarity was not None');
     });
     it('should correctly determine polarities', () => {
-      assert.equal(utils.translatePolarity('AP_ATTACK'), 'Madurai', 'Polarity incorrect');
-      assert.equal(utils.translatePolarity('AP_DEFENSE'), 'Varazin', 'Polarity incorrect');
-      assert.equal(utils.translatePolarity('AP_TACTIC'), 'Naramon', 'Polarity incorrect');
-      assert.equal(utils.translatePolarity('AP_POWER'), 'Zenurik', 'Polarity incorrect');
-      assert.equal(utils.translatePolarity('AP_WARD'), 'Unairu', 'Polarity incorrect');
+      assert.equal(translatePolarity('AP_ATTACK'), 'Madurai', 'Polarity incorrect');
+      assert.equal(translatePolarity('AP_DEFENSE'), 'Varazin', 'Polarity incorrect');
+      assert.equal(translatePolarity('AP_TACTIC'), 'Naramon', 'Polarity incorrect');
+      assert.equal(translatePolarity('AP_POWER'), 'Zenurik', 'Polarity incorrect');
+      assert.equal(translatePolarity('AP_WARD'), 'Unairu', 'Polarity incorrect');
     });
   });
 });

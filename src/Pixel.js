@@ -1,6 +1,4 @@
-'use strict';
-
-const Items = require('warframe-items');
+import Items from 'warframe-items';
 
 const items = new Items().filter((i) => i.hexColours);
 
@@ -34,7 +32,7 @@ const position = (ind) => ({
  * @property {PaletteCoordinate}
  */
 
-module.exports = class Pixel {
+export default class Pixel {
   /** Raw hex value
    * @type string
    */
@@ -117,4 +115,4 @@ module.exports = class Pixel {
       hex: this.#hex,
     };
   }
-};
+}

@@ -1,10 +1,8 @@
-'use strict';
-
-const { assert } = require('chai');
+import { assert } from 'chai';
 
 // Warframe.js testing
-const Warframe = require('../../src/Warframe');
-const { marshall } = require('../utils');
+import Warframe from '../../src/Warframe.js';
+import { marshall } from '../utils.js';
 
 describe('Warframe', () => {
   describe('#constructor', () => {

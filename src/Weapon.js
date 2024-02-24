@@ -1,21 +1,20 @@
-'use strict';
+import { find, colors } from 'warframe-items/utilities';
 
-const { items, loadMods, mapColors } = require('./utils');
+const { findItem, loadMods } = find;
+const { mapColors } = colors;
 
-module.exports = class WarframeWeapon {
+export default class WarframeWeapon {
   constructor(weapon) {
     this.xp = weapon.xp;
     this.polarized = weapon.polarized;
     this.upgrades = loadMods(weapon.upgrades);
     if (weapon.itemName) this.itemName = weapon.itemName;
-    this.cosmetics = (weapon.skins || []).map(
-      (skin) => items.find((item) => item.uniqueName === skin.uniqueName) || skin
-    );
+    this.cosmetics = (weapon.skins || []).map((skin) => findItem(skin.uniqueName) || skin);
 
     if (weapon.modularParts) {
       const parts = {};
       Object.keys(weapon.modularParts).forEach((part) => {
-        parts[part] = items.find((item) => item.uniqueName === weapon.modularParts[part]) || {
+        parts[part] = findItem(weapon.modularParts[part]) || {
           uniqueName: weapon.modularParts[part],
         };
       });
@@ -34,7 +33,7 @@ module.exports = class WarframeWeapon {
 
       this.parts = parts;
     } else {
-      this.weapon = items.find((item) => item.uniqueName === weapon.uniqueName) || weapon;
+      this.weapon = findItem(weapon.uniqueName) || weapon;
       delete this.weapon.components;
       delete this.weapon.patchlogs;
       this.colors = mapColors(weapon.pricol);
@@ -44,4 +43,4 @@ module.exports = class WarframeWeapon {
       delete this.weapon.damagePerShot;
     }
   }
-};
+}

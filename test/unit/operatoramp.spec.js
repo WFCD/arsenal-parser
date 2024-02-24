@@ -1,13 +1,11 @@
-'use strict';
-
-const { assert } = require('chai');
-const Items = require('warframe-items');
-
-const items = new Items();
+import { assert } from 'chai';
+import Items from 'warframe-items';
 
 // OperatorAmp.js testing
-const OperatorAmp = require('../../src/OperatorAmp');
-const { marshall } = require('../utils');
+import OperatorAmp from '../../src/OperatorAmp.js';
+import { marshall } from '../utils.js';
+
+const items = new Items();
 
 describe('OperatorAmp', () => {
   describe('#constructor', () => {

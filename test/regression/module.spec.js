@@ -1,10 +1,8 @@
-'use strict';
+import { assert } from 'chai';
 
-const { assert } = require('chai');
+import ArsenalData from '../../src/ArsenalParser.js';
 
-const ArsenalData = require('../../src/ArsenalParser');
-
-const fetch = require('./fetch');
+import fetch from './fetch.js';
 
 const working = async () => {
   try {

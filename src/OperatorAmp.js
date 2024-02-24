@@ -1,21 +1,22 @@
-'use strict';
+import { find, colors } from 'warframe-items/utilities';
 
-const { items, mapColors } = require('./utils');
+const { findItem } = find;
+const { mapColors } = colors;
 
-module.exports = class OperatorAmp {
+export default class OperatorAmp {
   constructor(amp) {
     this.xp = amp.xp;
     this.polarized = amp.polarized;
-    this.amp = items.find((item) => item.uniqueName === amp.uniqueName) || amp;
+    this.amp = findItem(amp.uniqueName) || amp;
     if (!amp.modularParts) return;
     this.parts = {
-      prism: items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_OCULUS) || {
+      prism: findItem(amp.modularParts.LWPT_AMP_OCULUS) || {
         uniqueName: amp.modularParts.LWPT_AMP_OCULUS,
       },
-      scaffold: items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_CORE) || {
+      scaffold: findItem(amp.modularParts.LWPT_AMP_CORE) || {
         uniqueName: amp.modularParts.LWPT_AMP_CORE,
       },
-      brace: items.find((item) => item.uniqueName === amp.modularParts.LWPT_AMP_BRACE) || {
+      brace: findItem(amp.modularParts.LWPT_AMP_BRACE) || {
         uniqueName: amp.modularParts.LWPT_AMP_BRACE,
       },
     };
@@ -33,4 +34,4 @@ module.exports = class OperatorAmp {
     });
     this.colors = mapColors(amp.pricol);
   }
-};
+}

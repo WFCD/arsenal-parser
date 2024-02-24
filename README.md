@@ -12,8 +12,8 @@ Documentation is available [here](https://wfcd.github.io/arsenal-parser/)
 ## Example usage
 
 ```javascript
-const ArsenalData = require('ArsenalParser');
-const fetch = require('node-fetch');
+import ArsenalData from 'ArsenalParser.js';
+import fetch from 'node-fetch.js';
 
 const baseURL = 'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
 

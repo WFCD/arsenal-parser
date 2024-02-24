@@ -41,3 +41,5 @@ test/data.json
 docs/
 wfcd-arsenal-parser-*.tgz
 !.github/docs
+.jshintignore
+.jshintrc

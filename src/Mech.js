@@ -1,8 +1,9 @@
-'use strict';
+import { find, colors } from 'warframe-items/utilities';
 
-const { loadMods, mapColors, findItem } = require('./utils');
+const { findItem, loadMods } = find;
+const { mapColors } = colors;
 
-module.exports = class WarframeMech {
+export default class WarframeMech {
   constructor(mech) {
     this.mech = findItem(mech.uniqueName) || mech;
 
@@ -39,4 +40,4 @@ module.exports = class WarframeMech {
     // ?? no idea what this is
     this.features = mech.features;
   }
-};
+}

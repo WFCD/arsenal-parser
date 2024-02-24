@@ -1,9 +1,7 @@
-'use strict';
-
-const { assert } = require('chai');
+import { assert } from 'chai';
 
 // Weapon.js testing
-const WarframeWeapon = require('../../src/Weapon');
+import WarframeWeapon from '../../src/Weapon.js';
 
 describe('WarframeWeapon', () => {
   describe('#constructor', () => {
