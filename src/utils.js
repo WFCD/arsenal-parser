@@ -1,6 +1,7 @@
 'use strict';
 
 const Items = require('warframe-items');
+
 const Pixel = require('./Pixel');
 
 const items = new Items();

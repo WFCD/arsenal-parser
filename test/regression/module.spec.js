@@ -1,9 +1,10 @@
 'use strict';
 
 const { assert } = require('chai');
-const fetch = require('./fetch');
 
 const ArsenalData = require('../../src/ArsenalParser');
+
+const fetch = require('./fetch');
 
 const working = async () => {
   try {

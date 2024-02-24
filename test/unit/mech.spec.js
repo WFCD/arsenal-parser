@@ -1,9 +1,9 @@
 'use strict';
 
 const { assert } = require('chai');
-
 // Companion.js testing
 const Items = require('warframe-items');
+
 const WarframeMech = require('../../src/Mech');
 
 const items = new Items();
