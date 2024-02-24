@@ -8,17 +8,15 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['lts/*']
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version-file: .nvmrc
     - run: |
         npm install
         npm i warframe-items@latest
+        npm i warframe-worldstate-data@latest
         npm run lint
   test:
     name: Test
@@ -26,7 +24,7 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        node-version: [14, 16, 'lts/*']
+        node-version: ['lts/hydrogen', 'lts/gallium', 'lts/iron', 'lts/*']
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -37,30 +35,28 @@ jobs:
     - name: Test
       env:
         CI: true
-        TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
       run: | 
         npm install
         npm i warframe-items@latest
+        npm i warframe-worldstate-data@latest
         npm test
   coverage:
     name: Coverage
     runs-on: ubuntu-latest
     needs: lint
-    strategy:
-      matrix:
-        node-version: ['lts/*']
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm i warframe-items@latest
+          node-version-file: '.nvmrc'
+      - run: |
+          npm install
+          npm i warframe-items@latest
+          npm i warframe-worldstate-data@latest
       - run: npm test
         env:
           CI: true
-          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
-          github-token: ${{ secrets.github_token }}
+          github-token: ${{ secrets.GH_TOKEN }}
