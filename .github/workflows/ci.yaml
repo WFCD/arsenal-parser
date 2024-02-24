@@ -15,8 +15,8 @@ jobs:
         node-version-file: .nvmrc
     - run: |
         npm install
-        npm i warframe-items@latest
-        npm i warframe-worldstate-data@latest
+        npm i --no-save warframe-items@latest
+        npm i --no-save warframe-worldstate-data@latest
         npm run lint
   test:
     name: Test
@@ -37,8 +37,8 @@ jobs:
         CI: true
       run: | 
         npm install
-        npm i warframe-items@latest
-        npm i warframe-worldstate-data@latest
+        npm i --no-save warframe-items@latest
+        npm i --no-save warframe-worldstate-data@latest
         npm test
   coverage:
     name: Coverage
@@ -51,8 +51,8 @@ jobs:
           node-version-file: '.nvmrc'
       - run: |
           npm install
-          npm i warframe-items@latest
-          npm i warframe-worldstate-data@latest
+          npm i --no-save warframe-items@latest
+          npm i --no-save warframe-worldstate-data@latest
       - run: npm test
         env:
           CI: true

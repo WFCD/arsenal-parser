@@ -23,6 +23,6 @@ jobs:
     - name: Test
       run: |
         npm ci
-        npm i warframe-items@latest
-        npm i warframe-worldstate-data@latest
+        npm i --no-save warframe-items@latest
+        npm i --no-save warframe-worldstate-data@latest
         npm test
