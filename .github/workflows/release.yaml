@@ -3,7 +3,9 @@ on:
   push:
     branches:
       - main
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   release:
     name: Release
@@ -20,8 +22,8 @@ jobs:
       - name: Test
         run: |
           npm ci
-          npm i warframe-items@latest
-          npm i warframe-worldstate-data@latest
+          npm i --no-save warframe-items@latest
+          npm i --no-save warframe-worldstate-data@latest
           npm run lint
           npm test
       - name: Semantic Release

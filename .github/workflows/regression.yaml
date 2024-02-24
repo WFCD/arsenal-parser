@@ -5,7 +5,9 @@ on:
       - main
   schedule:
     - cron: "0 * */5 * *"
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     name: Test
@@ -23,6 +25,6 @@ jobs:
     - name: Test
       run: |
         npm ci
-        npm i warframe-items@latest
-        npm i warframe-worldstate-data@latest
+        npm i --no-save warframe-items@latest
+        npm i --no-save warframe-worldstate-data@latest
         npm test
