@@ -24,7 +24,7 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        node-version: ['lts/hydrogen', 'lts/gallium', 'lts/iron', 'lts/*']
+        node-version: ['lts/gallium', 'lts/hydrogen', 'lts/iron', 'lts/*']
     steps:
     - name: Checkout
       uses: actions/checkout@v3
