@@ -1,16 +1,15 @@
-'use strict';
+import { colors } from 'warframe-items/utilities';
+import { assert } from 'chai';
 
-const { assert } = require('chai');
+const { safeColor } = colors;
 
 // Archwing.js testing
-const Pixel = require('../../src/Pixel');
-
 describe('Pixel', () => {
   describe('#constructor', () => {
     it('should parse and match hex codes', () => {
       const sampleCodes = ['2E203D', '9078EA', 'D6A3EC', '49667C', 'E6B0FE', 'E6B0FE', '2E203D'];
       sampleCodes.forEach((hex) => {
-        const pixel = new Pixel(hex);
+        const pixel = safeColor(hex);
         assert.equal(pixel.hex, hex, 'Hex mismatch');
         assert.isNotEmpty(pixel.matches, 'No matches resolved');
         assert.isNotEmpty(pixel.palettes, 'Real pixels should give palettes');
@@ -20,7 +19,7 @@ describe('Pixel', () => {
 
     it('should handle being passed an unknown hex', () => {
       const fakeHex = '023nva';
-      const fakePixel = new Pixel(fakeHex);
+      const fakePixel = safeColor(fakeHex);
 
       assert.isOk(fakePixel);
       assert.equal(fakePixel.hex, fakeHex, 'Hex mismatch');

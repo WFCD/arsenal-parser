@@ -1,10 +1,11 @@
-'use strict';
+import { find, colors } from 'warframe-items/utilities';
 
-const { items, loadMods, mapColors } = require('./utils');
+const { findItem, loadMods } = find;
+const { mapColors } = colors;
 
-module.exports = class Warframe {
+export default class Warframe {
   constructor(frame) {
-    this.warframe = items.find((item) => item.uniqueName === frame.uniqueName) || frame;
+    this.warframe = findItem(frame.uniqueName) || frame;
     delete this.warframe.patchlogs;
     delete this.warframe.components;
     delete this.warframe.buildPrice;
@@ -18,9 +19,7 @@ module.exports = class Warframe {
     this.xp = frame.xp;
     this.polarized = frame.polarized;
     this.features = frame.polarized;
-    this.cosmetics = (frame.skins || []).map(
-      (skin) => items.find((item) => item.uniqueName === skin.uniqueName) || skin
-    );
+    this.cosmetics = (frame.skins || []).map((skin) => findItem(skin.uniqueName) || skin);
 
     this.cosmetics.forEach((cosmetic) => {
       /* eslint-disable no-param-reassign */
@@ -42,4 +41,4 @@ module.exports = class Warframe {
       attachments: mapColors(frame.attcol),
     };
   }
-};
+}

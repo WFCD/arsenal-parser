@@ -1,10 +1,8 @@
-'use strict';
-
-const { assert } = require('chai');
+import { assert } from 'chai';
 
 // Parazon.js testing
-const WarframeParazon = require('../../src/Parazon');
-const { marshall } = require('../utils');
+import WarframeParazon from '../../src/Parazon.js';
+import { marshall } from '../utils.js';
 
 describe('WarframeParazon', () => {
   describe('#constructor', () => {

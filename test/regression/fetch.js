@@ -1,9 +1,4 @@
-'use strict';
-
 // based off of derrod's usage on github: https://github.com/derrod/warfra_re/blob/master/twitch/arsenal.py
-
-const fetch = require('node-fetch');
-
 const BASE_URL = 'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
 
 const CLIENT_ID = process.env.TWITCH_CLIENT_ID;
@@ -22,7 +17,7 @@ const v5Token = async () => {
   )?.tokens?.find((s) => s.extension_id === WF_ARSENAL_ID)?.token;
 };
 
-module.exports = async (username) => {
+export default async (username) => {
   if (!CLIENT_ID) throw new Error('No defined client id');
   if (cache[username]) return cache[username];
 

@@ -1,8 +1,8 @@
-'use strict';
+import { find } from 'warframe-items/utilities';
+import { translateFocus } from 'warframe-worldstate-data/utilities';
 
-const { translateFocus, items } = require('./utils');
-
-module.exports = /** Warframe Player information */ class WarframePlayer {
+const { findItem } = find;
+export default /** Warframe Player information */ class WarframePlayer {
   /**
    * Player name
    * @type {string}
@@ -33,7 +33,7 @@ module.exports = /** Warframe Player information */ class WarframePlayer {
     this.#name = data.playerName;
     this.#masteryRank = data.masteryRank;
     this.#lastUpdated = new Date(data.lastUpdated * 1000);
-    this.#glyph = items.find((item) => item.uniqueName === data.glyph) || data.glyph;
+    this.#glyph = findItem(data.glyph) || data.glyph;
     this.#focusSchool = translateFocus(data.focus || '');
   }
 
@@ -82,4 +82,4 @@ module.exports = /** Warframe Player information */ class WarframePlayer {
       focusSchool: this.#focusSchool,
     };
   }
-};
+}

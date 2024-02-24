@@ -1,15 +1,13 @@
-'use strict';
+import Player from './Player.js';
+import Warframe from './Warframe.js';
+import Weapon from './Weapon.js';
+import Archwing from './Archwing.js';
+import Parazon from './Parazon.js';
+import Amp from './OperatorAmp.js';
+import Companion from './Companion.js';
+import Mech from './Mech.js';
 
-const Player = require('./Player');
-const Warframe = require('./Warframe');
-const Weapon = require('./Weapon');
-const Archwing = require('./Archwing');
-const Parazon = require('./Parazon');
-const Amp = require('./OperatorAmp');
-const Companion = require('./Companion');
-const Mech = require('./Mech');
-
-module.exports = class ArsenalData {
+export default class ArsenalData {
   constructor(data) {
     this.account = new Player(data.account || data.accountInfo);
 
@@ -58,4 +56,4 @@ module.exports = class ArsenalData {
       if (mechExalted && !mechExalted.hide) this.loadout.mech.exalted = new Weapon(mechExalted);
     }
   }
-};
+}

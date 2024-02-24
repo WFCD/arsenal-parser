@@ -1,10 +1,11 @@
-'use strict';
+import { find, colors } from 'warframe-items/utilities';
 
-const { items, loadMods, mapColors } = require('./utils');
+const { findItem, loadMods } = find;
+const { mapColors } = colors;
 
-module.exports = class WarframeArchwing {
+export default class WarframeArchwing {
   constructor(archwing) {
-    this.archwing = items.find((item) => item.uniqueName === archwing.uniqueName) || archwing;
+    this.archwing = findItem(archwing.uniqueName) || archwing;
     delete this.archwing.components;
     delete this.archwing.patchlogs;
     this.xp = archwing.xp;
@@ -16,4 +17,4 @@ module.exports = class WarframeArchwing {
       attachments: mapColors(archwing.attcol),
     };
   }
-};
+}

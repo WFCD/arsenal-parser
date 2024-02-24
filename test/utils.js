@@ -1,10 +1,6 @@
-'use strict';
-
-module.exports = {
-  marshall: (obj) => {
-    const parsed = JSON.parse(JSON.stringify(obj));
-    if (parsed.wikiaUrl) delete parsed.wikiaUrl;
-    if (parsed.wikiaThumbnail) delete parsed.wikiaThumbnail;
-    return parsed;
-  },
+export const marshall = (obj) => {
+  const parsed = JSON.parse(JSON.stringify(obj));
+  if (parsed.wikiaUrl) delete parsed.wikiaUrl;
+  if (parsed.wikiaThumbnail) delete parsed.wikiaThumbnail;
+  return parsed;
 };

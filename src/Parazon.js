@@ -1,17 +1,16 @@
-'use strict';
+import { find, colors } from 'warframe-items/utilities';
 
-const { items, loadMods, mapColors } = require('./utils');
+const { findItem, loadMods } = find;
+const { mapColors } = colors;
 
-module.exports = class WarframeParazon {
+export default class WarframeParazon {
   constructor(parazon) {
     this.uniqueName = parazon.uniqueName;
     this.xp = parazon.xp;
     this.polarized = parazon.polarized;
     this.upgrades = loadMods(parazon.upgrades);
     if (parazon.skins) {
-      this.cosmetics = parazon.skins.map(
-        (cosmetic) => items.find((item) => item.uniqueName === cosmetic.uniqueName) || cosmetic
-      );
+      this.cosmetics = parazon.skins.map((cosmetic) => findItem(cosmetic.uniqueName) || cosmetic);
 
       this.cosmetics.forEach((cosmetic) => {
         /* eslint-disable no-param-reassign */
@@ -28,4 +27,4 @@ module.exports = class WarframeParazon {
 
     this.colors = mapColors(parazon.pricol);
   }
-};
+}
