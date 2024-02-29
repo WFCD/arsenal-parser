@@ -94,7 +94,7 @@
     "skip-full": true
   },
   "peerDependencies": {
-    "warframe-items": "^1.1262.0",
-    "warframe-worldstate-data": "^2.3.1"
+    "warframe-items": ">=1.1262.0",
+    "warframe-worldstate-data": ">=2.3.1"
   }
 }
