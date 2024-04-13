@@ -58,7 +58,7 @@ describe('utilities', () => {
 
       const expectedRiven = {
         uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
-        polarity: 'Varazin',
+        polarity: 'Vazarin',
         rarity: 'Common',
         imageName: 'rifle-riven-mod.png',
         category: 'Mods',
@@ -107,7 +107,7 @@ describe('utilities', () => {
     });
     it('should correctly determine focus schools', () => {
       assert.equal(translateFocus('Focus/Attack'), 'Madurai', 'Focus school incorrect');
-      assert.equal(translateFocus('Focus/Defense'), 'Varazin', 'Focus school incorrect');
+      assert.equal(translateFocus('Focus/Defense'), 'Vazarin', 'Focus school incorrect');
       assert.equal(translateFocus('Focus/Tactic'), 'Naramon', 'Focus school incorrect');
       assert.equal(translateFocus('Focus/Power'), 'Zenurik', 'Focus school incorrect');
       assert.equal(translateFocus('Focus/Ward'), 'Unairu', 'Focus school incorrect');
@@ -119,7 +119,7 @@ describe('utilities', () => {
     });
     it('should correctly determine polarities', () => {
       assert.equal(translatePolarity('AP_ATTACK'), 'Madurai', 'Polarity incorrect');
-      assert.equal(translatePolarity('AP_DEFENSE'), 'Varazin', 'Polarity incorrect');
+      assert.equal(translatePolarity('AP_DEFENSE'), 'Vazarin', 'Polarity incorrect');
       assert.equal(translatePolarity('AP_TACTIC'), 'Naramon', 'Polarity incorrect');
       assert.equal(translatePolarity('AP_POWER'), 'Zenurik', 'Polarity incorrect');
       assert.equal(translatePolarity('AP_WARD'), 'Unairu', 'Polarity incorrect');

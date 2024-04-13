@@ -28,7 +28,7 @@ describe('WarframePlayer', () => {
           tradable: false,
           masterable: false,
         },
-        focusSchool: 'Varazin',
+        focusSchool: 'Vazarin',
       };
 
       const player = new WarframePlayer(samplePlayer);
