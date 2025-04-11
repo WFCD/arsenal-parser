@@ -43,7 +43,7 @@ describe('WarframeParazon', () => {
               name: 'Sigma Series Parazon Skin',
               description: 'This Parazon model was gifted to the first Warframe Railjack crews.',
               type: 'Skin',
-              imageName: 'sigma-series-parazon-skin.png',
+              imageName: 'sigma-series-parazon-skin-b5e793d9a5.png',
               category: 'Skins',
               masterable: false,
             },

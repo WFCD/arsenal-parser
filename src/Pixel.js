@@ -1,4 +1,4 @@
-import Items from 'warframe-items';
+import Items from '@wfcd/items';
 
 const items = new Items().filter((i) => i.hexColours);
 

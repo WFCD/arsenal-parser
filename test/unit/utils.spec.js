@@ -1,6 +1,6 @@
 import { assert } from 'chai';
-import Items from 'warframe-items';
-import { find } from 'warframe-items/utilities';
+import Items from '@wfcd/items';
+import { find } from '@wfcd/items/utilities';
 import { translateFocus, translatePolarity } from 'warframe-worldstate-data/utilities';
 
 // js Testing
@@ -60,7 +60,7 @@ describe('utilities', () => {
         uniqueName: '/Lotus/Upgrades/Mods/Randomized/LotusRifleRandomModRare',
         polarity: 'Vazarin',
         rarity: 'Common',
-        imageName: 'rifle-riven-mod.png',
+        imageName: 'rifle-riven-mod-e05c5519f1.png',
         category: 'Mods',
         buffs: [
           { tag: 'WeaponCritDamageMod', val: 0.3296302411049886 },

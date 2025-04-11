@@ -5,7 +5,9 @@ import Player from '../../src/Player.js';
 
 const examples = (
   await Promise.all(
-    new Array(6).fill(0).map((_, i) => import(`../data/exampleData${i + 1}.json`, { assert: { type: 'json' } }))
+    new Array(6)
+      .fill(0)
+      .map((_, i) => import(`../data/exampleData${i + 1}.json`, { with: { type: 'json' }, assert: { type: 'json' } }))
   )
 ).map((p) => p.default);
 
