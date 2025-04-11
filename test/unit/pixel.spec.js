@@ -1,4 +1,4 @@
-import { colors } from 'warframe-items/utilities';
+import { colors } from '@wfcd/items/utilities';
 import { assert } from 'chai';
 
 const { safeColor } = colors;

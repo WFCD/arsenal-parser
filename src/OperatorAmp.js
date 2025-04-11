@@ -1,4 +1,4 @@
-import { find, colors } from 'warframe-items/utilities';
+import { find, colors } from '@wfcd/items/utilities';
 
 const { findItem } = find;
 const { mapColors } = colors;

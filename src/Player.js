@@ -1,4 +1,4 @@
-import { find } from 'warframe-items/utilities';
+import { find } from '@wfcd/items/utilities';
 import { translateFocus } from 'warframe-worldstate-data/utilities';
 
 const { findItem } = find;

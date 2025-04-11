@@ -67,7 +67,7 @@ describe('Warframe', () => {
               name: 'Nova Atomica Helmet',
               description: "Nova Atomica's signature helmet.",
               type: 'Skin',
-              imageName: 'nova-atomica-helmet.png',
+              imageName: 'nova-atomica-helmet-0161cc5d10.png',
               category: 'Skins',
               masterable: false,
             },
@@ -222,6 +222,16 @@ describe('Warframe', () => {
               tertiary: {
                 hex: 'BABABA',
                 matches: [
+                  {
+                    palette: {
+                      description: 'The exquisite colors of the Prime collection.',
+                      name: 'Prime Lacquer',
+                    },
+                    position: {
+                      col: 4,
+                      row: 2,
+                    },
+                  },
                   {
                     palette: {
                       name: 'Tenno',

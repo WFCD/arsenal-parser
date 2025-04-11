@@ -44,7 +44,9 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "body-max-line-length": [0]
+      "body-max-line-length": [
+        0
+      ]
     }
   },
   "lint-staged": {
@@ -111,8 +113,8 @@
     "typescript": "^5.0.2"
   },
   "peerDependencies": {
-    "warframe-items": ">=1.1262.0",
-    "warframe-worldstate-data": ">=2.3.1"
+    "@wfcd/items": ">=1.1270.0",
+    "warframe-worldstate-data": "^2.24.8"
   },
   "engines": {
     "node": ">=18.19.0"

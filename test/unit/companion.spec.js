@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import Items from 'warframe-items';
+import Items from '@wfcd/items';
 
 // Companion.js testing
 import WarframeCompanion from '../../src/Companion.js';

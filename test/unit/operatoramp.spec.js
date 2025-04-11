@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import Items from 'warframe-items';
+import Items from '@wfcd/items';
 
 // OperatorAmp.js testing
 import OperatorAmp from '../../src/OperatorAmp.js';
@@ -115,7 +115,7 @@ describe('OperatorAmp', () => {
                 palette: {
                   name: 'Lotus',
                   description:
-                    'A set of colors inspired by the Lotus.Unlocks additional color options for Warframe customization.',
+                    'A set of colors inspired by the Lotus.\n\nUnlocks additional color options for Warframe customization.',
                 },
                 position: { row: 4, col: 5 },
               },

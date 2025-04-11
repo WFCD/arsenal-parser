@@ -23,7 +23,7 @@ describe('WarframePlayer', () => {
           name: 'Argonsix Glyph',
           description: 'A Glyph for your profile.',
           type: 'Glyph',
-          imageName: 'argonsix-glyph.png',
+          imageName: 'argonsix-glyph-e0109dbf33.png',
           category: 'Glyphs',
           tradable: false,
           masterable: false,
