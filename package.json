@@ -113,8 +113,8 @@
     "typescript": "^5.0.2"
   },
   "peerDependencies": {
-    "@wfcd/items": ">=1.1270.0",
-    "warframe-worldstate-data": "^2.24.8"
+    "@wfcd/items": ">=1.1270.666",
+    "warframe-worldstate-data": "^3.0.1"
   },
   "engines": {
     "node": ">=18.19.0"
