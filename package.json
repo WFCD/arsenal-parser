@@ -97,7 +97,7 @@
     "skip-full": true
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
+    "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@types/chai": "^5.0.0",
     "@wfcd/eslint-config": "^1.6.1",
