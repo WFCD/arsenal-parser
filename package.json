@@ -8,7 +8,7 @@
     "twitch",
     "arsenal"
   ],
-  "repository": "https://github.com/wfcd/arsenal-parser",
+  "repository": "https://github.com/WFCD/arsenal-parser",
   "license": "MIT",
   "author": "NicksWorld",
   "contributors": [
@@ -119,5 +119,6 @@
   "engines": {
     "node": ">=18.19.0"
   },
-  "public": true
+  "public": true,
+  "publishConfig": { "provenance": true }
 }
