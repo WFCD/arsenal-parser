@@ -110,7 +110,7 @@
     "lint-staged": "^16.0.0",
     "mocha": "^11.0.1",
     "prettier": "^3.2.5",
-    "typescript": "^5.0.2"
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
     "@wfcd/items": ">=1.1270.666",
