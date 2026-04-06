@@ -1,11 +1,6 @@
 {
-  "inlcude": [
-    "src/**/*.js"
-  ],
   "exclude": [
     "test/**/*.*",
-    "types/**/*.*",
-    "resources/**/*.*",
     "docs/**/*.*",
     "node_modules/**/*.*",
     "coverage/**/*.*"

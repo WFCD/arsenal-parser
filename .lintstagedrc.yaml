@@ -1,0 +1,8 @@
+"*.**,!package*.json":
+  - "npm run fmt:fix"
+"*.ts":
+  - biome lint --write --staged
+  - mocha --reporter=mocha-minimalist-reporter
+package*.json:
+  - npm dedupe
+  - npx sort-package-json
