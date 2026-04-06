@@ -1,10 +1,9 @@
-import {
-  type Arcane,
-  type ColorMap,
-  type ModResolveable,
-  type ModUnion,
-  Skin,
-  type Warframe,
+import type {
+  Arcane,
+  ColorMap,
+  Item,
+  ModResolveable,
+  ModUnion,
 } from '@wfcd/items';
 import { colors, find } from '@wfcd/items/utilities';
 
@@ -16,26 +15,25 @@ const { mapColors } = colors;
 
 export interface RawCompanion extends BaseObject {
   type: string;
-  itemName: string;
+  itemName?: string;
   upgrades: ModResolveable[];
 }
 
 export default class WarframeCompanion {
   uniqueName: string;
-  companion: Warframe | undefined;
-  xp: any;
-  polarized: any;
+  name?: string;
+  companion: Item | undefined;
+  xp: number;
+  polarized: number;
   cosmetics?: { uniqueName: string }[];
   colors: { primary: ColorMap | undefined; attachments: ColorMap | undefined };
   upgrades: { arcane: Arcane[]; mods: ModUnion[] };
-  type: any;
-  name: any;
+  type: string;
 
   constructor(companion: RawCompanion) {
     this.uniqueName = companion.uniqueName;
-    this.companion = findItem(companion.uniqueName) as Warframe;
-    delete this.companion.patchlogs;
-    delete this.companion.components;
+    if (companion.itemName) this.name = companion.itemName;
+    this.companion = findItem(companion.uniqueName) as Item;
 
     this.xp = companion.xp;
     this.polarized = companion.polarized;

@@ -1,11 +1,4 @@
-import {
-  type Arcane,
-  type ColorMap,
-  type Item,
-  type ModUnion,
-  Skin,
-  type Warframe,
-} from '@wfcd/items';
+import type { Arcane, ColorMap, Item, ModUnion, Warframe } from '@wfcd/items';
 import { colors, find } from '@wfcd/items/utilities';
 
 import type BaseObject from './supporting/BaseObject';
