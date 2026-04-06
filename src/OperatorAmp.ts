@@ -1,12 +1,17 @@
-import {  colors } from '@wfcd/items/utilities';
-import BaseObject from './supporting/BaseObject';
-import { Item, ColorMap } from '@wfcd/items';
+import type { ColorMap, Item } from '@wfcd/items';
+import { colors } from '@wfcd/items/utilities';
+
+import type BaseObject from './supporting/BaseObject';
 import { findItem } from './supporting/FindItem';
 
 const { mapColors } = colors;
 
 export interface RawAmp extends BaseObject {
-  modularParts?: { LWPT_AMP_OCULUS: string; LWPT_AMP_BRACE: string; LWPT_AMP_CORE: string };
+  modularParts?: {
+    LWPT_AMP_OCULUS: string;
+    LWPT_AMP_BRACE: string;
+    LWPT_AMP_CORE: string;
+  };
 }
 
 export interface AmpParts {

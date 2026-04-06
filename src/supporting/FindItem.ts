@@ -1,4 +1,4 @@
-import { Item } from '@wfcd/items';
+import type { Item } from '@wfcd/items';
 import { find } from '@wfcd/items/utilities';
 
 export function findItem(uniqueName: string): Item | undefined {

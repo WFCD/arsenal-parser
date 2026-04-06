@@ -1,6 +1,7 @@
-import { Arcane, ColorMap, Item, ModUnion } from '@wfcd/items';
-import { find, colors } from '@wfcd/items/utilities';
-import BaseObject from './supporting/BaseObject';
+import type { Arcane, ColorMap, Item, ModUnion } from '@wfcd/items';
+import { colors, find } from '@wfcd/items/utilities';
+
+import type BaseObject from './supporting/BaseObject';
 import { findItem } from './supporting/FindItem';
 
 const { loadMods } = find;

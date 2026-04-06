@@ -1,4 +1,4 @@
-import { Item } from '@wfcd/items';
+import type { Item } from '@wfcd/items';
 import { find } from '@wfcd/items/utilities';
 import { translateFocus } from 'warframe-worldstate-data/utilities';
 

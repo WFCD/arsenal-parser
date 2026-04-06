@@ -1,7 +1,8 @@
-import { find, colors } from '@wfcd/items/utilities';
+import type { Arcane, ColorMap, Item, ModUnion } from '@wfcd/items';
+import { colors, find } from '@wfcd/items/utilities';
+
+import type BaseObject from './supporting/BaseObject';
 import { findItem } from './supporting/FindItem';
-import BaseObject from './supporting/BaseObject';
-import { Arcane, ColorMap, Item, ModUnion } from '@wfcd/items';
 
 const { loadMods } = find;
 const { mapColors } = colors;
@@ -26,7 +27,9 @@ export default class WarframeWeapon {
     this.polarized = weapon.polarized;
     this.upgrades = loadMods(weapon.upgrades);
     if (weapon.itemName) this.itemName = weapon.itemName;
-    this.cosmetics = (weapon.skins || []).map((skin) => findItem(skin.uniqueName) || skin);
+    this.cosmetics = (weapon.skins || []).map(
+      (skin) => findItem(skin.uniqueName) || skin
+    );
 
     if (weapon.modularParts) {
       const parts: Record<string, Item | { uniqueName: string }> = {};
@@ -38,8 +41,12 @@ export default class WarframeWeapon {
 
       this.parts = parts;
     } else {
-      this.weapon = findItem(weapon.uniqueName) || { uniqueName: weapon.uniqueName };
-      this.colors = { primary: weapon.pricol ? mapColors(weapon.pricol) : undefined };
+      this.weapon = findItem(weapon.uniqueName) || {
+        uniqueName: weapon.uniqueName,
+      };
+      this.colors = {
+        primary: weapon.pricol ? mapColors(weapon.pricol) : undefined,
+      };
     }
   }
 }

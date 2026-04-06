@@ -1,6 +1,14 @@
-import { Arcane, ColorMap, ModResolveable, ModUnion, Skin, Warframe } from '@wfcd/items';
-import { find, colors } from '@wfcd/items/utilities';
-import BaseObject from './supporting/BaseObject';
+import {
+  type Arcane,
+  type ColorMap,
+  type ModResolveable,
+  type ModUnion,
+  Skin,
+  type Warframe,
+} from '@wfcd/items';
+import { colors, find } from '@wfcd/items/utilities';
+
+import type BaseObject from './supporting/BaseObject';
 import { findItem } from './supporting/FindItem';
 
 const { loadMods } = find;
@@ -32,7 +40,9 @@ export default class WarframeCompanion {
     this.xp = companion.xp;
     this.polarized = companion.polarized;
     if (companion.skins) {
-      this.cosmetics = companion.skins.map((cosmetic) => findItem(cosmetic.uniqueName) || cosmetic);
+      this.cosmetics = companion.skins.map(
+        (cosmetic) => findItem(cosmetic.uniqueName) || cosmetic
+      );
     }
     this.colors = {
       primary: companion.pricol ? mapColors(companion.pricol) : undefined,

@@ -1,6 +1,14 @@
-import { Arcane, ColorMap, Item, ModUnion, Skin, Warframe } from '@wfcd/items';
-import { find, colors } from '@wfcd/items/utilities';
-import BaseObject from './supporting/BaseObject';
+import {
+  type Arcane,
+  type ColorMap,
+  type Item,
+  type ModUnion,
+  Skin,
+  type Warframe,
+} from '@wfcd/items';
+import { colors, find } from '@wfcd/items/utilities';
+
+import type BaseObject from './supporting/BaseObject';
 import { findItem } from './supporting/FindItem';
 
 const { loadMods } = find;
@@ -12,7 +20,11 @@ export default class WarframeMech {
   xp: number;
   polarized: number;
   cosmetics?: { uniqueName: string }[];
-  colors: { primary: ColorMap | undefined; sigil: ColorMap | undefined; attachments: ColorMap | undefined };
+  colors: {
+    primary: ColorMap | undefined;
+    sigil: ColorMap | undefined;
+    attachments: ColorMap | undefined;
+  };
   upgrades: { arcane: Arcane[]; mods: ModUnion[] };
   features: number;
 

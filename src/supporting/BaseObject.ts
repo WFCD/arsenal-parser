@@ -1,4 +1,4 @@
-import { ModResolveable, RawColors } from '@wfcd/items';
+import type { ModResolveable, RawColors } from '@wfcd/items';
 
 export default interface BaseObject {
   uniqueName: string;
