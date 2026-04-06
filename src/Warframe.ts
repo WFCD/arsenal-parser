@@ -27,7 +27,7 @@ export default class Warframe {
     this.warframe = findItem(frame.uniqueName);
     this.xp = frame.xp;
     this.polarized = frame.polarized;
-    this.features = frame.polarized;
+    this.features = frame.features;
     this.cosmetics = (frame.skins || []).map(
       (skin) => findItem(skin.uniqueName) || skin
     );
