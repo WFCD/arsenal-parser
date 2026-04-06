@@ -1,13 +1,12 @@
-import Player, { PlayerInformation } from './Player.js';
-import Warframe from './Warframe.js';
-import Weapon, { RawWeapon } from './Weapon.js';
 import Archwing from './Archwing.js';
-import Parazon from './Parazon.js';
-import Amp from './OperatorAmp.js';
-import Companion, { RawCompanion } from './Companion.js';
+import Companion, { type RawCompanion } from './Companion.js';
 import Mech from './Mech.js';
-import BaseObject from './supporting/BaseObject.js';
-import WarframeMech from './Mech.js';
+import Amp from './OperatorAmp.js';
+import Parazon from './Parazon.js';
+import Player, { type PlayerInformation } from './Player.js';
+import type BaseObject from './supporting/BaseObject.js';
+import Warframe from './Warframe.js';
+import Weapon, { type RawWeapon } from './Weapon.js';
 
 export interface BaseArsenalData {
   accountInfo: PlayerInformation;
@@ -48,7 +47,7 @@ export interface VechilesLoadout {
   archwing?: Archwing;
   primary?: Weapon;
   melee?: Weapon;
-  necramech?: { mech: WarframeMech; heavy: Weapon; exalted: Weapon };
+  necramech?: { mech: Mech; heavy: Weapon; exalted: Weapon };
 }
 
 export default class ArsenalData {
@@ -59,7 +58,8 @@ export default class ArsenalData {
   constructor(data: BaseArsenalData) {
     this.account = new Player(data.accountInfo);
 
-    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH } = data.loadOuts;
+    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH } =
+      data.loadOuts;
 
     const { warframe, primary, secondary, melee, heavy, exalted } = NORMAL;
 
@@ -71,7 +71,8 @@ export default class ArsenalData {
     this.loadout = { warframe: new Warframe(warframe) };
 
     if (primary && !primary.hide) this.loadout.primary = new Weapon(primary);
-    if (secondary && !secondary.hide) this.loadout.secondary = new Weapon(secondary);
+    if (secondary && !secondary.hide)
+      this.loadout.secondary = new Weapon(secondary);
     if (melee && !melee.hide) this.loadout.melee = new Weapon(melee);
     if (heavy && !heavy.hide) this.loadout.heavy = new Weapon(heavy);
     if (exalted) {
@@ -83,9 +84,12 @@ export default class ArsenalData {
     }
 
     this.loadout.vechiles = {};
-    if (archwing && !archwing.hide) this.loadout.vechiles.archwing = new Archwing(archwing);
-    if (archPrimary && !archPrimary.hide) this.loadout.vechiles.primary = new Weapon(archPrimary);
-    if (archMelee && !archMelee.hide) this.loadout.vechiles.melee = new Weapon(archMelee);
+    if (archwing && !archwing.hide)
+      this.loadout.vechiles.archwing = new Archwing(archwing);
+    if (archPrimary && !archPrimary.hide)
+      this.loadout.vechiles.primary = new Weapon(archPrimary);
+    if (archMelee && !archMelee.hide)
+      this.loadout.vechiles.melee = new Weapon(archMelee);
 
     if (parazon && !parazon.hide) this.loadout.parazon = new Parazon(parazon);
 
