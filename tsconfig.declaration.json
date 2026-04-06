@@ -11,11 +11,15 @@
     "coverage/**/*.*"
   ],
   "compilerOptions": {
-    "outDir": "./types",
-    "declaration": true,
-    "noEmit": false,
-    "allowJs": true,
-    "emitDeclarationOnly": true,
-    "lib": ["es6"]
+    "module": "esnext",
+    "target": "es2024",
+    "strict": true,
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "baseUrl": "."
   }
 }
