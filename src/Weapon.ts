@@ -9,7 +9,7 @@ const { mapColors } = colors;
 
 export interface RawWeapon extends BaseObject {
   itemName?: string;
-  modularParts: Record<string, string>;
+  modularParts?: Record<string, string>;
 }
 
 export default class WarframeWeapon {
@@ -34,8 +34,8 @@ export default class WarframeWeapon {
     if (weapon.modularParts) {
       const parts: Record<string, Item | { uniqueName: string }> = {};
       Object.keys(weapon.modularParts).forEach((part) => {
-        parts[part] = findItem(weapon.modularParts[part]) || {
-          uniqueName: weapon.modularParts[part],
+        parts[part] = findItem(weapon.modularParts![part]) || {
+          uniqueName: weapon.modularParts![part],
         };
       });
 
