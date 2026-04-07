@@ -9,7 +9,7 @@ const { mapColors } = colors;
 
 export default class Warframe {
   uniqueName: string;
-  warframe: Item | undefined;
+  warframe?: Item;
   xp: number;
   polarized: number;
   features?: number;

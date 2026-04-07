@@ -20,7 +20,7 @@ export default class WarframeWeapon {
   cosmetics: { uniqueName: string }[];
   parts?: Record<string, Item | { uniqueName: string }>;
   weapon?: Item | { uniqueName: string };
-  colors?: { primary: ColorMap | undefined };
+  colors?: { primary?: ColorMap };
 
   constructor(weapon: RawWeapon) {
     this.xp = weapon.xp;
