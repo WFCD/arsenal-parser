@@ -2,18 +2,11 @@
   "name": "@wfcd/arsenal-parser",
   "version": "0.0.1",
   "description": "Parser for Digital Extreme's Twitch Arsenal Extension data",
-  "keywords": [
-    "warframe",
-    "parser",
-    "twitch",
-    "arsenal"
-  ],
+  "keywords": ["warframe", "parser", "twitch", "arsenal"],
   "repository": "https://github.com/WFCD/arsenal-parser",
   "license": "MIT",
   "author": "NicksWorld",
-  "contributors": [
-    "TobiTenno <tobiah@pm.me>"
-  ],
+  "contributors": ["TobiTenno <tobiah@pm.me>"],
   "type": "module",
   "exports": {
     ".": {
@@ -23,12 +16,7 @@
   },
   "main": "src/ArsenalParser.js",
   "types": "./types/src/ArsenalParser.d.ts",
-  "files": [
-    "src",
-    "LICENSE",
-    "README.md",
-    "types"
-  ],
+  "files": ["src", "LICENSE", "README.md", "types"],
   "scripts": {
     "build": "tsdown",
     "build:docs": "typedoc",
