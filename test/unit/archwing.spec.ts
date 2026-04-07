@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 
 // Archwing.js testing
-import WarframeArchwing from '../../src/Archwing.js';
+import WarframeArchwing from '../../src/Archwing';
+import type BaseObject from '../../src/supporting/BaseObject';
 
 describe('WarframeArchwing', () => {
   describe('#constructor', () => {
@@ -18,10 +19,12 @@ describe('WarframeArchwing', () => {
           m1: 'E6B0FE',
           en: '2E203D',
         },
-        uniqueName: '/Lotus/Powersuits/Archwing/StandardJetPack/StandardJetPack',
+        uniqueName:
+          '/Lotus/Powersuits/Archwing/StandardJetPack/StandardJetPack',
         upgrades: [
           {
-            uniqueName: '/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitHealthMaxMod',
+            uniqueName:
+              '/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitHealthMaxMod',
             rank: 2,
           },
           {
@@ -34,11 +37,13 @@ describe('WarframeArchwing', () => {
             uniqueName: '',
           },
           {
-            uniqueName: '/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitShieldRechargeRateMod',
+            uniqueName:
+              '/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitShieldRechargeRateMod',
             rank: 2,
           },
           {
-            uniqueName: '/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitShieldMaxMod',
+            uniqueName:
+              '/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitShieldMaxMod',
             rank: 3,
           },
           {
@@ -53,16 +58,22 @@ describe('WarframeArchwing', () => {
       const archwing = new WarframeArchwing(sampleArchwing);
 
       assert.equal(archwing.xp, sampleArchwing.xp, 'Invalid xp count');
-      assert.equal(archwing.archwing.name, 'Odonata', 'Incorrect archwing name');
+      assert.equal(
+        archwing.archwing?.name,
+        'Odonata',
+        'Incorrect archwing name'
+      );
     });
 
     it('should handle being passed an unknown archwing ID', () => {
-      const fakeArchwing = new WarframeArchwing({ uniqueName: 'SomeNewUnknownArchwing' });
+      const fakeArchwing = new WarframeArchwing({
+        uniqueName: 'SomeNewUnknownArchwing',
+      } as BaseObject);
 
       assert.equal(
         JSON.stringify(fakeArchwing),
         JSON.stringify({
-          archwing: { uniqueName: 'SomeNewUnknownArchwing' },
+          uniqueName: 'SomeNewUnknownArchwing',
           upgrades: {
             arcanes: [],
             mods: [],

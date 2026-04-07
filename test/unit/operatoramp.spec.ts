@@ -1,9 +1,11 @@
-import { assert } from 'chai';
 import Items from '@wfcd/items';
+import { assert } from 'chai';
+
+import type BaseObject from '@/supporting/BaseObject';
 
 // OperatorAmp.js testing
-import OperatorAmp from '../../src/OperatorAmp.js';
-import { marshall } from '../utils.js';
+import OperatorAmp from '../../src/OperatorAmp';
+import { marshall } from '../utils';
 
 const items = new Items();
 
@@ -25,17 +27,22 @@ describe('OperatorAmp', () => {
           en: '33589B',
           e1: '5E71B3',
         },
-        uniqueName: '/Lotus/Weapons/Sentients/OperatorAmplifiers/OperatorAmpWeapon',
+        uniqueName:
+          '/Lotus/Weapons/Sentients/OperatorAmplifiers/OperatorAmpWeapon',
         upgrades: [
           {
-            uniqueName: '/Lotus/Upgrades/CosmeticEnhancers/OperatorAmps/IncreasedCriticalDamageOnCriticalStrike',
+            uniqueName:
+              '/Lotus/Upgrades/CosmeticEnhancers/OperatorAmps/IncreasedCriticalDamageOnCriticalStrike',
             rank: 3,
           },
         ],
         modularParts: {
-          LWPT_AMP_OCULUS: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC',
-          LWPT_AMP_BRACE: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC',
-          LWPT_AMP_CORE: '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB',
+          LWPT_AMP_OCULUS:
+            '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC',
+          LWPT_AMP_BRACE:
+            '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC',
+          LWPT_AMP_CORE:
+            '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB',
         },
       };
       const sampleProcessedAmp = {
@@ -56,28 +63,39 @@ describe('OperatorAmp', () => {
             en: '33589B',
             e1: '5E71B3',
           },
-          uniqueName: '/Lotus/Weapons/Sentients/OperatorAmplifiers/OperatorAmpWeapon',
+          uniqueName:
+            '/Lotus/Weapons/Sentients/OperatorAmplifiers/OperatorAmpWeapon',
           upgrades: [
             {
-              uniqueName: '/Lotus/Upgrades/CosmeticEnhancers/OperatorAmps/IncreasedCriticalDamageOnCriticalStrike',
+              uniqueName:
+                '/Lotus/Upgrades/CosmeticEnhancers/OperatorAmps/IncreasedCriticalDamageOnCriticalStrike',
               rank: 3,
             },
           ],
           modularParts: {
-            LWPT_AMP_OCULUS: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC',
-            LWPT_AMP_BRACE: '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC',
-            LWPT_AMP_CORE: '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB',
+            LWPT_AMP_OCULUS:
+              '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC',
+            LWPT_AMP_BRACE:
+              '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC',
+            LWPT_AMP_CORE:
+              '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB',
           },
         },
         parts: {
           prism: items.find(
-            (i) => i.uniqueName === '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC'
+            (i) =>
+              i.uniqueName ===
+              '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC'
           ),
           scaffold: items.find(
-            (i) => i.uniqueName === '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB'
+            (i) =>
+              i.uniqueName ===
+              '/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB'
           ),
           brace: items.find(
-            (i) => i.uniqueName === '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC'
+            (i) =>
+              i.uniqueName ===
+              '/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC'
           ),
         },
         colors: {
@@ -85,7 +103,11 @@ describe('OperatorAmp', () => {
             hex: '5B73D6',
             matches: [
               {
-                palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' },
+                palette: {
+                  name: 'Dojo',
+                  description:
+                    'Unlocks a collection of colors inspired by Dojo pigments.',
+                },
                 position: { row: 5, col: 4 },
               },
             ],
@@ -94,7 +116,11 @@ describe('OperatorAmp', () => {
             hex: '4559A5',
             matches: [
               {
-                palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' },
+                palette: {
+                  name: 'Dojo',
+                  description:
+                    'Unlocks a collection of colors inspired by Dojo pigments.',
+                },
                 position: { row: 2, col: 4 },
               },
             ],
@@ -103,7 +129,11 @@ describe('OperatorAmp', () => {
             hex: '33589B',
             matches: [
               {
-                palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' },
+                palette: {
+                  name: 'Dojo',
+                  description:
+                    'Unlocks a collection of colors inspired by Dojo pigments.',
+                },
                 position: { row: 18, col: 4 },
               },
             ],
@@ -126,7 +156,11 @@ describe('OperatorAmp', () => {
               hex: '33589B',
               matches: [
                 {
-                  palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' },
+                  palette: {
+                    name: 'Dojo',
+                    description:
+                      'Unlocks a collection of colors inspired by Dojo pigments.',
+                  },
                   position: { row: 18, col: 4 },
                 },
               ],
@@ -137,7 +171,8 @@ describe('OperatorAmp', () => {
                 {
                   palette: {
                     name: 'Discord',
-                    description: 'Unlocks a collection of Blurple, Greyple and not quite black colors.',
+                    description:
+                      'Unlocks a collection of Blurple, Greyple and not quite black colors.',
                   },
                   position: { row: 8, col: 1 },
                 },
@@ -149,7 +184,11 @@ describe('OperatorAmp', () => {
               hex: '33589B',
               matches: [
                 {
-                  palette: { name: 'Dojo', description: 'Unlocks a collection of colors inspired by Dojo pigments.' },
+                  palette: {
+                    name: 'Dojo',
+                    description:
+                      'Unlocks a collection of colors inspired by Dojo pigments.',
+                  },
                   position: { row: 18, col: 4 },
                 },
               ],
@@ -171,11 +210,11 @@ describe('OperatorAmp', () => {
         },
       };
 
-      assert.isOk(new OperatorAmp(sampleAmp));
+      assert.isOk(new OperatorAmp(sampleAmp as unknown as BaseObject));
     });
 
     it('should handle being passed no modularparts', () => {
-      assert.isOk(new OperatorAmp({}));
+      assert.isOk(new OperatorAmp({} as unknown as BaseObject));
     });
   });
 });

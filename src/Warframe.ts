@@ -12,9 +12,9 @@ export default class Warframe {
   warframe: Item | undefined;
   xp: number;
   polarized: number;
-  features: number;
+  features?: number;
   cosmetics: { uniqueName: string }[];
-  upgrades: { arcane: Arcane[]; mods: ModUnion[] };
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   colors: {
     primary?: ColorMap;
     attachments?: ColorMap;
@@ -25,8 +25,8 @@ export default class Warframe {
   constructor(frame: BaseObject) {
     this.uniqueName = frame.uniqueName;
     this.warframe = findItem(frame.uniqueName);
-    this.xp = frame.xp;
-    this.polarized = frame.polarized;
+    this.xp = frame.xp || 0;
+    this.polarized = frame.polarized || 0;
     this.features = frame.features;
     this.cosmetics = (frame.skins || []).map(
       (skin) => findItem(skin.uniqueName) || skin
@@ -37,6 +37,7 @@ export default class Warframe {
       primary: frame.pricol ? mapColors(frame.pricol) : undefined,
       attachments: frame.attcol ? mapColors(frame.attcol) : undefined,
       sigil: frame.sigcol ? mapColors(frame.sigcol) : undefined,
+      syandana: frame.eyecol ? mapColors(frame.eyecol) : undefined,
     };
   }
 }

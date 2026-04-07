@@ -27,7 +27,7 @@ export default class WarframeCompanion {
   polarized: number;
   cosmetics?: { uniqueName: string }[];
   colors: { primary: ColorMap | undefined; attachments: ColorMap | undefined };
-  upgrades: { arcane: Arcane[]; mods: ModUnion[] };
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   type: string;
 
   constructor(companion: RawCompanion) {

@@ -1,9 +1,8 @@
 {
   "exclude": [
-    "test/**/*.*",
-    "docs/**/*.*",
-    "node_modules/**/*.*",
-    "coverage/**/*.*"
+    "docs",
+    "coverage",
+    "node_modules"
   ],
   "compilerOptions": {
     "module": "esnext",
@@ -12,8 +11,12 @@
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "isolatedModules": true,
+    "skipLibCheck": true,
+    "types": ["chai", "mocha"],
     "paths": {
-      "@/*": ["./src/*"]
-    },
+      "@/*": [
+        "./src/*"
+      ]
+    }
   }
 }

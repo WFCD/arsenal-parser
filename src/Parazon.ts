@@ -11,7 +11,7 @@ export default class WarframeParazon {
   uniqueName: string;
   xp: number;
   polarized: number;
-  upgrades: { arcane: Arcane[]; mods: ModUnion[] };
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   cosmetics?: { uniqueName: string }[];
   colors: ColorMap | undefined;
 

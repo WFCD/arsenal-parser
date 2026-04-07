@@ -1,7 +1,8 @@
+import type { Item } from '@wfcd/items';
 import { assert } from 'chai';
 
 // Player.js testing
-import WarframePlayer from '../../src/Player.js';
+import WarframePlayer, { type PlayerInformation } from '../../src/Player';
 import { marshall } from '../utils.js';
 
 describe('WarframePlayer', () => {
@@ -11,7 +12,8 @@ describe('WarframePlayer', () => {
         playerName: 'MainlandHero',
         masteryRank: 29,
         lastUpdated: 1595555591,
-        glyph: '/Lotus/Types/StoreItems/AvatarImages/FanChannel/AvatarImageArgonSix',
+        glyph:
+          '/Lotus/Types/StoreItems/AvatarImages/FanChannel/AvatarImageArgonSix',
         focus: '/Lotus/Upgrades/Focus/Defense/DefenseFocusAbility',
       };
       const expectedPlayer = {
@@ -19,7 +21,8 @@ describe('WarframePlayer', () => {
         masteryRank: 29,
         lastUpdated: new Date('2020-07-24T01:53:11.000Z').toJSON(),
         glyph: {
-          uniqueName: '/Lotus/Types/StoreItems/AvatarImages/FanChannel/AvatarImageArgonSix',
+          uniqueName:
+            '/Lotus/Types/StoreItems/AvatarImages/FanChannel/AvatarImageArgonSix',
           name: 'Argonsix Glyph',
           description: 'A Glyph for your profile.',
           type: 'Glyph',
@@ -33,16 +36,30 @@ describe('WarframePlayer', () => {
 
       const player = new WarframePlayer(samplePlayer);
       assert.equal(player.name, samplePlayer.playerName, 'Name match');
-      assert.equal(player.masteryRank, samplePlayer.masteryRank, 'mastery rank!');
-      assert.equal(player.glyph.name, expectedPlayer.glyph.name, 'glyph');
+      assert.equal(
+        player.masteryRank,
+        samplePlayer.masteryRank,
+        'mastery rank!'
+      );
+      assert.equal(
+        (player.glyph as Item).name,
+        expectedPlayer.glyph.name,
+        'glyph'
+      );
       assert.equal(player.lastUpdated.toJSON(), expectedPlayer.lastUpdated);
       assert.equal(player.focusSchool, expectedPlayer.focusSchool, 'focus');
-      assert.deepEqual(marshall(player), expectedPlayer, 'Player object invalid');
+      assert.deepEqual(
+        marshall(player),
+        expectedPlayer,
+        'Player object invalid'
+      );
     });
 
     it('should handle an unknown glyph', () => {
       assert.equal(
-        new WarframePlayer({ glyph: 'UnknownGlyph' }).glyph,
+        new WarframePlayer({
+          glyph: 'UnknownGlyph',
+        } as unknown as PlayerInformation).glyph,
         'UnknownGlyph',
         'Unknown glyph incorrectly handled'
       );

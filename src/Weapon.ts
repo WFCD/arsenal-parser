@@ -15,7 +15,7 @@ export interface RawWeapon extends BaseObject {
 export default class WarframeWeapon {
   xp: number;
   polarized: number;
-  upgrades: { arcane: Arcane[]; mods: ModUnion[] };
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   name?: string;
   cosmetics: { uniqueName: string }[];
   parts?: Record<string, Item | { uniqueName: string }>;
@@ -26,7 +26,12 @@ export default class WarframeWeapon {
     this.xp = weapon.xp;
     this.polarized = weapon.polarized;
     this.upgrades = loadMods(weapon.upgrades);
-    if (weapon.itemName) this.name = weapon.itemName;
+    if (weapon.itemName) {
+      this.name = weapon.itemName.includes('|')
+        ? weapon.itemName.split('|').reverse()[0]
+        : weapon.itemName;
+    }
+
     this.cosmetics = (weapon.skins || []).map(
       (skin) => findItem(skin.uniqueName) || skin
     );

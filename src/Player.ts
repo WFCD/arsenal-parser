@@ -9,8 +9,8 @@ export interface PlayerInformation {
   masteryRank: number;
   lastUpdated: number;
   glyph: string;
-  title: string;
-  focus: string;
+  title?: string;
+  focus?: string;
 }
 
 /** Warframe Player information */

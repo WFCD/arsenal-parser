@@ -12,14 +12,14 @@ export default class WarframeMech {
   mech: Item | undefined;
   xp: number;
   polarized: number;
-  cosmetics?: { uniqueName: string }[];
+  cosmetics?: (Item | { uniqueName: string })[];
   colors: {
     primary: ColorMap | undefined;
     sigil: ColorMap | undefined;
     attachments: ColorMap | undefined;
   };
-  upgrades: { arcane: Arcane[]; mods: ModUnion[] };
-  features: number;
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
+  features?: number;
 
   constructor(mech: BaseObject) {
     this.uniqueName = mech.uniqueName;

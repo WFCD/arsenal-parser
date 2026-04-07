@@ -12,7 +12,7 @@ export default class WarframeArchwing {
   archwing: Item | undefined;
   xp: number;
   polarized: number;
-  upgrades: { arcane: Arcane[]; mods: ModUnion[] };
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   colors: { primary: ColorMap | undefined; attachments: ColorMap | undefined };
 
   constructor(archwing: BaseObject) {

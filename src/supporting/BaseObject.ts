@@ -4,12 +4,13 @@ export default interface BaseObject {
   uniqueName: string;
   xp: number;
   polarized: number;
-  focus: string | undefined;
-  features: number;
+  focus?: string;
+  features?: number;
   upgrades: ModResolveable[];
-  skins: { uniqueName: string }[] | undefined;
-  pricol: RawColors | undefined;
-  attcol: RawColors | undefined;
-  sigcol: RawColors | undefined;
-  hide: boolean;
+  skins?: { uniqueName: string }[];
+  pricol?: RawColors;
+  attcol?: RawColors;
+  sigcol?: RawColors;
+  eyecol?: RawColors;
+  hide?: boolean;
 }
