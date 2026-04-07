@@ -44,3 +44,5 @@ wfcd-arsenal-parser-*.tgz
 .jshintignore
 .jshintrc
 .eslintcache
+
+dist/

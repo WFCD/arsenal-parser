@@ -17,8 +17,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/ArsenalParser.js",
-      "types": "./types/src/ArsenalParser.d.ts"
+      "import": "./dist/ArsenalParser.mjs",
+      "types": "./dist/ArsenalParser.d.mts"
     }
   },
   "main": "src/ArsenalParser.js",
@@ -35,7 +35,7 @@
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "biome check",
     "lint:fix": "biome check --write",
-    "prepare": "husky && install-peerdeps @wfcd/eslint-config@latest -S",
+    "prepare": "husky",
     "prepublishOnly": "npm run build:types",
     "test": "c8 mocha"
   },
@@ -44,6 +44,7 @@
     "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@types/chai": "^5.0.0",
+    "@types/mocha": "^10.0.10",
     "c8": "^11.0.0",
     "chai": "^6.0.1",
     "chai-json-equal": "^0.0.1",
@@ -59,8 +60,8 @@
     "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "@wfcd/items": ">=1.1270.666",
-    "warframe-worldstate-data": "^3.0.1"
+    "@wfcd/items": ">=1.1273.10",
+    "warframe-worldstate-data": "^3.11.3"
   },
   "engines": {
     "node": ">=18.19.0"
