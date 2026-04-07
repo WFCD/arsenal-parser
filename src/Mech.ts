@@ -12,10 +12,10 @@ export default class WarframeMech {
   mech?: Item;
   xp: number;
   polarized: number;
-  cosmetics?: Array<(Item | { uniqueName: string })>;
+  cosmetics?: Array<Item | { uniqueName: string }>;
   colors: {
-    primary?: ColorMap ;
-    sigil?: ColorMap ;
+    primary?: ColorMap;
+    sigil?: ColorMap;
     attachments?: ColorMap;
   };
   upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
