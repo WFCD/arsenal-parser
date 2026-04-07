@@ -7,7 +7,7 @@ export default interface BaseObject {
   focus?: string;
   features?: number;
   upgrades: ModResolveable[];
-  skins?: { uniqueName: string }[];
+  skins?: Array<{ uniqueName: string }>;
   pricol?: RawColors;
   attcol?: RawColors;
   sigcol?: RawColors;

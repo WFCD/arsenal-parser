@@ -9,11 +9,11 @@ const { mapColors } = colors;
 
 export default class WarframeArchwing {
   uniqueName: string;
-  archwing: Item | undefined;
+  archwing?: Item;
   xp: number;
   polarized: number;
   upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
-  colors: { primary: ColorMap | undefined; attachments: ColorMap | undefined };
+  colors: { primary?: ColorMap; attachments?: ColorMap };
 
   constructor(archwing: BaseObject) {
     this.uniqueName = archwing.uniqueName;

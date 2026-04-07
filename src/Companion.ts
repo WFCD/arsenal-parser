@@ -16,11 +16,11 @@ export interface RawCompanion extends BaseObject {
 export default class WarframeCompanion {
   uniqueName: string;
   name?: string;
-  companion: Item | undefined;
+  companion?: Item;
   xp: number;
   polarized: number;
   cosmetics?: { uniqueName: string }[];
-  colors: { primary: ColorMap | undefined; attachments: ColorMap | undefined };
+  colors: { primary?: ColorMap; attachments?: ColorMap };
   upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   type: string;
 

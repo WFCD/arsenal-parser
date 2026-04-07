@@ -9,14 +9,14 @@ const { mapColors } = colors;
 
 export default class WarframeMech {
   uniqueName: string;
-  mech: Item | undefined;
+  mech?: Item;
   xp: number;
   polarized: number;
-  cosmetics?: (Item | { uniqueName: string })[];
+  cosmetics?: Array<(Item | { uniqueName: string })>;
   colors: {
-    primary: ColorMap | undefined;
-    sigil: ColorMap | undefined;
-    attachments: ColorMap | undefined;
+    primary?: ColorMap ;
+    sigil?: ColorMap ;
+    attachments?: ColorMap;
   };
   upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   features?: number;

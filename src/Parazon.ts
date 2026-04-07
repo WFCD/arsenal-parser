@@ -13,7 +13,7 @@ export default class WarframeParazon {
   polarized: number;
   upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
   cosmetics?: { uniqueName: string }[];
-  colors: ColorMap | undefined;
+  colors?: ColorMap;
 
   constructor(parazon: BaseObject) {
     this.uniqueName = parazon.uniqueName;
