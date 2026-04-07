@@ -59,8 +59,7 @@ describe('WarframeWeapon', () => {
           en: 'F60A11',
           e1: 'FFFFFF',
         },
-        uniqueName:
-          '/Lotus/Weapons/SolarisUnited/Secondary/LotusModularSecondaryShotgun',
+        uniqueName: '/Lotus/Weapons/SolarisUnited/Secondary/LotusModularSecondaryShotgun',
         upgrades: [],
         modularParts: {
           LWPT_GUN_BARREL:
@@ -78,10 +77,7 @@ describe('WarframeWeapon', () => {
 
       assert.equal((kitgun.parts?.LWPT_GUN_BARREL as Item).name, 'Catchmoon');
       assert.equal((kitgun.parts?.LWPT_GUN_CLIP as Item).name, 'Splat');
-      assert.equal(
-        (kitgun.parts?.LWPT_GUN_SECONDARY_HANDLE as Item).name,
-        'Haymaker'
-      );
+      assert.equal((kitgun.parts?.LWPT_GUN_SECONDARY_HANDLE as Item).name, 'Haymaker');
     });
   });
 });

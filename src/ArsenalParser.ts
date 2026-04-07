@@ -58,8 +58,7 @@ export default class ArsenalData {
   constructor(data: BaseArsenalData) {
     this.account = new Player(data.accountInfo);
 
-    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH } =
-      data.loadOuts;
+    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH } = data.loadOuts;
 
     const { warframe, primary, secondary, melee, heavy, exalted } = NORMAL;
 
@@ -71,8 +70,7 @@ export default class ArsenalData {
     this.loadout = { warframe: new Warframe(warframe) };
 
     if (primary && !primary.hide) this.loadout.primary = new Weapon(primary);
-    if (secondary && !secondary.hide)
-      this.loadout.secondary = new Weapon(secondary);
+    if (secondary && !secondary.hide) this.loadout.secondary = new Weapon(secondary);
     if (melee && !melee.hide) this.loadout.melee = new Weapon(melee);
     if (heavy && !heavy.hide) this.loadout.heavy = new Weapon(heavy);
     if (exalted) {
@@ -84,12 +82,9 @@ export default class ArsenalData {
     }
 
     this.loadout.vechiles = {};
-    if (archwing && !archwing.hide)
-      this.loadout.vechiles.archwing = new Archwing(archwing);
-    if (archPrimary && !archPrimary.hide)
-      this.loadout.vechiles.primary = new Weapon(archPrimary);
-    if (archMelee && !archMelee.hide)
-      this.loadout.vechiles.melee = new Weapon(archMelee);
+    if (archwing && !archwing.hide) this.loadout.vechiles.archwing = new Archwing(archwing);
+    if (archPrimary && !archPrimary.hide) this.loadout.vechiles.primary = new Weapon(archPrimary);
+    if (archMelee && !archMelee.hide) this.loadout.vechiles.melee = new Weapon(archMelee);
 
     if (parazon && !parazon.hide) this.loadout.parazon = new Parazon(parazon);
 

@@ -27,14 +27,10 @@ export default class WarframeWeapon {
     this.polarized = weapon.polarized;
     this.upgrades = loadMods(weapon.upgrades);
     if (weapon.itemName) {
-      this.name = weapon.itemName.includes('|')
-        ? weapon.itemName.split('|').reverse()[0]
-        : weapon.itemName;
+      this.name = weapon.itemName.includes('|') ? weapon.itemName.split('|').reverse()[0] : weapon.itemName;
     }
 
-    this.cosmetics = (weapon.skins || []).map(
-      (skin) => findItem(skin.uniqueName) || skin
-    );
+    this.cosmetics = (weapon.skins || []).map((skin) => findItem(skin.uniqueName) || skin);
 
     if (weapon.modularParts) {
       const parts: Record<string, Item | { uniqueName: string }> = {};

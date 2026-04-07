@@ -54,11 +54,7 @@ describe('Warframe', () => {
       };
 
       const frame = new Warframe(sampleFrame);
-      assert.equal(
-        frame.warframe?.name,
-        'Nova Prime',
-        'Frame not correctly identified'
-      );
+      assert.equal(frame.warframe?.name, 'Nova Prime', 'Frame not correctly identified');
       delete frame.warframe; // Cleanup data for comparison
 
       assert.deepEqual(
@@ -77,7 +73,7 @@ describe('Warframe', () => {
               imageName: 'nova-atomica-helmet-0161cc5d10.png',
               category: 'Skins',
               masterable: false,
-              tradable: false
+              tradable: false,
             },
           ],
           upgrades: { arcanes: [], mods: [] },
@@ -244,8 +240,7 @@ describe('Warframe', () => {
                   {
                     palette: {
                       name: 'Classic',
-                      description:
-                        'Unlocks additional color options for Warframe customization.',
+                      description: 'Unlocks additional color options for Warframe customization.',
                     },
                     position: { row: 16, col: 2 },
                   },
@@ -269,8 +264,7 @@ describe('Warframe', () => {
                 matches: [
                   {
                     palette: {
-                      description:
-                        'The exquisite colors of the Prime collection.',
+                      description: 'The exquisite colors of the Prime collection.',
                       name: 'Prime Lacquer',
                     },
                     position: {
@@ -376,27 +370,24 @@ describe('Warframe', () => {
     });
 
     it('should handle an unknown warframe id', () => {
-      assert.deepEqual(
-        new Warframe({ uniqueName: 'UnknownFrame' } as BaseObject),
-        {
-          uniqueName: 'UnknownFrame',
-          warframe: undefined,
-          xp: 0,
-          polarized: 0,
-          features: undefined,
-          cosmetics: [],
-          upgrades: {
-            arcanes: [],
-            mods: []
-          },
-          colors: {
-            primary: undefined,
-            attachments: undefined,
-            syandana: undefined,
-            sigil: undefined
-          }
-        }
-      );
+      assert.deepEqual(new Warframe({ uniqueName: 'UnknownFrame' } as BaseObject), {
+        uniqueName: 'UnknownFrame',
+        warframe: undefined,
+        xp: 0,
+        polarized: 0,
+        features: undefined,
+        cosmetics: [],
+        upgrades: {
+          arcanes: [],
+          mods: [],
+        },
+        colors: {
+          primary: undefined,
+          attachments: undefined,
+          syandana: undefined,
+          sigil: undefined,
+        },
+      });
     });
 
     it('should handle an unknown cosmetic id', () => {

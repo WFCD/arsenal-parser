@@ -16,9 +16,7 @@ describe('ArsenalData', function () {
   describe('#constructor', () => {
     it('can parse live data', async function () {
       if (!(await working())) this.skip();
-      const parsed = JSON.parse(
-        JSON.stringify(new ArsenalData(await fetch('tobiah')))
-      );
+      const parsed = JSON.parse(JSON.stringify(new ArsenalData(await fetch('tobiah'))));
       assert.equal(parsed.account.name, 'Tobiah');
       assert.isOk(parsed);
     });

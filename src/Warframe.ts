@@ -28,9 +28,7 @@ export default class Warframe {
     this.xp = frame.xp || 0;
     this.polarized = frame.polarized || 0;
     this.features = frame.features;
-    this.cosmetics = (frame.skins || []).map(
-      (skin) => findItem(skin.uniqueName) || skin
-    );
+    this.cosmetics = (frame.skins || []).map((skin) => findItem(skin.uniqueName) || skin);
     this.upgrades = loadMods(frame.upgrades);
 
     this.colors = {

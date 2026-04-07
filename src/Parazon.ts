@@ -21,9 +21,7 @@ export default class WarframeParazon {
     this.polarized = parazon.polarized;
     this.upgrades = loadMods(parazon.upgrades);
     if (parazon.skins) {
-      this.cosmetics = parazon.skins.map(
-        (cosmetic) => findItem(cosmetic.uniqueName) || cosmetic
-      );
+      this.cosmetics = parazon.skins.map((cosmetic) => findItem(cosmetic.uniqueName) || cosmetic);
     }
 
     this.colors = parazon.pricol ? mapColors(parazon.pricol) : undefined;

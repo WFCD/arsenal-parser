@@ -1,6 +1,5 @@
 // based off of derrod's usage on github: https://github.com/derrod/warfra_re/blob/master/twitch/arsenal.py
-const BASE_URL =
-  'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
+const BASE_URL = 'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
 
 const CLIENT_ID = 'kimne78kx3ncx6brgo4mv6wki5h1ko'; // Twitch's client id
 const WF_ARSENAL_ID = 'ud1zj704c0eb1s553jbkayvqxjft97'; // wf arsenal extension
@@ -31,16 +30,13 @@ export default async (username: string) => {
 
   const token = await gqlToken();
   // Fetch the data for the specified username
-  const data = await fetch(
-    BASE_URL + encodeURIComponent(username.toLowerCase()),
-    {
-      headers: {
-        Origin: `https://${WF_ARSENAL_ID}.ext-twitch.tv`,
-        Referer: `https://${WF_ARSENAL_ID}.ext-twitch.tv`,
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  ).then((res) => res.json());
+  const data = await fetch(BASE_URL + encodeURIComponent(username.toLowerCase()), {
+    headers: {
+      Origin: `https://${WF_ARSENAL_ID}.ext-twitch.tv`,
+      Referer: `https://${WF_ARSENAL_ID}.ext-twitch.tv`,
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => res.json());
   if (data.errors) {
     throw new Error(data.errors);
   }
