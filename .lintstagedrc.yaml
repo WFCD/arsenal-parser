@@ -2,6 +2,6 @@ package*.json:
   - npm dedupe
   - npx sort-package-json
   - npm run lint:fix
-"*.ts,*.json":
+"*.{ts,json}":
   - npm run lint:fix
   - mocha --reporter=mocha-minimalist-reporter
