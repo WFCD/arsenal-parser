@@ -1,14 +1,13 @@
 import { assert } from 'chai';
 
 import ArsenalData from '../../src/ArsenalParser.js';
-
 import fetch from './fetch.js';
 
 const working = async () => {
   try {
     await fetch('tobiah');
     return true;
-  } catch (e) {
+  } catch {
     return false;
   }
 };

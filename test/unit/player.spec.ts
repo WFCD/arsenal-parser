@@ -1,7 +1,8 @@
+import type { Item } from '@wfcd/items';
 import { assert } from 'chai';
 
 // Player.js testing
-import WarframePlayer from '../../src/Player.js';
+import WarframePlayer, { type PlayerInformation } from '../../src/Player';
 import { marshall } from '../utils.js';
 
 describe('WarframePlayer', () => {
@@ -34,7 +35,7 @@ describe('WarframePlayer', () => {
       const player = new WarframePlayer(samplePlayer);
       assert.equal(player.name, samplePlayer.playerName, 'Name match');
       assert.equal(player.masteryRank, samplePlayer.masteryRank, 'mastery rank!');
-      assert.equal(player.glyph.name, expectedPlayer.glyph.name, 'glyph');
+      assert.equal((player.glyph as Item).name, expectedPlayer.glyph.name, 'glyph');
       assert.equal(player.lastUpdated.toJSON(), expectedPlayer.lastUpdated);
       assert.equal(player.focusSchool, expectedPlayer.focusSchool, 'focus');
       assert.deepEqual(marshall(player), expectedPlayer, 'Player object invalid');
@@ -42,7 +43,9 @@ describe('WarframePlayer', () => {
 
     it('should handle an unknown glyph', () => {
       assert.equal(
-        new WarframePlayer({ glyph: 'UnknownGlyph' }).glyph,
+        new WarframePlayer({
+          glyph: 'UnknownGlyph',
+        } as unknown as PlayerInformation).glyph,
         'UnknownGlyph',
         'Unknown glyph incorrectly handled'
       );

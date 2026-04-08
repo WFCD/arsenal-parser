@@ -1,14 +1,14 @@
-import { assert } from 'chai';
 import Items from '@wfcd/items';
+import { assert } from 'chai';
 
 // Companion.js testing
-import WarframeCompanion from '../../src/Companion.js';
-import { marshall } from '../utils.js';
+import WarframeCompanion, { type RawCompanion } from '../../src/Companion';
+import { marshall } from '../utils';
 
 const items = new Items({ category: ['Pets'] });
 
 const cheshire = items.find((i) => i.uniqueName === '/Lotus/Types/Game/CatbrowPet/CheshireCatbrowPetPowerSuit');
-delete cheshire.patchlogs;
+delete cheshire?.patchlogs;
 
 describe('WarframeCompanion', () => {
   describe('#constructor', () => {
@@ -202,6 +202,7 @@ describe('WarframeCompanion', () => {
           mods: [],
         },
         xp: 548455507,
+        uniqueName: '/Lotus/Types/Game/CatbrowPet/CheshireCatbrowPetPowerSuit',
       });
 
       assert.deepEqual(companion, expectedCompanion, 'Incorrect companion output');
@@ -215,7 +216,7 @@ describe('WarframeCompanion', () => {
         ],
       };
 
-      assert.isOk(new WarframeCompanion(unknownCompanion));
+      assert.isOk(new WarframeCompanion(unknownCompanion as RawCompanion));
     });
   });
 });

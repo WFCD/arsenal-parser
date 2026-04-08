@@ -1,7 +1,8 @@
+import type { Item } from '@wfcd/items';
 import { assert } from 'chai';
 
 // Weapon.js testing
-import WarframeWeapon from '../../src/Weapon.js';
+import WarframeWeapon, { type RawWeapon } from '../../src/Weapon';
 
 describe('WarframeWeapon', () => {
   describe('#constructor', () => {
@@ -16,7 +17,7 @@ describe('WarframeWeapon', () => {
       };
 
       const weapon = new WarframeWeapon(sampleWeapon);
-      assert.equal(weapon.weapon.name, 'Kuva Karak');
+      assert.equal((weapon.weapon as Item)?.name, 'Kuva Karak');
     });
 
     it('should handle modular weapons', () => {
@@ -26,15 +27,20 @@ describe('WarframeWeapon', () => {
         },
       };
 
-      const kitgun = new WarframeWeapon(sampleKitgun);
+      const kitgun = new WarframeWeapon(sampleKitgun as unknown as RawWeapon);
 
-      assert.equal(kitgun.parts.LWPT_GUN_BARREL.uniqueName, 'UnkownPart');
+      assert.equal(kitgun.parts?.LWPT_GUN_BARREL.uniqueName, 'UnkownPart');
     });
 
     it('should handle an unknown cosmetic id', () => {
-      assert.deepEqual(new WarframeWeapon({ skins: [{ uniqueName: 'UnknownSkin' }] }).cosmetics[0], {
-        uniqueName: 'UnknownSkin',
-      });
+      assert.deepEqual(
+        new WarframeWeapon({
+          skins: [{ uniqueName: 'UnknownSkin' }],
+        } as RawWeapon).cosmetics[0],
+        {
+          uniqueName: 'UnknownSkin',
+        }
+      );
     });
 
     it('should handle an unknown part id', () => {
@@ -67,11 +73,11 @@ describe('WarframeWeapon', () => {
 
       const kitgun = new WarframeWeapon(sampleKitgun);
 
-      assert.equal(kitgun.itemName, 'Blaster Master');
+      assert.equal(kitgun.name, 'Blaster Master');
 
-      assert.equal(kitgun.parts.LWPT_GUN_BARREL.name, 'Catchmoon');
-      assert.equal(kitgun.parts.LWPT_GUN_CLIP.name, 'Splat');
-      assert.equal(kitgun.parts.LWPT_GUN_SECONDARY_HANDLE.name, 'Haymaker');
+      assert.equal((kitgun.parts?.LWPT_GUN_BARREL as Item).name, 'Catchmoon');
+      assert.equal((kitgun.parts?.LWPT_GUN_CLIP as Item).name, 'Splat');
+      assert.equal((kitgun.parts?.LWPT_GUN_SECONDARY_HANDLE as Item).name, 'Haymaker');
     });
   });
 });

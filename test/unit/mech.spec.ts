@@ -1,10 +1,10 @@
-import { assert } from 'chai';
 // Companion.js testing
-import Items from '@wfcd/items';
+import { assert } from 'chai';
 
-import WarframeMech from '../../src/Mech.js';
+import type BaseObject from '@/supporting/BaseObject';
+import { findItem } from '@/supporting/FindItem';
 
-const items = new Items();
+import WarframeMech from '../../src/Mech';
 
 describe('WarframeMech', () => {
   describe('#constructor', () => {
@@ -30,11 +30,12 @@ describe('WarframeMech', () => {
       const cosmetics = [
         '/Lotus/Upgrades/Skins/Necramech/NecraMechCHelmetA',
         '/Lotus/Upgrades/Skins/Necramech/NecraMechCSkin',
-      ].map((uName) => items.find((item) => item.uniqueName === uName));
+      ].map((uName) => findItem(uName) || { uniqueName: uName });
 
       assert.deepEqual(
         mech,
         {
+          uniqueName: '/Lotus/Powersuits/EntratiMech/NechroTech',
           colors: {
             attachments: undefined,
             primary: undefined,
@@ -42,7 +43,7 @@ describe('WarframeMech', () => {
           },
           cosmetics,
           features: 1,
-          mech: items.find((item) => item.uniqueName === '/Lotus/Powersuits/EntratiMech/NechroTech'),
+          mech: findItem('/Lotus/Powersuits/EntratiMech/NechroTech'),
           polarized: 1,
           upgrades: {
             arcanes: [],
@@ -59,17 +60,19 @@ describe('WarframeMech', () => {
         uniqueName: 'ExtremlyUnkownMech',
         skins: [
           { uniqueName: 'UnknownCosmetic' },
-          { uniqueName: '/Lotus/Upgrades/Skins/Effects/Kuva/KuvaToxinEphemera' },
+          {
+            uniqueName: '/Lotus/Upgrades/Skins/Effects/Kuva/KuvaToxinEphemera',
+          },
         ],
       };
 
-      assert.isOk(new WarframeMech(unknownCompanion));
+      assert.isOk(new WarframeMech(unknownCompanion as BaseObject));
     });
 
     it('should handle getting an unknown mech id without cosmetics', () => {
       const unknownCompanion = { uniqueName: 'ExtremlyUnkownCompanion' };
 
-      assert.isOk(new WarframeMech(unknownCompanion));
+      assert.isOk(new WarframeMech(unknownCompanion as BaseObject));
     });
   });
 });

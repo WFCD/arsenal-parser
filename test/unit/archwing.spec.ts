@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 
 // Archwing.js testing
-import WarframeArchwing from '../../src/Archwing.js';
+import WarframeArchwing from '../../src/Archwing';
+import type BaseObject from '../../src/supporting/BaseObject';
 
 describe('WarframeArchwing', () => {
   describe('#constructor', () => {
@@ -53,16 +54,18 @@ describe('WarframeArchwing', () => {
       const archwing = new WarframeArchwing(sampleArchwing);
 
       assert.equal(archwing.xp, sampleArchwing.xp, 'Invalid xp count');
-      assert.equal(archwing.archwing.name, 'Odonata', 'Incorrect archwing name');
+      assert.equal(archwing.archwing?.name, 'Odonata', 'Incorrect archwing name');
     });
 
     it('should handle being passed an unknown archwing ID', () => {
-      const fakeArchwing = new WarframeArchwing({ uniqueName: 'SomeNewUnknownArchwing' });
+      const fakeArchwing = new WarframeArchwing({
+        uniqueName: 'SomeNewUnknownArchwing',
+      } as BaseObject);
 
       assert.equal(
         JSON.stringify(fakeArchwing),
         JSON.stringify({
-          archwing: { uniqueName: 'SomeNewUnknownArchwing' },
+          uniqueName: 'SomeNewUnknownArchwing',
           upgrades: {
             arcanes: [],
             mods: [],

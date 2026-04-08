@@ -1,8 +1,10 @@
 import { assert } from 'chai';
 
+import type BaseObject from '@/supporting/BaseObject';
+
 // Warframe.js testing
-import Warframe from '../../src/Warframe.js';
-import { marshall } from '../utils.js';
+import Warframe from '../../src/Warframe';
+import { marshall } from '../utils';
 
 describe('Warframe', () => {
   describe('#constructor', () => {
@@ -52,15 +54,16 @@ describe('Warframe', () => {
       };
 
       const frame = new Warframe(sampleFrame);
-      assert.equal(frame.warframe.name, 'Nova Prime', 'Frame not correctly identified');
+      assert.equal(frame.warframe?.name, 'Nova Prime', 'Frame not correctly identified');
       delete frame.warframe; // Cleanup data for comparison
 
       assert.deepEqual(
         marshall(frame),
         {
+          uniqueName: '/Lotus/Powersuits/AntiMatter/NovaPrime',
           xp: 153461190,
           polarized: 5,
-          features: 5,
+          features: 3,
           cosmetics: [
             {
               uniqueName: '/Lotus/Upgrades/Skins/AntiMatter/NovaDeluxeIIHelmet',
@@ -70,6 +73,7 @@ describe('Warframe', () => {
               imageName: 'nova-atomica-helmet-0161cc5d10.png',
               category: 'Skins',
               masterable: false,
+              tradable: false,
             },
           ],
           upgrades: { arcanes: [], mods: [] },
@@ -79,7 +83,10 @@ describe('Warframe', () => {
                 hex: 'FF588A',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 2, col: 2 },
                   },
                 ],
@@ -88,7 +95,10 @@ describe('Warframe', () => {
                 hex: 'FE1C50',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 8, col: 2 },
                   },
                 ],
@@ -97,7 +107,10 @@ describe('Warframe', () => {
                 hex: 'FF0D43',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 3, col: 2 },
                   },
                 ],
@@ -106,7 +119,10 @@ describe('Warframe', () => {
                 hex: 'FF5C9F',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 7, col: 2 },
                   },
                 ],
@@ -117,7 +133,10 @@ describe('Warframe', () => {
                   hex: 'FF70A9',
                   matches: [
                     {
-                      palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                      palette: {
+                        name: 'Valentine',
+                        description: 'Unlocks a collection of lovely colors.',
+                      },
                       position: { row: 12, col: 2 },
                     },
                   ],
@@ -129,7 +148,10 @@ describe('Warframe', () => {
                 hex: 'FF588A',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 2, col: 2 },
                   },
                 ],
@@ -138,7 +160,10 @@ describe('Warframe', () => {
                 hex: 'FE1C50',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 8, col: 2 },
                   },
                 ],
@@ -147,7 +172,10 @@ describe('Warframe', () => {
                 hex: 'FF0D43',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 3, col: 2 },
                   },
                 ],
@@ -156,7 +184,10 @@ describe('Warframe', () => {
                 hex: 'FF5C9F',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 7, col: 2 },
                   },
                 ],
@@ -166,7 +197,10 @@ describe('Warframe', () => {
                   hex: 'FF70A9',
                   matches: [
                     {
-                      palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                      palette: {
+                        name: 'Valentine',
+                        description: 'Unlocks a collection of lovely colors.',
+                      },
                       position: { row: 12, col: 2 },
                     },
                   ],
@@ -175,7 +209,10 @@ describe('Warframe', () => {
                   hex: 'FF70A9',
                   matches: [
                     {
-                      palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                      palette: {
+                        name: 'Valentine',
+                        description: 'Unlocks a collection of lovely colors.',
+                      },
                       position: { row: 12, col: 2 },
                     },
                   ],
@@ -186,7 +223,10 @@ describe('Warframe', () => {
                   hex: 'FF70A9',
                   matches: [
                     {
-                      palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                      palette: {
+                        name: 'Valentine',
+                        description: 'Unlocks a collection of lovely colors.',
+                      },
                       position: { row: 12, col: 2 },
                     },
                   ],
@@ -263,7 +303,10 @@ describe('Warframe', () => {
                 hex: 'FF588A',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 2, col: 2 },
                   },
                 ],
@@ -272,7 +315,10 @@ describe('Warframe', () => {
                 hex: 'FE1C50',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 8, col: 2 },
                   },
                 ],
@@ -281,7 +327,10 @@ describe('Warframe', () => {
                 hex: 'FF0D43',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 3, col: 2 },
                   },
                 ],
@@ -290,7 +339,10 @@ describe('Warframe', () => {
                 hex: 'FF5C9F',
                 matches: [
                   {
-                    palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                    palette: {
+                      name: 'Valentine',
+                      description: 'Unlocks a collection of lovely colors.',
+                    },
                     position: { row: 7, col: 2 },
                   },
                 ],
@@ -301,7 +353,10 @@ describe('Warframe', () => {
                   hex: 'FF70A9',
                   matches: [
                     {
-                      palette: { name: 'Valentine', description: 'Unlocks a collection of lovely colors.' },
+                      palette: {
+                        name: 'Valentine',
+                        description: 'Unlocks a collection of lovely colors.',
+                      },
                       position: { row: 12, col: 2 },
                     },
                   ],
@@ -315,13 +370,33 @@ describe('Warframe', () => {
     });
 
     it('should handle an unknown warframe id', () => {
-      assert.deepEqual(new Warframe({ uniqueName: 'UnknownFrame' }).warframe, { uniqueName: 'UnknownFrame' });
+      assert.deepEqual(new Warframe({ uniqueName: 'UnknownFrame' } as BaseObject), {
+        uniqueName: 'UnknownFrame',
+        warframe: undefined,
+        xp: 0,
+        polarized: 0,
+        features: undefined,
+        cosmetics: [],
+        upgrades: {
+          arcanes: [],
+          mods: [],
+        },
+        colors: {
+          primary: undefined,
+          attachments: undefined,
+          syandana: undefined,
+          sigil: undefined,
+        },
+      });
     });
 
     it('should handle an unknown cosmetic id', () => {
-      assert.deepEqual(new Warframe({ skins: [{ uniqueName: 'UnknownCosmetic' }] }).cosmetics, [
-        { uniqueName: 'UnknownCosmetic' },
-      ]);
+      assert.deepEqual(
+        new Warframe({
+          skins: [{ uniqueName: 'UnknownCosmetic' }],
+        } as BaseObject).cosmetics,
+        [{ uniqueName: 'UnknownCosmetic' }]
+      );
     });
   });
 });

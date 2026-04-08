@@ -1,0 +1,1239 @@
+{
+    "accountInfo": {
+        "playerName": "Warframe PlayerName",
+        "masteryRank": 36,
+        "lastUpdated": 1775400461,
+        "glyph": "/Lotus/Types/StoreItems/AvatarImages/FanChannel/AvatarImagePandaahhhhh",
+        "title": "/Lotus/Types/Items/Titles/MaxedRailjackTitle",
+        "focus": "/Lotus/Upgrades/Focus/Attack/AttackFocusAbility"
+    },
+    "loadOuts": {
+        "NORMAL": {
+            "warframe": {
+                "uniqueName": "/Lotus/Powersuits/Wisp/WispPrime",
+                "xp": 35944568,
+                "polarized": 10,
+                "focus": "/Lotus/Upgrades/Focus/DefenseLens",
+                "features": 3,
+                "abilityOverride": {
+                    "ability": "/Lotus/Powersuits/Devourer/Abilities/DevourerConsumeAbility",
+                    "index": 3
+                },
+                "skins": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Armor/InfGrnWolfShoulderArmorMorphed/InfGrnWolfShoulderArmorA"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Armor/HarrowDeluxe/HarrowDeluxeLArmor"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Wisp/WF1999WispSkin"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Armor/SWXulatuChest/SWXulatuChestArmor"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Armor/Inf1999Armor/Inf1999ArmorA"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Armor/HarrowDeluxe/HarrowDeluxeLArmor"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Effects/EphemeraNezhaPrime"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Crowns/CitrineDeluxeCrown"
+                    }
+                ],
+                "pricol": {
+                    "t0": "998270",
+                    "t1": "9F9F9F",
+                    "t2": "4FF7FF",
+                    "t3": "1C1A1A",
+                    "m0": "B1D1B9",
+                    "m1": "EFFFFF",
+                    "en": "2B2220",
+                    "e1": "787575"
+                },
+                "sigcol": {
+                    "e1": "FF8080"
+                },
+                "attcol": {
+                    "t0": "998270",
+                    "t1": "9F9F9F",
+                    "t2": "4FF7FF",
+                    "t3": "1C1A1A",
+                    "m0": "B1D1B9",
+                    "m1": "EFFFFF",
+                    "en": "2B2220",
+                    "e1": "787575"
+                },
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/PowerStrengthOnKill",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Utility/GolemArcaneRadialEnergyOnEnergyPickup",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Powersuits/Wisp/WispReservoirAugmentCard",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Aura/FairyQuest/FairyQuestCritToAbilityAuraMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Warframe/DualStat/CorruptedPowerEfficiencyWarframe",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Warframe/AvatarInvulnOnRollMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Warframe/Expert/AvatarAbilityDurationModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Augur/WarframeAugurReachMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Warframe/DualStat/ConstitutionMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Warframe/Kahl/KahlAvatarAbilityRangeMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Warframe/DualStat/CorruptedPowerStrengthPowerDurationWarframe",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Umbra/WarframeUmbraModC",
+                        "rank": 10
+                    }
+                ]
+            },
+            "secondary": {
+                "uniqueName": "/Lotus/Weapons/Tenno/Pistols/PrimeKompressa/PrimeKompressa",
+                "xp": 131543988,
+                "polarized": 5,
+                "focus": "/Lotus/Upgrades/Focus/PowerLens",
+                "features": 35,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/SecondaryDamageOnMeleeKill",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Pistol/WeaponProjectileSpeedMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/DualSource/Pistol/MultishotDodgeMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Synth/PistolSynthChargeMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Pistol/DualStat/GrinderMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Pistol/DualStat/MagneticCritDamagePistolMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Augur/SecondaryAugurSeekerMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Augur/SecondaryAugurPactMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Pistol/DualStat/CorruptedFireRateDamagePistol",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Pistol/WeaponStunChanceMod",
+                        "rank": 5
+                    }
+                ]
+            },
+            "melee": {
+                "uniqueName": "/Lotus/Weapons/Tenno/Zariman/Melee/Tonfas/ZarimanTonfaWeapon",
+                "xp": 1071513423,
+                "polarized": 10,
+                "focus": "/Lotus/Upgrades/Focus/PowerLensGreater",
+                "features": 35,
+                "eyecol": {
+                    "t0": "808089",
+                    "t2": "808063"
+                },
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Utility/FreezeEnemiesOnRoll",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/EmpoweredHeavyMelee/CertainStrike",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Weapons/Tenno/Melee/MeleeTrees/TonfaCmbTwoMeleeTree",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Melee/WeaponDamageIfVictimProcActive",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Melee/Channel/ChannelFireRateMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/DualSource/Melee/CritDamageChargeSpeedMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Melee/Expert/WeaponMeleeDamageModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Melee/Event/ComboCritChanceMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Sacrifice/MeleeSacrificeModB",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Melee/Expert/WeaponToxinDamageModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Melee/WeaponMeleeArmorShatterMod",
+                        "rank": 5
+                    }
+                ]
+            },
+            "heavy": {
+                "uniqueName": "/Lotus/Weapons/Grineer/HeavyWeapons/GrnHeavyGrenadeLauncher",
+                "upgradeType": "/Lotus/Weapons/Grineer/KuvaLich/Upgrades/InnateDamageRandomMod",
+                "itemName": "AYANGA KUVA DE UPUU LOLBUKK",
+                "xp": 874384,
+                "polarized": 5,
+                "features": 5,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/Expert/ArchwingRifleDamageAmountModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/PrimedArchwingRifleFireIterationsMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleFireRateMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleCritChanceMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleReloadSpeedMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleAmmoMaxMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponToxinDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponElectricityDamageMod",
+                        "rank": 5
+                    }
+                ]
+            }
+        },
+        "SENTINEL": {
+            "companion": {
+                "uniqueName": "/Lotus/Types/Game/KubrowPet/FurtiveKubrowPetPowerSuit",
+                "xp": 1179356,
+                "polarized": 11,
+                "features": 1,
+                "skins": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Kubrows/Collars/PrimeKubrowCollarA"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Kubrows/Fur/DaybreakKubrowFur"
+                    }
+                ],
+                "pricol": {
+                    "t0": "94857B",
+                    "t1": "94857B",
+                    "t2": "FFC78A",
+                    "t3": "6CBDFF",
+                    "m0": "C4A25D",
+                    "m1": "5A1A1A",
+                    "en": "4917AD"
+                },
+                "attcol": {
+                    "t0": "A07E76",
+                    "t1": "8A9E9C",
+                    "t2": "4F4238",
+                    "t3": "AC944E",
+                    "m0": "502828",
+                    "m1": "5B5C7D",
+                    "en": "DCBF72",
+                    "e1": "BABABA"
+                },
+                "type": "beast",
+                "itemName": "Huuuu raaaaaas",
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Types/Friendly/Pets/KubrowPetPrecepts/KubrowCloakPrecept",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/KubrowShieldRechargeRateMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/VoidBond/Proliferation",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/VoidBond/BoneSplitter",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Mecha/KubrowMechaRechargeMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/VoidBond/EximusHunter",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/VoidBond/VoidClone",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/VoidBond/TenaciousPartner",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/BeastLoyalRetriever",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Types/Sentinels/SentinelPrecepts/BeastUniversalVacuum",
+                        "rank": 5
+                    }
+                ]
+            },
+            "roboticweapon": {
+                "uniqueName": "/Lotus/Types/Sentinels/SentinelWeapons/SentinelFreezeRayPrimeRifle",
+                "xp": 526322160,
+                "polarized": 6,
+                "features": 1,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponDamageAmountMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponFireIterationsMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Vigilante/PrimaryVigilanteArmamentsMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Vigilante/PrimaryVigilanteOffenseMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/IceEventRifleMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/PoisonEventRifleMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponFireDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Vigilante/PrimaryVigilanteFervorMod",
+                        "rank": 5
+                    }
+                ]
+            },
+            "exalted2": {
+                "uniqueName": "/Lotus/Types/Friendly/Pets/BeastWeapons/HurasPetWeapon",
+                "xp": 1181964111,
+                "polarized": 4,
+                "features": 1,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Types/Friendly/Pets/BeastWeapons/Stances/BeastVIPStance",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/KubrowMeleeDamageMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/KubrowCritMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/BeastWeapon/KubrowHeatConversionMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/BeastWeapon/BeastPrecisionConditioningMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Mecha/KubrowMechaOverdriveMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/BeastWeapon/BeastCullTheWeakMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sets/Hunter/CompanionHunterSynergyMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Sentinel/Kubrow/BeastWeapon/BeastWeakenedImmunityMod",
+                        "rank": 3
+                    }
+                ]
+            }
+        },
+        "ARCHWING": {
+            "archwing": {
+                "uniqueName": "/Lotus/Powersuits/Archwing/StealthJetPack/StealthJetPack",
+                "xp": 19240736,
+                "polarized": 3,
+                "focus": "/Lotus/Upgrades/Focus/DefenseLens",
+                "features": 1,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitHealthMaxMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitAbilityRangeMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitAbilityEfficiencyMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitSprintSpeedMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitShieldRechargeRateMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Powersuits/Archwing/StealthJetPack/GravInstabilityAugmentCard",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Suit/ArchwingSuitPowerMaxMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Expert/ArchwingSuitAbilityStrengthModExpert",
+                        "rank": 10
+                    }
+                ]
+            },
+            "primary": {
+                "uniqueName": "/Lotus/Weapons/Tenno/Archwing/Primary/ThanoTechArchLongGun/ThanoTechLongGun",
+                "xp": 32067110,
+                "polarized": 5,
+                "focus": "/Lotus/Upgrades/Focus/TacticLens",
+                "features": 101,
+                "skins": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Necramech/MechWeapon/MechEventMausolonSkin"
+                    }
+                ],
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/SecondaryDamageOnHeatProc",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/StatusAndAmmoEfficiencyOnWeakpointHit",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRiflePunchthroughMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/Expert/ArchwingRifleDamageAmountModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/PrimedArchwingRifleFireIterationsMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleCritDamageMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleCritChanceMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingEventRadiationFireIterationRifleMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingEventMagneticFireRateRifleMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleFireRateMod",
+                        "rank": 5
+                    }
+                ]
+            },
+            "melee": {
+                "uniqueName": "/Lotus/Weapons/Tenno/Archwing/Melee/VoidTraderArchsword/VTArchSwordWeapon",
+                "xp": 142238,
+                "polarized": 4,
+                "features": 1,
+                "pricol": {
+                    "t0": "FFFFFF",
+                    "t1": "FFFFFF",
+                    "t2": "1D1E22",
+                    "t3": "FF9C00",
+                    "m0": "DE0000",
+                    "m1": "DE0000",
+                    "en": "DE0000",
+                    "e1": "DE0000"
+                },
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingMeleeDamageMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingMeleeCritChanceMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingMeleeCritDamageMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": ""
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingMeleeRangeIncMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingWeaponElectricityDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingEventToxinStatusMeleeMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Melee/ArchwingMeleeScanOnKillMod"
+                    }
+                ]
+            }
+        },
+        "OPERATOR": {
+            "operator": {
+                "ItemId": {
+                    "$oid": "6939a06103251f95ae04bb26"
+                },
+                "mod": 0,
+                "cus": 0
+            },
+            "amp": {
+                "uniqueName": "/Lotus/Weapons/Sentients/OperatorAmplifiers/OperatorAmpWeapon",
+                "itemName": "5-4-7",
+                "xp": 162728465,
+                "focus": "/Lotus/Upgrades/Focus/TacticLens",
+                "features": 40,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Zariman/OperatorOnOperatorAbilityIncreaseDamage",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Zariman/AmpOnEnergyDepletedCritChance",
+                        "rank": 5
+                    }
+                ],
+                "modularParts": {
+                    "LWPT_AMP_OCULUS": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartA",
+                    "LWPT_AMP_BRACE": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC",
+                    "LWPT_AMP_CORE": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set2/Chassis/SentAmpSet2ChassisPartA"
+                }
+            }
+        },
+        "DATAKNIFE": {
+            "parazon": {
+                "uniqueName": "/Lotus/Weapons/Tenno/HackingDevices/TnHackingDevice/TnHackingDeviceWeapon",
+                "xp": 450000,
+                "skins": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Parazon/TnRailjackDataKnife"
+                    }
+                ],
+                "pricol": {
+                    "t0": "050608",
+                    "t1": "040203",
+                    "t2": "050608",
+                    "t3": "EFA55E",
+                    "m0": "F9D75C",
+                    "m1": "FFB522",
+                    "en": "E09711",
+                    "e1": "E09711"
+                },
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Immortal/ImmortalOneMod",
+                        "rank": 1
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Immortal/ImmortalWildcardMod",
+                        "rank": 1
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Immortal/ImmortalThreeMod",
+                        "rank": 2
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/DataSpike/Assassin/OnExecutionEnergyDropMod"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/DataSpike/Cipher/OnHackInvisMod"
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/DataSpike/Cipher/OnHackSprintSpeedMod"
+                    }
+                ]
+            },
+            "primary": {
+                "uniqueName": "/Lotus/Types/Game/CrewShip/RailJack/DefaultHarness",
+                "xp": 57046026,
+                "polarized": 3,
+                "features": 1,
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Piloting/LavanHijackMatrixAura",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Gunnery/VidarGunnerWeaponCritDamage",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Piloting/ZektiSpeed",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Gunnery/VidarGunnerWeaponDamage",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Gunnery/ZektiSuperWeaponDamage",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Piloting/ZektiNonCombatSpeed",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Gunnery/ZektiFreeSuperWeaponAmmo",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Gunnery/VidarGunnerWeaponCritChance",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Piloting/ZektiBoostSpeed",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Tactical/CrewShipAfterBurnersAbilityCard",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Tactical/CrewShipQuadDamageAbilityCard",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Tactical/CrewShipMassRecallAbilityCard",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Abilities/CrewShipAttackAbilityCard",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Abilities/CrewShipThumperAbilityCard",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Railjack/Abilities/CrewShipEMPAbilityCard",
+                        "rank": 10
+                    }
+                ]
+            }
+        },
+        "MECH": {
+            "mech": {
+                "uniqueName": "/Lotus/Powersuits/EntratiMech/NechroTech",
+                "xp": 11411875,
+                "polarized": 7,
+                "focus": "/Lotus/Upgrades/Focus/AttackLensLua",
+                "features": 1,
+                "skins": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Necramech/NecramechVoidRigDefaultHelmet"
+                    }
+                ],
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechAbilityStrengthMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechBoostRechargeMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechAvatarShieldRechargeRateMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechSlideSpeedMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechArmourMaxMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechAbilityDurationMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechRegenOnLowHealthMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechPowerMaxMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechAbilityEfficiencyMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechHealthMaxMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechBoostMaxMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Necromech/NecromechAvatarDamageToEnergyMod",
+                        "rank": 5
+                    }
+                ]
+            },
+            "heavy": {
+                "uniqueName": "/Lotus/Weapons/Tenno/Archwing/Primary/ThanoTechArchLongGun/ThanoTechLongGun",
+                "xp": 32067110,
+                "polarized": 5,
+                "focus": "/Lotus/Upgrades/Focus/TacticLens",
+                "features": 101,
+                "skins": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Skins/Necramech/MechWeapon/MechEventMausolonSkin"
+                    }
+                ],
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/SecondaryCritOnHit",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/PrimaryDamageOnNoMelee",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponElectricityDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/Expert/ArchwingRifleDamageAmountModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/PrimedArchwingRifleFireIterationsMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponFireDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponToxinDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingEventMagneticFireRateRifleMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleFireRateMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleCritDamageMod",
+                        "rank": 3
+                    }
+                ]
+            },
+            "exalted": {
+                "uniqueName": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/ExaltedArtilleryWeapon",
+                "xp": 25501804,
+                "polarized": 7,
+                "features": 1,
+                "pricol": {
+                    "t0": "929886",
+                    "t1": "D0D1D0",
+                    "t2": "65481E",
+                    "t3": "C86324",
+                    "m0": "FF7A00",
+                    "m1": "E8C381",
+                    "en": "55726F"
+                },
+                "upgrades": [
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleCritChanceMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponFireDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingWeaponElectricityDamageMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingEventRadiationFireIterationRifleMod",
+                        "rank": 3
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleFireRateMod",
+                        "rank": 5
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/PrimedArchwingRifleFireIterationsMod",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/Expert/ArchwingRifleDamageAmountModExpert",
+                        "rank": 10
+                    },
+                    {
+                        "uniqueName": "/Lotus/Upgrades/Mods/Archwing/Rifle/ArchwingRifleCritDamageMod",
+                        "rank": 3
+                    }
+                ]
+            }
+        },
+        "RAILJACK": {
+            "railjack": {
+                "uniqueName": "/Lotus/Types/Game/CrewShip/Ships/RailJack",
+                "modularParts": {
+                    "SHIELD": {
+                        "uniqueName": "/Lotus/Upgrades/Skins/RailJack/ShieldArrayLavanC"
+                    },
+                    "ENGINES": {
+                        "uniqueName": "/Lotus/Upgrades/Skins/RailJack/EnginesLavanC"
+                    },
+                    "REACTOR": {
+                        "uniqueName": "/Lotus/Upgrades/Skins/RailJack/ReactorLavanC"
+                    },
+                    "HULL": {
+                        "uniqueName": "/Lotus/Upgrades/Skins/RailJack/HullMaterialsVidarC"
+                    }
+                },
+                "upgrades": [
+                ],
+                "itemName": "Ayaya Ayaya",
+                "pricol": {
+                    "t0": "827DD3",
+                    "t1": "030404",
+                    "t2": "73665C",
+                    "t3": "565E4A",
+                    "m0": "000000",
+                    "m1": "774E37",
+                    "en": "DFBA64",
+                    "e1": "545E74"
+                }
+            },
+            "armaments": {
+                "modularParts": {
+                    "PILOT": {
+                        "uniqueName": "/Lotus/Weapons/CrewShip/Laser/PulseLaser/ZektiPulseLaserTierC",
+                        "upgradeType": "/Lotus/Weapons/CrewShip/CrewShipInnateFireRateRandomMod"
+                    },
+                    "ORDINANCE": {
+                        "uniqueName": "/Lotus/Weapons/CrewShip/Missiles/MissleLauncherWeaponTierC"
+                    },
+                    "PORT_GUNS": {
+                        "uniqueName": "/Lotus/Weapons/CrewShip/Laser/Beam/ZektiRailJackBeamWeaponTierC",
+                        "upgradeType": "/Lotus/Weapons/CrewShip/Laser/Beam/RailJackBeamInnateDamageRandomMod"
+                    }
+                }
+            },
+            "crew": {
+                "members": {
+                    "SLOT_A": {
+                        "uniqueName": "/Lotus/Types/Game/CrewShip/CrewMember/CephalonSudaCrewMemberGeneratorStrong",
+                        "xp": 0,
+                        "role": 3,
+                        "skills": {
+                            "PILOTING": {
+                                "Assigned": 0
+                            },
+                            "GUNNERY": {
+                                "Assigned": 3
+                            },
+                            "ENGINEERING": {
+                                "Assigned": 0
+                            },
+                            "COMBAT": {
+                                "Assigned": 0
+                            },
+                            "SURVIVABILITY": {
+                                "Assigned": 0
+                            }
+                        },
+                        "suit": "/Lotus/Powersuits/NpcPowersuits/CrewMemberFemaleSuit",
+                        "crewweapon": {
+                            "uniqueName": "/Lotus/Weapons/Tenno/Shotgun/PrimeBoar",
+                            "xp": 1464752,
+                            "polarized": 16,
+                            "features": 547,
+                            "upgrades": [
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/ShotgunMultishotAndReloadSpeedOnCloseKill",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": ""
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/Expert/WeaponDamageAmountModExpert",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/WeaponFireIterationsSPMod",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/Expert/WeaponCritDamageModExpert",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/Expert/WeaponShotgunFactionDamageInfestedExpert",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/DualStat/CorruptedCritChanceFireRateShotgun",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/WeaponFireRateMod",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Shotgun/WeaponFireDamageMod",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Randomized/LotusShotgunRandomModRare",
+                                    "rank": 8,
+                                    "buffs": [
+                                        {
+                                            "tag": "WeaponStunChanceMod",
+                                            "val": 0.61891937592897506
+                                        },
+                                        {
+                                            "tag": "WeaponCritDamageMod",
+                                            "val": 0.57922036720367187
+                                        },
+                                        {
+                                            "tag": "WeaponFireIterationsMod",
+                                            "val": 0.069307515462215544
+                                        }
+                                    ],
+                                    "compat": "/Lotus/Weapons/Tenno/Shotgun/FullAutoShotgun",
+                                    "lvlReq": 14,
+                                    "pol": "AP_TACTIC"
+                                }
+                            ]
+                        },
+                        "pricol": {
+                            "t0": -13817028,
+                            "t1": -11324829,
+                            "t2": -11496026,
+                            "t3": -4156625,
+                            "m0": -5594573,
+                            "m1": -3296433
+                        },
+                        "attcol": {
+                            "t0": -13817028,
+                            "t1": -11324829,
+                            "t2": -11496026,
+                            "t3": -4156625,
+                            "m0": -5594573,
+                            "m1": -3296433
+                        },
+                        "eyecol": {
+                            "t0": -13817028,
+                            "t1": -11324829,
+                            "t2": -11496026,
+                            "t3": -4156625,
+                            "m0": -5594573,
+                            "m1": -3296433
+                        },
+                        "faction": "CephalonSuda"
+                    },
+                    "SLOT_B": {
+                        "uniqueName": "/Lotus/Types/Game/CrewShip/CrewMember/NewLokaCrewMemberGeneratorStrong",
+                        "xp": 0,
+                        "role": 4,
+                        "skills": {
+                            "PILOTING": {
+                                "Assigned": 0
+                            },
+                            "GUNNERY": {
+                                "Assigned": 0
+                            },
+                            "ENGINEERING": {
+                                "Assigned": 2
+                            },
+                            "COMBAT": {
+                                "Assigned": 0
+                            },
+                            "SURVIVABILITY": {
+                                "Assigned": 1
+                            }
+                        },
+                        "suit": "/Lotus/Powersuits/NpcPowersuits/CrewMemberFemaleSuit",
+                        "crewweapon": {
+                            "uniqueName": "/Lotus/Weapons/Tenno/LongGuns/PrimeAcceltra/PrimeAcceltraWeapon",
+                            "xp": 12524912,
+                            "polarized": 11,
+                            "features": 35,
+                            "upgrades": [
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/PrimaryDamageOnKill",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Sets/Vigilante/PrimaryVigilanteSuppliesMod"
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/DualSource/Rifle/SerratedRushMod",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponFireIterationsSPMod",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/Expert/WeaponIncreaseRadialExplosionModExpert",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponCritDamageMod",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/FireEventRifleMod",
+                                    "rank": 3
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/HammerShotMod",
+                                    "rank": 3
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponFireDamageMod",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/CorruptedCritRateFireRateRifle",
+                                    "rank": 5
+                                }
+                            ]
+                        },
+                        "pricol": {
+                            "t0": -13560501,
+                            "t1": -5597724,
+                            "t2": -15728633,
+                            "t3": -15263206,
+                            "m0": -13488548,
+                            "m1": -14350222
+                        },
+                        "attcol": {
+                            "t0": -13560501,
+                            "t1": -5597724,
+                            "t2": -15728633,
+                            "t3": -15263206,
+                            "m0": -13488548,
+                            "m1": -14350222
+                        },
+                        "eyecol": {
+                            "t0": -13560501,
+                            "t1": -5597724,
+                            "t2": -15728633,
+                            "t3": -15263206,
+                            "m0": -13488548,
+                            "m1": -14350222
+                        },
+                        "faction": "NewLoka"
+                    },
+                    "SLOT_C": {
+                        "uniqueName": "/Lotus/Types/Game/CrewShip/CrewMember/PerrinCrewMemberGeneratorStrong",
+                        "xp": 0,
+                        "role": 1,
+                        "skills": {
+                            "PILOTING": {
+                                "Assigned": 0
+                            },
+                            "GUNNERY": {
+                                "Assigned": 0
+                            },
+                            "ENGINEERING": {
+                                "Assigned": 0
+                            },
+                            "COMBAT": {
+                                "Assigned": 0
+                            },
+                            "SURVIVABILITY": {
+                                "Assigned": 3
+                            }
+                        },
+                        "suit": "/Lotus/Powersuits/NpcPowersuits/CrewMemberMaleSuit",
+                        "secondincommand": true,
+                        "crewweapon": {
+                            "uniqueName": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Zarr/KuvaZarr",
+                            "upgradeType": "/Lotus/Weapons/Grineer/KuvaLich/Upgrades/InnateDamageRandomMod",
+                            "itemName": "Zarr Kuva Prime Umbra",
+                            "xp": 3674289,
+                            "polarized": 7,
+                            "features": 1059,
+                            "upgrades": [
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/CosmeticEnhancers/Offensive/PrimaryDamageOnKill",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponAmmoMaxMod",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponDamageAmountMod",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponFireIterationsSPMod",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/Expert/WeaponIncreaseRadialExplosionModExpert",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/CorruptedCritRateFireRateRifle",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/Expert/WeaponReloadSpeedModExpert",
+                                    "rank": 10
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/DualStat/CorruptedFireRateDamageRifle",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponCritDamageMod",
+                                    "rank": 5
+                                },
+                                {
+                                    "uniqueName": "/Lotus/Upgrades/Mods/Rifle/WeaponFireDamageMod",
+                                    "rank": 5
+                                }
+                            ]
+                        },
+                        "pricol": {
+                            "t0": -1047,
+                            "t1": -10584194,
+                            "t2": -7155242,
+                            "t3": -10578000,
+                            "m0": -3385,
+                            "m1": -9944007
+                        },
+                        "attcol": {
+                            "t0": -1047,
+                            "t1": -10584194,
+                            "t2": -7155242,
+                            "t3": -10578000,
+                            "m0": -3385,
+                            "m1": -9944007
+                        },
+                        "faction": "Perrin"
+                    }
+                }
+            }
+        }
+    }
+}

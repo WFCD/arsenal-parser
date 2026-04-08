@@ -1,10 +1,10 @@
-import { assert } from 'chai';
-import Items from '@wfcd/items';
+import Items, { type Mod } from '@wfcd/items';
 import { find } from '@wfcd/items/utilities';
+import { assert } from 'chai';
 import { translateFocus, translatePolarity } from 'warframe-worldstate-data/utilities';
 
 // js Testing
-import { marshall } from '../utils.js';
+import { marshall } from '../utils';
 
 const { loadMods } = find;
 
@@ -22,7 +22,7 @@ describe('utilities', () => {
 
       assert.deepEqual(
         marshall(arcaneEnergize.arcanes[0]),
-        marshall(items.find((i) => i.name === 'Arcane Energize')),
+        marshall(items.find((i) => i.name === 'Arcane Energize')!),
         'Arcane energize invalid'
       );
     });
@@ -68,13 +68,11 @@ describe('utilities', () => {
         ],
         curses: [{ tag: 'WeaponAmmoMaxMod', val: 0.5835381164993515 }],
         masteryReq: 15,
+        baseDrain: 0,
+        fusionLimit: 0,
         wikiaThumbnail: undefined,
         wikiaUrl: undefined,
       };
-
-      // ignore some fields
-      delete rivenMod.mods[0].baseDrain;
-      delete rivenMod.mods[0].fusionLimit;
 
       assert.deepEqual(marshall(rivenMod.mods[0]), marshall(expectedRiven), 'Riven parsing failed');
     });
@@ -94,7 +92,7 @@ describe('utilities', () => {
       };
       const parazonMod = loadMods([sampleParazonMod]);
       assert.deepEqual(
-        parazonMod.mods[0].levelStats[0],
+        (parazonMod.mods[0] as Mod).levelStats![0],
         { stats: ['+30% chance to auto complete Hacking'] },
         'Mod not correctly found'
       );

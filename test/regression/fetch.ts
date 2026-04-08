@@ -5,7 +5,7 @@ const CLIENT_ID = 'kimne78kx3ncx6brgo4mv6wki5h1ko'; // Twitch's client id
 const WF_ARSENAL_ID = 'ud1zj704c0eb1s553jbkayvqxjft97'; // wf arsenal extension
 const TWITCH_CHANNEL_ID = '89104719'; // tobitenno
 
-const cache = {};
+const cache: Record<string, object> = {};
 
 const gqlToken = async () => {
   const raw = await fetch(`https://gql.twitch.tv/gql`, {
@@ -15,12 +15,16 @@ const gqlToken = async () => {
     },
     body: `[{"operationName":"ExtensionsForChannel","variables":{"channelID":"${TWITCH_CHANNEL_ID}"},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"d52085e5b03d1fc3534aa49de8f5128b2ee0f4e700f79bf3875dcb1c90947ac3"}}}]`,
   }).then((d) => d.json());
-  return raw?.[0]?.data?.user?.channel?.selfInstalledExtensions?.find((s) => {
-    return s?.token?.extensionID === WF_ARSENAL_ID;
-  })?.token?.jwt;
+
+  return raw?.[0]?.data?.user?.channel?.selfInstalledExtensions?.find(
+    // biome-ignore lint/suspicious/noExplicitAny: This is fine for now
+    (s?: any) => {
+      return s?.token?.extensionID === WF_ARSENAL_ID;
+    }
+  )?.token?.jwt;
 };
 
-export default async (username) => {
+export default async (username: string) => {
   if (!CLIENT_ID) throw new Error('No defined client id');
   if (cache[username]) return cache[username];
 

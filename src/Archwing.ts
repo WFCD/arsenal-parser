@@ -1,0 +1,30 @@
+import type { Arcane, ColorMap, Item, ModUnion } from '@wfcd/items';
+import { colors, find } from '@wfcd/items/utilities';
+
+import type BaseObject from './supporting/BaseObject';
+import { findItem } from './supporting/FindItem';
+
+const { loadMods } = find;
+const { mapColors } = colors;
+
+export default class WarframeArchwing {
+  uniqueName: string;
+  archwing?: Item;
+  xp: number;
+  polarized: number;
+  upgrades: { arcanes: Arcane[]; mods: ModUnion[] };
+  colors: { primary?: ColorMap; attachments?: ColorMap };
+
+  constructor(archwing: BaseObject) {
+    this.uniqueName = archwing.uniqueName;
+    this.archwing = findItem(archwing.uniqueName);
+    this.xp = archwing.xp;
+    this.polarized = archwing.polarized;
+    this.upgrades = loadMods(archwing.upgrades);
+
+    this.colors = {
+      primary: archwing.pricol ? mapColors(archwing.pricol) : undefined,
+      attachments: archwing.attcol ? mapColors(archwing.attcol) : undefined,
+    };
+  }
+}

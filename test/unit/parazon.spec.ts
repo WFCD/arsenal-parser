@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 
 // Parazon.js testing
-import WarframeParazon from '../../src/Parazon.js';
-import { marshall } from '../utils.js';
+import WarframeParazon from '../../src/Parazon';
+import { marshall } from '../utils';
 
 describe('WarframeParazon', () => {
   describe('#constructor', () => {
@@ -41,6 +41,7 @@ describe('WarframeParazon', () => {
             {
               uniqueName: '/Lotus/Upgrades/Skins/Parazon/TnRailjackDataKnife',
               name: 'Sigma Series Parazon Skin',
+              tradable: false,
               description: 'This Parazon model was gifted to the first Warframe Railjack crews.',
               type: 'Skin',
               imageName: 'sigma-series-parazon-skin-b5e793d9a5.png',

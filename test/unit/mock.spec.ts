@@ -1,13 +1,16 @@
 import { assert } from 'chai';
-import ArsenalData from '@wfcd/arsenal-parser';
 
-import Player from '../../src/Player.js';
+import ArsenalData, { type BaseArsenalData } from '../../src/ArsenalParser';
+import { default as Player } from '../../src/Player';
 
-const examples = (
+const examples: BaseArsenalData[] = (
   await Promise.all(
-    new Array(6)
-      .fill(0)
-      .map((_, i) => import(`../data/exampleData${i + 1}.json`, { with: { type: 'json' }, assert: { type: 'json' } }))
+    new Array(6).fill(0).map(
+      (_, i) =>
+        import(`../data/exampleData${i + 1}.json`, {
+          with: { type: 'json' },
+        })
+    )
   )
 ).map((p) => p.default);
 

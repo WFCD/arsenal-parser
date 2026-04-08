@@ -2,105 +2,37 @@
   "name": "@wfcd/arsenal-parser",
   "version": "0.0.1",
   "description": "Parser for Digital Extreme's Twitch Arsenal Extension data",
-  "keywords": [
-    "warframe",
-    "parser",
-    "twitch",
-    "arsenal"
-  ],
+  "keywords": ["warframe", "parser", "twitch", "arsenal"],
   "repository": "https://github.com/WFCD/arsenal-parser",
   "license": "MIT",
   "author": "NicksWorld",
-  "contributors": [
-    "TobiTenno <tobiah@pm.me>"
-  ],
+  "contributors": ["TobiTenno <tobiah@pm.me>"],
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/ArsenalParser.js",
-      "types": "./types/src/ArsenalParser.d.ts"
+      "import": "./dist/ArsenalParser.mjs",
+      "types": "./dist/ArsenalParser.d.mts"
     }
   },
   "main": "src/ArsenalParser.js",
   "types": "./types/src/ArsenalParser.d.ts",
-  "files": [
-    "src",
-    "LICENSE",
-    "README.md",
-    "types"
-  ],
+  "files": ["src", "LICENSE", "README.md", "types"],
   "scripts": {
-    "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
-    "build:types": "tsc -p tsconfig.declaration.json",
+    "build": "tsdown",
+    "build:docs": "typedoc",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint src/ test/",
-    "lint:fix": "eslint src/ test/ --fix",
-    "prepare": "husky && install-peerdeps @wfcd/eslint-config@latest -S",
+    "lint": "biome check",
+    "lint:fix": "biome check --write",
+    "prepare": "husky",
     "prepublishOnly": "npm run build:types",
     "test": "c8 mocha"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "body-max-line-length": [
-        0
-      ]
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --cache --fix",
-      "npm test"
-    ],
-    "package*.json": [
-      "prettier --write",
-      "npm dedupe",
-      "npx sort-package-json"
-    ],
-    "*.{json,yml,yaml},!package*.json": [
-      "prettier --write"
-    ]
-  },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-transform-class-properties",
-      "@babel/plugin-transform-private-methods"
-    ],
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "prettier": "@wfcd/eslint-config/prettier",
-  "eslintConfig": {
-    "parser": "@babel/eslint-parser",
-    "parserOptions": {
-      "sourceType": "module"
-    },
-    "extends": "@wfcd/eslint-config/esm"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
-  "mocha": {
-    "exit": true,
-    "spec": "test/**/*.spec.js"
-  },
-  "c8": {
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "skip-full": true
-  },
   "devDependencies": {
+    "@biomejs/biome": "2.4.10",
     "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@types/chai": "^5.0.0",
-    "@wfcd/eslint-config": "^1.6.1",
+    "@types/mocha": "^10.0.10",
     "c8": "^11.0.0",
     "chai": "^6.0.1",
     "chai-json-equal": "^0.0.1",
@@ -109,16 +41,20 @@
     "install-peerdeps": "^3.0.3",
     "lint-staged": "^16.0.0",
     "mocha": "^11.0.1",
-    "prettier": "^3.2.5",
+    "mocha-minimalist-reporter": "1.1.0",
+    "tsdown": "^0.21.7",
+    "tsx": "4.21.0",
+    "typedoc": "0.28.18",
     "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "@wfcd/items": ">=1.1270.666",
-    "warframe-worldstate-data": "^3.0.1"
+    "@wfcd/items": ">=1.1273.11",
+    "warframe-worldstate-data": "^3.12.0"
   },
   "engines": {
     "node": ">=18.19.0"
   },
-  "public": true,
-  "publishConfig": { "provenance": true }
+  "publishConfig": {
+    "provenance": true
+  }
 }
