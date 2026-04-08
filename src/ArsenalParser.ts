@@ -4,6 +4,7 @@ import Mech from './Mech.js';
 import Amp from './OperatorAmp.js';
 import Parazon from './Parazon.js';
 import Player, { type PlayerInformation } from './Player.js';
+import { Railjack, type RawRailjackObject } from './Railjack.js';
 import type BaseObject from './supporting/BaseObject.js';
 import Warframe from './Warframe.js';
 import Weapon, { type RawWeapon } from './Weapon.js';
@@ -27,6 +28,7 @@ export interface BaseLoadouts {
   OPERATOR: { amp: BaseObject };
   SENTINEL: { roboticweapon?: RawWeapon; companion?: RawCompanion };
   MECH: { mech: BaseObject; heavy: RawWeapon; exalted: RawWeapon };
+  RAILJACK: RawRailjackObject;
 }
 
 export interface ArsenalLoadout {
@@ -41,6 +43,7 @@ export interface ArsenalLoadout {
   amp?: Amp;
   companion?: Companion;
   roboticweapon?: Weapon;
+  railjack?: Railjack;
 }
 
 export interface VechilesLoadout {
@@ -58,7 +61,7 @@ export default class ArsenalData {
   constructor(data: BaseArsenalData) {
     this.account = new Player(data.accountInfo);
 
-    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH } = data.loadOuts;
+    const { NORMAL, ARCHWING, DATAKNIFE, OPERATOR, SENTINEL, MECH, RAILJACK } = data.loadOuts;
 
     const { warframe, primary, secondary, melee, heavy, exalted } = NORMAL;
 
@@ -105,5 +108,7 @@ export default class ArsenalData {
         };
       }
     }
+
+    if (RAILJACK) this.loadout.railjack = new Railjack(RAILJACK);
   }
 }
