@@ -14,9 +14,9 @@
       "types": "./dist/ArsenalParser.d.mts"
     }
   },
-  "main": "src/ArsenalParser.js",
-  "types": "./types/src/ArsenalParser.d.ts",
-  "files": ["src", "LICENSE", "README.md", "types"],
+  "main": "./dist/ArsenalParser.mjs",
+  "types": "./dist/ArsenalParser.d.mts",
+  "files": ["LICENSE", "README.md", "dist"],
   "scripts": {
     "build": "tsdown",
     "build:docs": "typedoc",
