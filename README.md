@@ -12,8 +12,7 @@ Documentation is available [here](https://wfcd.github.io/arsenal-parser/)
 ## Example usage
 
 ```javascript
-import ArsenalData from 'ArsenalParser.js';
-import fetch from 'node-fetch.js';
+import ArsenalData from '@wfcd/arsenal-parser';
 
 const baseURL = 'https://content.warframe.com/dynamic/twitch/getActiveLoadout.php?account=';
 
@@ -27,6 +26,4 @@ async function fetchArsenal(username) {
 
   return new ArsenalData(data);
 }
-
-
 ```
