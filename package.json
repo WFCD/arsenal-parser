@@ -28,7 +28,7 @@
     "test": "c8 mocha"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.1",
+    "@biomejs/biome": "2.5.3",
     "@commitlint/cli": "^21.0.0",
     "@commitlint/config-conventional": "^21.0.0",
     "@types/chai": "^5.0.0",
@@ -44,8 +44,8 @@
     "mocha-minimalist-reporter": "1.1.0",
     "tsdown": "^0.22.0",
     "tsx": "4.23.0",
-    "typedoc": "0.28.19",
-    "typescript": "^6.0.2"
+    "typedoc": "0.28.20",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "@wfcd/items": ">=1.1273.11",
