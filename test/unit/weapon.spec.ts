@@ -75,9 +75,16 @@ describe('WarframeWeapon', () => {
 
       assert.equal(kitgun.name, 'Blaster Master');
 
-      assert.equal((kitgun.parts?.LWPT_GUN_BARREL as Item).name, 'Catchmoon');
-      assert.equal((kitgun.parts?.LWPT_GUN_CLIP as Item).name, 'Splat');
-      assert.equal((kitgun.parts?.LWPT_GUN_SECONDARY_HANDLE as Item).name, 'Haymaker');
+      const barrel: Item = kitgun.parts?.LWPT_GUN_BARREL as Item;
+      const clip: Item = kitgun.parts?.LWPT_GUN_CLIP as Item;
+      const secondaryHandle: Item = kitgun.parts?.LWPT_GUN_SECONDARY_HANDLE as Item;
+
+      assert.isDefined(barrel, 'Barrel part should be defined');
+      assert.isDefined(clip, 'Clip part should be defined');
+      assert.isDefined(secondaryHandle, 'Secondary handle part should be defined');
+      assert.equal(barrel.name, 'Catchmoon');
+      assert.equal(clip.name, 'Splat');
+      assert.equal(secondaryHandle.name, 'Haymaker');
     });
   });
 });
