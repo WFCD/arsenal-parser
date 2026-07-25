@@ -49,7 +49,7 @@ jobs:
         npm i --no-save warframe-worldstate-data@latest
         npm test
     - name: Coveralls
-      # MAtch the current .nvmrc version to the matrix version, only run coveralls on the project development version
+      # Match the current .nvmrc version to the matrix version, only run coveralls on the project development version
       if: matrix.node-version == 'lts/jod'
       uses: coverallsapp/github-action@master
       with:
