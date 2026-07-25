@@ -48,23 +48,9 @@ jobs:
         npm i --no-save @wfcd/items@latest
         npm i --no-save warframe-worldstate-data@latest
         npm test
-  coverage:
-    name: Coverage
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7.0.0
-        with:
-          node-version-file: '.nvmrc'
-      - run: |
-          npm install
-          npm i --no-save @wfcd/items@latest
-          npm i --no-save warframe-worldstate-data@latest
-      - run: npm test
-        env:
-          CI: true
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.github_token }}
+    - name: Coveralls
+      # MAtch the current .nvmrc version to the matrix version, only run coveralls on the project development version
+      if: matrix.node-version == 'lts/jod'
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
