@@ -30,9 +30,11 @@ jobs:
     strategy:
       matrix:
         node-version:
-         - 'lts/hydrogen'
-         - 'lts/iron'
-         - 'lts/jod'
+         - 'lts/iron'     # 20
+         - 'lts/jod'      # 22
+         - 'lts/krypton'  # 24
+         # Enable when Node 26 enters Active LTS (scheduled 2026-10-28):
+         # - 'lts/lithium'  # 26
     steps:
     - name: Checkout
       uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
